@@ -91,6 +91,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\HelpViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\HelpViewer.Designer.cs">
+      <DependentUpon>HelpViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DynamicInput.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,10 @@
     <EmbeddedResource Include="Controls\EditMagicWord.resx">
       <SubType>Designer</SubType>
       <DependentUpon>EditMagicWord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HelpViewer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>HelpViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DynamicInput.resx">
       <SubType>Designer</SubType>
