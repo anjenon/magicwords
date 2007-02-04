@@ -103,5 +103,17 @@ namespace Serialcoder.MagicWords.Properties {
                 return ((string)(this["HelpUrl"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool RunAtWindowsStart {
+            get {
+                return ((bool)(this["RunAtWindowsStart"]));
+            }
+            set {
+                this["RunAtWindowsStart"] = value;
+            }
+        }
     }
 }

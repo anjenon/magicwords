@@ -64,9 +64,9 @@ namespace Serialcoder.MagicWords.Forms
             this.uxMagicWordsToolStripMenuItem,
             this.uxNewMagicWordToolStripMenuItem,
             this.toolStripSeparator3,
-            this.uxHideToolStripMenuItem,
             this.uxSetupToolStripMenuItem,
             this.uxHelpToolStripMenuItem,
+            this.uxHideToolStripMenuItem,
             this.toolStripSeparator1,
             this.uxExitToolStripMenuItem});
 			this.uxInputContextMenuStrip.Name = "contextMenuStrip1";
@@ -109,7 +109,7 @@ namespace Serialcoder.MagicWords.Forms
 			// 
 			this.uxHelpToolStripMenuItem.Name = "uxHelpToolStripMenuItem";
 			this.uxHelpToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-			this.uxHelpToolStripMenuItem.Text = "&Help";
+			this.uxHelpToolStripMenuItem.Text = "&MagicWords online";
 			this.uxHelpToolStripMenuItem.Click += new System.EventHandler(this.OnHelpToolStripMenuItemClick);
 			// 
 			// toolStripSeparator1

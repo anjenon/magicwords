@@ -15,22 +15,36 @@ namespace Serialcoder.MagicWords.Forms
 			InitializeComponent();
 		}
 
+
 		protected override void OnLoad(EventArgs e)
 		{
 			base.OnLoad(e);
 			this.Size = uxInputText.Size;
 
-			uxInputText.AutoCompleteMode = AutoCompleteMode.Append;
-			uxInputText.AutoCompleteSource = AutoCompleteSource.CustomSource;
-			AutoCompleteStringCollection sr = new AutoCompleteStringCollection();
-			sr.AddRange(Context.Current.AutoCompleteSource);
-						
-			uxInputText.AutoCompleteCustomSource = sr;
+			UpdateAutoCompletion();
 
 			// position on bottom right
 			this.StartPosition = FormStartPosition.Manual;
 			this.Left = Screen.PrimaryScreen.WorkingArea.Width - this.Width;
 			this.Top = Screen.PrimaryScreen.WorkingArea.Height - this.Height;
+
+		}
+
+		protected override void OnShown(EventArgs e)
+		{
+			base.OnShown(e);
+
+			UpdateAutoCompletion();
+		}
+
+		public void UpdateAutoCompletion()
+		{
+			uxInputText.AutoCompleteMode = AutoCompleteMode.Append;
+			uxInputText.AutoCompleteSource = AutoCompleteSource.CustomSource;
+			AutoCompleteStringCollection sr = new AutoCompleteStringCollection();
+			sr.AddRange(Context.Current.AutoCompleteSource);
+
+			uxInputText.AutoCompleteCustomSource = sr;
 		}
 		
 
@@ -39,24 +53,37 @@ namespace Serialcoder.MagicWords.Forms
 			if (e.KeyCode == Keys.Enter)
 			{
 				string alias = uxInputText.Text;
-				this.Close();
+				this.HideForm();
 				Context.Current.Start(alias);
 			}
 			else if (e.KeyCode == Keys.Escape)
 			{
-				this.Close();
+				this.HideForm();
 			}
 		}
 
-		protected override void OnClosing(CancelEventArgs e)
+		/// <summary>
+		/// Hides the form.
+		/// </summary>
+		private void HideForm()
 		{
-			base.OnClosing(e);
+			this.Hide();
 
 			Properties.Settings.Default.Position = this.Location;
 			Properties.Settings.Default.Size = this.Size;
-			Properties.Settings.Default.Save();
-		
+			Properties.Settings.Default.Save();			
 		}
+
+		//protected override void OnClosing(CancelEventArgs e)
+		//{
+		//    base.OnClosing(e);
+
+		//    Properties.Settings.Default.Position = this.Location;
+		//    Properties.Settings.Default.Size = this.Size;
+		//    Properties.Settings.Default.Save();
+		
+		//}
+
 		
 		private void OnExitToolStripMenuItemClick(object sender, EventArgs e)
 		{
@@ -65,7 +92,7 @@ namespace Serialcoder.MagicWords.Forms
 
 		private void OnHideToolStripMenuItemClick(object sender, EventArgs e)
 		{
-			this.Close();
+			this.HideForm();
 		}
 
 		private void OnSetupToolStripMenuItemClick(object sender, EventArgs e)
@@ -86,13 +113,15 @@ namespace Serialcoder.MagicWords.Forms
 		private void uxInputContextMenuStrip_Opening(object sender, CancelEventArgs e)
 		{
 			uxMagicWordsToolStripMenuItem.DropDownItems.Clear();
-
+			Context.Current.MagicWords.Sort(delegate(Entities.MagicWord w1, Entities.MagicWord w2) { return w1.Alias.CompareTo(w2.Alias); });
 			foreach (Entities.MagicWord word in Context.Current.MagicWords)
 			{
 				ToolStripMenuItem item = new ToolStripMenuItem(word.Alias);
-				item.Click += new EventHandler(delegate(object source, EventArgs args) {
-					Context.Current.Start(word.Alias);
+				item.Click += new EventHandler(delegate(object source, EventArgs args)
+				{
+					Context.Current.Start(item.Text);
 				});
+				uxMagicWordsToolStripMenuItem.DropDownItems.Add(item);
 			}
 		}
 	}
