@@ -20,5 +20,8 @@
     <Setting Name="AddWordHotKey" Type="System.Windows.Forms.Shortcut" Scope="User">
       <Value Profile="(Default)">CtrlF11</Value>
     </Setting>
+    <Setting Name="HelpUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://code.google.com/p/magicwords/wiki/Help</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
