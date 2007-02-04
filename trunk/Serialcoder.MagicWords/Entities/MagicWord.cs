@@ -5,6 +5,9 @@ using System.Diagnostics;
 
 namespace Serialcoder.MagicWords.Entities
 {
+	/// <summary>
+	/// A magic word is an alias, a keyword, to launch one or more program, url, or files.
+	/// </summary>
 	[Serializable()]
 	public class MagicWord : System.ComponentModel.INotifyPropertyChanged
 	{
@@ -169,17 +172,6 @@ namespace Serialcoder.MagicWords.Entities
 		}
 		#endregion
 				
-		internal void Run()
-		{
-			// TODO preprocess infos
-
-			ProcessStartInfo info = new ProcessStartInfo(this.FileName, this.Arguments);
-			//info.WindowStyle = this.StartUpMode;
-			info.WorkingDirectory = this.WorkingDirectory;
-
-			Process.Start(info);
-		}
-
 		#region INotifyPropertyChanged Members
 
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;

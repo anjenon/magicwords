@@ -18,15 +18,14 @@ namespace Serialcoder.MagicWords.Forms
 		protected override void OnLoad(EventArgs e)
 		{
 			base.OnLoad(e);
-			this.Size = textBox1.Size;
+			this.Size = uxInputText.Size;
 
-			textBox1.AutoCompleteMode = AutoCompleteMode.Append;
-			textBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
+			uxInputText.AutoCompleteMode = AutoCompleteMode.Append;
+			uxInputText.AutoCompleteSource = AutoCompleteSource.CustomSource;
 			AutoCompleteStringCollection sr = new AutoCompleteStringCollection();
 			sr.AddRange(Context.Current.AutoCompleteSource);
-
-			
-			textBox1.AutoCompleteCustomSource = sr;
+						
+			uxInputText.AutoCompleteCustomSource = sr;
 
 			// position on bottom right
 			this.StartPosition = FormStartPosition.Manual;
@@ -35,11 +34,11 @@ namespace Serialcoder.MagicWords.Forms
 		}
 		
 
-		private void textBox1_KeyUp(object sender, KeyEventArgs e)
+		private void OnInputTextBoxKeyUp(object sender, KeyEventArgs e)
 		{
 			if (e.KeyCode == Keys.Enter)
 			{
-				string alias = textBox1.Text;
+				string alias = uxInputText.Text;
 				this.Close();
 				Context.Current.Start(alias);
 			}
@@ -59,20 +58,42 @@ namespace Serialcoder.MagicWords.Forms
 		
 		}
 		
-		private void uxExitToolStripMenuItem_Click(object sender, EventArgs e)
+		private void OnExitToolStripMenuItemClick(object sender, EventArgs e)
 		{
 			Context.Current.Exit();
 		}
 
-		private void uxHideToolStripMenuItem_Click(object sender, EventArgs e)
+		private void OnHideToolStripMenuItemClick(object sender, EventArgs e)
 		{
 			this.Close();
 		}
 
-		private void uxSetupToolStripMenuItem_Click(object sender, EventArgs e)
+		private void OnSetupToolStripMenuItemClick(object sender, EventArgs e)
 		{
 			Context.Current.Setup();
 		}
 
+		private void OnHelpToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			Context.Current.Help();
+		}
+
+		private void OnNewMagicWordToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			Context.Current.ShowNewMagicWordForm();
+		}
+
+		private void uxInputContextMenuStrip_Opening(object sender, CancelEventArgs e)
+		{
+			uxMagicWordsToolStripMenuItem.DropDownItems.Clear();
+
+			foreach (Entities.MagicWord word in Context.Current.MagicWords)
+			{
+				ToolStripMenuItem item = new ToolStripMenuItem(word.Alias);
+				item.Click += new EventHandler(delegate(object source, EventArgs args) {
+					Context.Current.Start(word.Alias);
+				});
+			}
+		}
 	}
 }

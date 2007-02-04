@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Serialcoder.MagicWords.Interfaces</RootNamespace>
-    <AssemblyName>Serialcoder.MagicWords.Interfaces</AssemblyName>
+    <AssemblyName>MagicWords.Interfaces</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

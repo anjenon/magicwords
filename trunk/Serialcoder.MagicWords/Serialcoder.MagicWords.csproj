@@ -9,7 +9,7 @@
     <ApplicationIcon>App.ico</ApplicationIcon>
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
-    <AssemblyName>Serialcoder.Launcher</AssemblyName>
+    <AssemblyName>MagicWords</AssemblyName>
     <AssemblyOriginatorKeyFile>
     </AssemblyOriginatorKeyFile>
     <DefaultClientScript>JScript</DefaultClientScript>
@@ -192,13 +192,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Serialcoder.MagicWords.Interfaces\Serialcoder.MagicWords.Interfaces.csproj">
-      <Project>{1AEF87B4-B549-4408-BBF2-9BC76B9A5121}</Project>
-      <Name>Serialcoder.Launcher.Interfaces</Name>
-    </ProjectReference>
+    <Content Include="App.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App.ico" />
+    <ProjectReference Include="..\Serialcoder.MagicWords.Interfaces\Serialcoder.MagicWords.Interfaces.csproj">
+      <Project>{1AEF87B4-B549-4408-BBF2-9BC76B9A5121}</Project>
+      <Name>Serialcoder.MagicWords.Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
