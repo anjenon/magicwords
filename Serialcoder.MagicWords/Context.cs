@@ -219,17 +219,15 @@ namespace Serialcoder.MagicWords
 				case "exit":
 					Exit();
 					return;
-					break;
-
+				
 				case "setup":
 					Setup();
 					return;
-					break;
-
+				
 				case "help":
 					Help();
 					return;
-					break;
+				
 				case "add":
 					ShowNewMagicWordForm();
 					return;

@@ -30,14 +30,14 @@ namespace Serialcoder.MagicWords.Forms
 		{
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
-			this.listMagicWords1 = new Serialcoder.MagicWords.Controls.ListMagicWords();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
 			this.uxCancelButton = new System.Windows.Forms.Button();
 			this.uxAcceptButton = new System.Windows.Forms.Button();
-			this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+			this.listMagicWords1 = new Serialcoder.MagicWords.Controls.ListMagicWords();
+			this.helpViewer1 = new Serialcoder.MagicWords.Controls.HelpViewer();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.tabPage3.SuspendLayout();
@@ -69,14 +69,6 @@ namespace Serialcoder.MagicWords.Forms
 			this.tabPage1.Text = "MagicWords library";
 			this.tabPage1.UseVisualStyleBackColor = true;
 			// 
-			// listMagicWords1
-			// 
-			this.listMagicWords1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.listMagicWords1.Location = new System.Drawing.Point(3, 3);
-			this.listMagicWords1.Name = "listMagicWords1";
-			this.listMagicWords1.Size = new System.Drawing.Size(504, 267);
-			this.listMagicWords1.TabIndex = 0;
-			// 
 			// tabPage3
 			// 
 			this.tabPage3.Controls.Add(this.propertyGrid1);
@@ -98,7 +90,7 @@ namespace Serialcoder.MagicWords.Forms
 			// 
 			// tabPage2
 			// 
-			this.tabPage2.Controls.Add(this.webBrowser1);
+			this.tabPage2.Controls.Add(this.helpViewer1);
 			this.tabPage2.Controls.Add(this.linkLabel1);
 			this.tabPage2.Location = new System.Drawing.Point(4, 22);
 			this.tabPage2.Name = "tabPage2";
@@ -134,6 +126,7 @@ namespace Serialcoder.MagicWords.Forms
 			// uxAcceptButton
 			// 
 			this.uxAcceptButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.uxAcceptButton.DialogResult = System.Windows.Forms.DialogResult.OK;
 			this.uxAcceptButton.Location = new System.Drawing.Point(374, 317);
 			this.uxAcceptButton.Name = "uxAcceptButton";
 			this.uxAcceptButton.Size = new System.Drawing.Size(75, 23);
@@ -142,17 +135,23 @@ namespace Serialcoder.MagicWords.Forms
 			this.uxAcceptButton.UseVisualStyleBackColor = true;
 			this.uxAcceptButton.Click += new System.EventHandler(this.uxAcceptButton_Click);
 			// 
-			// webBrowser1
+			// listMagicWords1
 			// 
-			this.webBrowser1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+			this.listMagicWords1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.listMagicWords1.Location = new System.Drawing.Point(3, 3);
+			this.listMagicWords1.Name = "listMagicWords1";
+			this.listMagicWords1.Size = new System.Drawing.Size(504, 267);
+			this.listMagicWords1.TabIndex = 0;
+			// 
+			// helpViewer1
+			// 
+			this.helpViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
 						| System.Windows.Forms.AnchorStyles.Left)
 						| System.Windows.Forms.AnchorStyles.Right)));
-			this.webBrowser1.Location = new System.Drawing.Point(6, 19);
-			this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-			this.webBrowser1.Name = "webBrowser1";
-			this.webBrowser1.Size = new System.Drawing.Size(498, 248);
-			this.webBrowser1.TabIndex = 1;
-			this.webBrowser1.Url = new System.Uri("http://code.google.com/p/magicwords/wiki/Help", System.UriKind.Absolute);
+			this.helpViewer1.Location = new System.Drawing.Point(6, 19);
+			this.helpViewer1.Name = "helpViewer1";
+			this.helpViewer1.Size = new System.Drawing.Size(498, 248);
+			this.helpViewer1.TabIndex = 1;
 			// 
 			// OptionsForm
 			// 
@@ -161,7 +160,6 @@ namespace Serialcoder.MagicWords.Forms
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.uxCancelButton;
 			this.ClientSize = new System.Drawing.Size(542, 352);
-			this.ControlBox = false;
 			this.Controls.Add(this.uxAcceptButton);
 			this.Controls.Add(this.uxCancelButton);
 			this.Controls.Add(this.tabControl1);
@@ -189,6 +187,6 @@ namespace Serialcoder.MagicWords.Forms
 		private System.Windows.Forms.TabPage tabPage3;
 		private System.Windows.Forms.PropertyGrid propertyGrid1;
 		private System.Windows.Forms.LinkLabel linkLabel1;
-		private System.Windows.Forms.WebBrowser webBrowser1;
+		private Serialcoder.MagicWords.Controls.HelpViewer helpViewer1;
 	}
 }

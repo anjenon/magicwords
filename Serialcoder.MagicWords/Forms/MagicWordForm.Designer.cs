@@ -28,7 +28,6 @@ namespace Serialcoder.MagicWords.Forms
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.label6 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
@@ -44,11 +43,8 @@ namespace Serialcoder.MagicWords.Forms
 			this.label1 = new System.Windows.Forms.Label();
 			this.uxAcceptButton = new System.Windows.Forms.Button();
 			this.uxCancelButton = new System.Windows.Forms.Button();
-			this.uxErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-			this.uxBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.button1 = new System.Windows.Forms.Button();
 			this.tableLayoutPanel1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.uxErrorProvider)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.uxBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -78,7 +74,7 @@ namespace Serialcoder.MagicWords.Forms
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(383, 182);
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(336, 182);
 			this.tableLayoutPanel1.TabIndex = 1;
 			// 
 			// label6
@@ -183,7 +179,7 @@ namespace Serialcoder.MagicWords.Forms
 			// 
 			this.uxAcceptButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.uxAcceptButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-			this.uxAcceptButton.Location = new System.Drawing.Point(264, 209);
+			this.uxAcceptButton.Location = new System.Drawing.Point(192, 209);
 			this.uxAcceptButton.Name = "uxAcceptButton";
 			this.uxAcceptButton.Size = new System.Drawing.Size(75, 23);
 			this.uxAcceptButton.TabIndex = 4;
@@ -194,17 +190,21 @@ namespace Serialcoder.MagicWords.Forms
 			// 
 			this.uxCancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.uxCancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.uxCancelButton.Location = new System.Drawing.Point(345, 209);
+			this.uxCancelButton.Location = new System.Drawing.Point(273, 209);
 			this.uxCancelButton.Name = "uxCancelButton";
 			this.uxCancelButton.Size = new System.Drawing.Size(75, 23);
 			this.uxCancelButton.TabIndex = 3;
 			this.uxCancelButton.Text = "&Cancel";
 			this.uxCancelButton.UseVisualStyleBackColor = true;
 			// 
-			// uxErrorProvider
+			// button1
 			// 
-			this.uxErrorProvider.ContainerControl = this;
-			this.uxErrorProvider.DataSource = this.uxBindingSource;
+			this.button1.Location = new System.Drawing.Point(354, 38);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(75, 23);
+			this.button1.TabIndex = 5;
+			this.button1.Text = "button1";
+			this.button1.UseVisualStyleBackColor = true;
 			// 
 			// MagicWordForm
 			// 
@@ -212,17 +212,17 @@ namespace Serialcoder.MagicWords.Forms
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.uxCancelButton;
-			this.ClientSize = new System.Drawing.Size(432, 244);
+			this.ClientSize = new System.Drawing.Size(520, 244);
 			this.ControlBox = false;
+			this.Controls.Add(this.button1);
 			this.Controls.Add(this.uxAcceptButton);
 			this.Controls.Add(this.uxCancelButton);
 			this.Controls.Add(this.tableLayoutPanel1);
 			this.Name = "MagicWordForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "NewMagicWordForm";
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.tableLayoutPanel1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.uxErrorProvider)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.uxBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -245,7 +245,6 @@ namespace Serialcoder.MagicWords.Forms
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button uxAcceptButton;
 		private System.Windows.Forms.Button uxCancelButton;
-		private System.Windows.Forms.ErrorProvider uxErrorProvider;
-		private System.Windows.Forms.BindingSource uxBindingSource;
+		private System.Windows.Forms.Button button1;
 	}
 }
