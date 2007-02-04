@@ -1,0 +1,24 @@
+This is the MagicWords help page.
+
+= Introduction =
+Here are the basic quick start information for MagicWords.
+
+= Show the input box =
+MagicWords command line textbox is hidden by default, so when the program start you just see an icon in the tray bar. To display the textbox and enter a magic word, you can :
+- double click on the MagicWords tray icon
+- right click on the tray icon, and click on "Show"
+- or the fastest way : press the CTRL-F12 hotkey
+
+
+
+= Add MagicWords =
+
+You can add a new magic word, the following ways:
+
+- right click the tray icon, and click on "New MagicWord..." item. The new MagicWord form is then displayed
+- Right click the tray icon, and click on the "Setup.." item. An editable MagicWords data grid view is displayed, there you can view your Magic Words library, edit, insert or delete MagicWords.
+- Finally you can add the current focused application by pressing the CTRL-F11 hotkey combinaison. The new MagicWord form will be displayed, filled with current focused application data.
+
+= Other information =
+Your MagicWords library is automatically saved. 
+
