@@ -21,8 +21,9 @@ namespace Serialcoder.MagicWords
 		private System.Windows.Forms.ContextMenuStrip	m_NotifyIconContextMenu;	// the context menu for the notify icon
 		private System.Windows.Forms.ToolStripMenuItem exitContextMenuItem;			// exit menu command for context menu 
 		private System.Windows.Forms.ToolStripMenuItem m_helpContextMenuItem;			// open menu command for context menu 	
-		private System.Windows.Forms.ToolStripMenuItem showContextMenuItem;			// open menu command for context menu 	
-		private System.Windows.Forms.ToolStripMenuItem setupContextMenuItem;			// open menu command for context menu 	
+		private System.Windows.Forms.ToolStripMenuItem m_ShowContextMenuItem;			// open menu command for context menu 	
+		private System.Windows.Forms.ToolStripMenuItem m_setupContextMenuItem;			// open menu command for context menu 	
+		private System.Windows.Forms.ToolStripMenuItem m_addContextMenuItem;			// open menu command for context menu 	
 		private System.Windows.Forms.Form m_MainForm;						// the current form we're displaying
 
 		private SystemHotkey m_SystemHotkey;
@@ -46,16 +47,17 @@ namespace Serialcoder.MagicWords
 			this.components = new System.ComponentModel.Container();
 			this.m_NotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
 			this.m_NotifyIconContextMenu = new System.Windows.Forms.ContextMenuStrip();
-			this.showContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.m_ShowContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.exitContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.setupContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.m_setupContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.m_helpContextMenuItem = new ToolStripMenuItem();
+			this.m_addContextMenuItem = new ToolStripMenuItem();
 			this.m_SystemHotkey = new SystemHotkey(this.components);
 			m_AddWordSystemHotkey = new SystemHotkey(this.components);
 			
 		
 			// 
-			// calendarNotifyIcon
+			// m_NotifyIcon
 			// 
 			this.m_NotifyIcon.ContextMenuStrip = this.m_NotifyIconContextMenu;
 			this.m_NotifyIcon.DoubleClick += new System.EventHandler(this.OnNotifyIconDoubleClick);
@@ -66,25 +68,34 @@ namespace Serialcoder.MagicWords
 			// 
 			// calendarNotifyIconContextMenu
 			// 
-			this.m_NotifyIconContextMenu.Items.AddRange(new ToolStripItem[] { this.setupContextMenuItem, this.showContextMenuItem, exitContextMenuItem });
+			this.m_NotifyIconContextMenu.Items.AddRange(new ToolStripItem[] { this.m_setupContextMenuItem, this.m_ShowContextMenuItem, exitContextMenuItem });
 
 			
 			// 
 			// showContextMenuItem
 			// 
-			this.setupContextMenuItem.Text = "&Setup...";
-			this.setupContextMenuItem.Click += new EventHandler(OnSetupContextMenuItemClick);
+			this.m_setupContextMenuItem.Text = "&Setup...";
+			this.m_setupContextMenuItem.Click += new EventHandler(OnSetupContextMenuItemClick);
 
 			//this.showContextMenuItem.Index = 0;
-			this.showContextMenuItem.Text = "&Show launch pad";
+			this.m_ShowContextMenuItem.Text = "&Show input box...";
 			//this.showContextMenuItem.DisplayStyle = true;
-			this.showContextMenuItem.Click += new System.EventHandler(this.OnShowContextMenuItemClick);
+			this.m_ShowContextMenuItem.Click += new System.EventHandler(this.OnShowContextMenuItemClick);
 
 			//
 			// m_helpContextMenuItem
 			//
 			this.m_helpContextMenuItem.Text = "&Help...";
-			this.showContextMenuItem.Click += new System.EventHandler(delegate(object sender, EventArgs e)
+			this.m_ShowContextMenuItem.Click += new System.EventHandler(delegate(object sender, EventArgs e)
+			{
+				Context.Current.Help();
+			});
+
+			//
+			// m_helpContextMenuItem
+			//
+			this.m_addContextMenuItem.Text = "&New MagicWord...";
+			this.m_addContextMenuItem.Click += new System.EventHandler(delegate(object sender, EventArgs e)
 			{
 				Context.Current.Help();
 			});

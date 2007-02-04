@@ -218,15 +218,21 @@ namespace Serialcoder.MagicWords
 			{
 				case "exit":
 					Exit();
+					return;
 					break;
 
 				case "setup":
 					Setup();
+					return;
 					break;
 
 				case "help":
 					Help();
+					return;
 					break;
+				case "add":
+					ShowNewMagicWordForm();
+					return;
 				default:
 					break;
 			}
@@ -241,6 +247,8 @@ namespace Serialcoder.MagicWords
 				Execute(alias);
 			}			
 		}
+
+		
 
 		
 
@@ -326,16 +334,26 @@ namespace Serialcoder.MagicWords
 
 		#endregion
 
-		internal void AddActiveApplicationMagicWord(string appExeName, string appExePath)
+		public void AddActiveApplicationMagicWord(string appExeName, string appExePath)
 		{			
 			MagicWord word = new MagicWord();
 			word.Alias = appExeName;
-			word.FileName = appExePath;					
+			word.FileName = appExePath;
 
+			ShowMagicWordForm(word);
+		}
+
+		public void ShowNewMagicWordForm()
+		{
+			ShowMagicWordForm(new MagicWord());			
+		}
+
+		private void ShowMagicWordForm(MagicWord word)
+		{
 			Forms.MagicWordForm form = new Serialcoder.MagicWords.Forms.MagicWordForm();
 			form.MagicWord = word;
 
-			if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+			if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK && m_MagicWords.Contains(word) == false)
 			{
 				m_MagicWords.Add(word);
 			}
