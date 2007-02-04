@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialcoder.MagicWords", "Serialcoder.MagicWords\Serialcoder.MagicWords.csproj", "{6F67CAF3-C557-4BEF-B233-FFB4E7C0C8BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialcoder.MagicWords.Interfaces", "Serialcoder.MagicWords.Interfaces\Serialcoder.MagicWords.Interfaces.csproj", "{1AEF87B4-B549-4408-BBF2-9BC76B9A5121}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MagicWordsSetup", "MagicWordsSetup\MagicWordsSetup.vdproj", "{015DF4CF-D5F7-4EED-89CA-8BDF9BEE7593}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F67CAF3-C557-4BEF-B233-FFB4E7C0C8BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F67CAF3-C557-4BEF-B233-FFB4E7C0C8BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F67CAF3-C557-4BEF-B233-FFB4E7C0C8BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F67CAF3-C557-4BEF-B233-FFB4E7C0C8BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AEF87B4-B549-4408-BBF2-9BC76B9A5121}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AEF87B4-B549-4408-BBF2-9BC76B9A5121}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AEF87B4-B549-4408-BBF2-9BC76B9A5121}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AEF87B4-B549-4408-BBF2-9BC76B9A5121}.Release|Any CPU.Build.0 = Release|Any CPU
+		{015DF4CF-D5F7-4EED-89CA-8BDF9BEE7593}.Debug|Any CPU.ActiveCfg = Debug
+		{015DF4CF-D5F7-4EED-89CA-8BDF9BEE7593}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
