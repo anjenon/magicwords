@@ -1,17 +1,19 @@
 This is the MagicWords help page.
 
 = Introduction =
-Here are the basic quick start information for MagicWords.
+Here are the basic quick start information for MagicWords, it will tell you how to type existing MagicWord and how to add some new ones.
 
 = Show the input box =
 MagicWords command line textbox is hidden by default, so when the program start you just see an icon in the tray bar. To display the textbox and enter a magic word, you can :
 - double click on the MagicWords tray icon
 - right click on the tray icon, and click on "Show"
+- right click on the tray icon, and select the "MagicWords" menu item, it will show your MagicWords library as children menu items.
 - or the fastest way : press the CTRL-F12 hotkey
 
+The input box use build in autocompletion feature, so your MagicWord will probably be completed after typing 2 or 3 caracters.
 
 
-= Add MagicWords =
+= How to add MagicWords =
 
 You can add a new magic word, the following ways:
 
@@ -21,4 +23,3 @@ You can add a new magic word, the following ways:
 
 = Other information =
 Your MagicWords library is automatically saved. 
-
