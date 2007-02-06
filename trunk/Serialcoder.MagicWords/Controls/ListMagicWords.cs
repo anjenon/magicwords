@@ -34,7 +34,7 @@ namespace Serialcoder.MagicWords.Controls
 		}
 
 		
-		private void uxDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+		private void OnDataGridViewCellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
 		{
 			if (e.ColumnIndex == uxModesColumn.Index &&  e.Value is System.Diagnostics.ProcessWindowStyle)
 			{
@@ -43,7 +43,7 @@ namespace Serialcoder.MagicWords.Controls
 			}
 		}
 
-		private void uxDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+		private void OnDataGridViewDataError(object sender, DataGridViewDataErrorEventArgs e)
 		{
 			Console.WriteLine(e.Exception);
 			Console.WriteLine(e.RowIndex);

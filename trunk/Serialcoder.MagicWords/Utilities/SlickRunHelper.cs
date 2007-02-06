@@ -36,7 +36,24 @@ namespace Serialcoder.MagicWords.Utilities
 				reader.ReadLine();
 
 				string startModeLine = reader.ReadLine();
-				word.StartUpMode = (System.Diagnostics.ProcessWindowStyle)Convert.ToInt32(startModeLine.Split('=')[1]);
+				int slickRunStartMode = Convert.ToInt32(startModeLine.Split('=')[1]);
+				switch (slickRunStartMode)
+				{
+					case 5:
+						word.StartUpMode = System.Diagnostics.ProcessWindowStyle.Normal;
+						break;
+
+					case 7:
+						word.StartUpMode = System.Diagnostics.ProcessWindowStyle.Minimized;
+						break;
+
+					case 3:
+						word.StartUpMode = System.Diagnostics.ProcessWindowStyle.Maximized;
+						break;
+					default:
+						break;
+				}
+				word.StartUpMode = System.Diagnostics.ProcessWindowStyle.Normal;
 			
 				words.Add(word);
 			}

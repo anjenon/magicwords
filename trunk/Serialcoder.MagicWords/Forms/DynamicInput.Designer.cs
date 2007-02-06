@@ -56,7 +56,7 @@ namespace Serialcoder.MagicWords.Forms
 			// 
 			this.button1.Location = new System.Drawing.Point(265, 27);
 			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
+			this.button1.Size = new System.Drawing.Size(32, 23);
 			this.button1.TabIndex = 2;
 			this.button1.Text = "&OK";
 			this.button1.UseVisualStyleBackColor = true;
@@ -67,7 +67,7 @@ namespace Serialcoder.MagicWords.Forms
 			this.AcceptButton = this.button1;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(352, 62);
+			this.ClientSize = new System.Drawing.Size(308, 62);
 			this.ControlBox = false;
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.uxNotesLabel);

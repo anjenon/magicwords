@@ -10,12 +10,36 @@ namespace Serialcoder.MagicWords.Forms
 {
 	public partial class LauncherForm : Form
 	{
-		public LauncherForm()
+		private LauncherForm()
 		{
 			InitializeComponent();
 		}
 
+		#region Singleton
 
+		private static volatile LauncherForm _singleton;
+		private static object syncRoot = new Object();
+
+		public static LauncherForm Current
+		{
+			get
+			{
+				if (_singleton == null)
+				{
+					lock (syncRoot)
+					{
+						if (_singleton == null)
+						{
+							_singleton = new LauncherForm();
+						}
+					}
+				}
+
+				return _singleton;
+			}
+		}
+		#endregion
+		
 		protected override void OnLoad(EventArgs e)
 		{
 			base.OnLoad(e);

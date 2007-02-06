@@ -23,6 +23,14 @@ namespace Serialcoder.MagicWords.Forms
 			}
 		}
 
+		public string EncodedInput
+		{
+			get
+			{
+				return System.Web.HttpUtility.UrlEncode(comboBox1.Text);
+			}
+		}
+
 		private void button1_Click(object sender, EventArgs e)
 		{
 			DialogResult = DialogResult.OK;

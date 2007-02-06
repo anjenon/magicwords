@@ -260,7 +260,7 @@ namespace Serialcoder.MagicWords
 				switch (form.ShowDialog())
 				{
 					case System.Windows.Forms.DialogResult.OK:
-						return inputText.Replace("$W$", form.Input);
+						return inputText.Replace("$W$", form.EncodedInput).Replace("$w$", form.Input);
 						break;
 					
 					default:

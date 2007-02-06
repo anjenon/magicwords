@@ -1,9 +1,10 @@
 using System;
 using System.Windows.Forms;
 using System.Drawing;
-using Serialcoder.MagicWords.Utilities;
-using Serialcoder.MagicWords.Forms;
 using System.Diagnostics;
+
+using Serialcoder.MagicWords.Forms;
+using Serialcoder.MagicWords.Components;
 
 namespace Serialcoder.MagicWords
 {
@@ -18,7 +19,7 @@ namespace Serialcoder.MagicWords
 	{
 		private System.ComponentModel.IContainer	components;						// a list of components to dispose when the context is disposed
 		private System.Windows.Forms.NotifyIcon		m_NotifyIcon;				// the icon that sits in the system tray
-		private Forms.LauncherForm m_MainForm;						// the current form we're displaying
+		//private Forms.LauncherForm m_MainForm;						// the current form we're displaying
 		private SystemHotkey m_SystemHotkey;
 		private SystemHotkey m_AddWordSystemHotkey;
 
@@ -30,17 +31,11 @@ namespace Serialcoder.MagicWords
 			// create the notify icon and it's associated context menu
 			InitializeContext();
 
-			m_MainForm = new LauncherForm();
-			m_MainForm.FormClosing += new FormClosingEventHandler(m_MainForm_FormClosing);
+			//m_MainForm = new LauncherForm();
+			//Console.WriteLine(Forms.LauncherForm.Current.Name);
 
-			m_NotifyIcon.ContextMenuStrip = m_MainForm.ContextMenuStrip;
+			m_NotifyIcon.ContextMenuStrip = Forms.LauncherForm.Current.ContextMenuStrip;
 		}
-
-		void m_MainForm_FormClosing(object sender, FormClosingEventArgs e)
-		{
-			//throw new Exception("The method or operation is not implemented.");
-		}
-
 
 		/// <summary>
 		/// Create the NotifyIcon UI, the ContextMenu for the NotifyIcon and an Exit menu item. 
@@ -135,13 +130,13 @@ namespace Serialcoder.MagicWords
 		/// </summary>
 		private void ShowForm() 
 		{			
-			if (m_MainForm.Visible)
+			if (Forms.LauncherForm.Current.Visible)
 			{
-				m_MainForm.Activate();
+				Forms.LauncherForm.Current.Activate();
 			}
 			else
 			{
-				m_MainForm.Show();
+				Forms.LauncherForm.Current.Show();
 			}
 		}
 
@@ -150,10 +145,10 @@ namespace Serialcoder.MagicWords
 		/// </summary>
 		protected override void ExitThreadCore()
 		{
-			if (m_MainForm != null) 
+			if (Forms.LauncherForm.Current != null) 
 			{
 				// before we exit, give the main form a chance to clean itself up.
-				m_MainForm.Close();
+				Forms.LauncherForm.Current.Close();
 			}
 			base.ExitThreadCore ();
 		}

@@ -83,6 +83,7 @@
     <Reference Include="System.Drawing">
       <Name>System.Drawing</Name>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms">
       <Name>System.Windows.Forms</Name>
     </Reference>
@@ -116,13 +117,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Context.cs" />
-    <Compile Include="Controls\EditMagicWord.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\EditMagicWord.Designer.cs">
-      <DependentUpon>EditMagicWord.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\MagicWord.cs" />
     <Compile Include="Forms\LauncherForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,18 +146,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Utilities\Hotkey.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Utilities\SlickRunHelper.cs" />
-    <Compile Include="Utilities\SystemHotkey.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Utilities\Win32.cs" />
-    <EmbeddedResource Include="Controls\EditMagicWord.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>EditMagicWord.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Controls\HelpViewer.resx">
       <SubType>Designer</SubType>
       <DependentUpon>HelpViewer.cs</DependentUpon>
@@ -205,9 +187,9 @@
     <Content Include="App.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Serialcoder.MagicWords.Interfaces\Serialcoder.MagicWords.Interfaces.csproj">
+    <ProjectReference Include="..\Serialcoder.MagicWords.Interfaces\Serialcoder.MagicWords.Framework.csproj">
       <Project>{1AEF87B4-B549-4408-BBF2-9BC76B9A5121}</Project>
-      <Name>Serialcoder.MagicWords.Interfaces</Name>
+      <Name>Serialcoder.MagicWords.Framework</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
