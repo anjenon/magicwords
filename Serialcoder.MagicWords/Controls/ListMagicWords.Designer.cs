@@ -60,9 +60,9 @@ namespace Serialcoder.MagicWords.Controls
 			this.uxDataGridView.Name = "uxDataGridView";
 			this.uxDataGridView.Size = new System.Drawing.Size(516, 292);
 			this.uxDataGridView.TabIndex = 1;
-			this.uxDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.uxDataGridView_CellFormatting);
+			this.uxDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.OnDataGridViewCellFormatting);
 			this.uxDataGridView.CellParsing += new System.Windows.Forms.DataGridViewCellParsingEventHandler(this.OnDataGridViewCellParsing);
-			this.uxDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.uxDataGridView_DataError);
+			this.uxDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.OnDataGridViewDataError);
 			// 
 			// errorProvider1
 			// 

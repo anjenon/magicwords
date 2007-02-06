@@ -34,9 +34,9 @@ namespace Serialcoder.MagicWords.Forms
 			this.uxMagicWordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.uxNewMagicWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-			this.uxHideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.uxSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.uxHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.uxHideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.uxExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.uxInputContextMenuStrip.SuspendLayout();
@@ -70,7 +70,7 @@ namespace Serialcoder.MagicWords.Forms
             this.toolStripSeparator1,
             this.uxExitToolStripMenuItem});
 			this.uxInputContextMenuStrip.Name = "contextMenuStrip1";
-			this.uxInputContextMenuStrip.Size = new System.Drawing.Size(175, 170);
+			this.uxInputContextMenuStrip.Size = new System.Drawing.Size(175, 148);
 			this.uxInputContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.uxInputContextMenuStrip_Opening);
 			// 
 			// uxMagicWordsToolStripMenuItem
@@ -91,13 +91,6 @@ namespace Serialcoder.MagicWords.Forms
 			this.toolStripSeparator3.Name = "toolStripSeparator3";
 			this.toolStripSeparator3.Size = new System.Drawing.Size(171, 6);
 			// 
-			// uxHideToolStripMenuItem
-			// 
-			this.uxHideToolStripMenuItem.Name = "uxHideToolStripMenuItem";
-			this.uxHideToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-			this.uxHideToolStripMenuItem.Text = "&Hide in Tray";
-			this.uxHideToolStripMenuItem.Click += new System.EventHandler(this.OnHideToolStripMenuItemClick);
-			// 
 			// uxSetupToolStripMenuItem
 			// 
 			this.uxSetupToolStripMenuItem.Name = "uxSetupToolStripMenuItem";
@@ -111,6 +104,13 @@ namespace Serialcoder.MagicWords.Forms
 			this.uxHelpToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
 			this.uxHelpToolStripMenuItem.Text = "&MagicWords online";
 			this.uxHelpToolStripMenuItem.Click += new System.EventHandler(this.OnHelpToolStripMenuItemClick);
+			// 
+			// uxHideToolStripMenuItem
+			// 
+			this.uxHideToolStripMenuItem.Name = "uxHideToolStripMenuItem";
+			this.uxHideToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+			this.uxHideToolStripMenuItem.Text = "&Hide in Tray";
+			this.uxHideToolStripMenuItem.Click += new System.EventHandler(this.OnHideToolStripMenuItemClick);
 			// 
 			// toolStripSeparator1
 			// 

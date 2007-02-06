@@ -30,14 +30,15 @@ namespace Serialcoder.MagicWords.Forms
 		{
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.listMagicWords1 = new Serialcoder.MagicWords.Controls.ListMagicWords();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.helpViewer1 = new Serialcoder.MagicWords.Controls.HelpViewer();
 			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
 			this.uxCancelButton = new System.Windows.Forms.Button();
 			this.uxAcceptButton = new System.Windows.Forms.Button();
-			this.listMagicWords1 = new Serialcoder.MagicWords.Controls.ListMagicWords();
-			this.helpViewer1 = new Serialcoder.MagicWords.Controls.HelpViewer();
+			this.uxImportLinkLabel = new System.Windows.Forms.LinkLabel();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.tabPage3.SuspendLayout();
@@ -69,6 +70,14 @@ namespace Serialcoder.MagicWords.Forms
 			this.tabPage1.Text = "MagicWords library";
 			this.tabPage1.UseVisualStyleBackColor = true;
 			// 
+			// listMagicWords1
+			// 
+			this.listMagicWords1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.listMagicWords1.Location = new System.Drawing.Point(3, 3);
+			this.listMagicWords1.Name = "listMagicWords1";
+			this.listMagicWords1.Size = new System.Drawing.Size(504, 267);
+			this.listMagicWords1.TabIndex = 0;
+			// 
 			// tabPage3
 			// 
 			this.tabPage3.Controls.Add(this.propertyGrid1);
@@ -99,6 +108,16 @@ namespace Serialcoder.MagicWords.Forms
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Help";
 			this.tabPage2.UseVisualStyleBackColor = true;
+			// 
+			// helpViewer1
+			// 
+			this.helpViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+						| System.Windows.Forms.AnchorStyles.Left)
+						| System.Windows.Forms.AnchorStyles.Right)));
+			this.helpViewer1.Location = new System.Drawing.Point(6, 19);
+			this.helpViewer1.Name = "helpViewer1";
+			this.helpViewer1.Size = new System.Drawing.Size(498, 248);
+			this.helpViewer1.TabIndex = 1;
 			// 
 			// linkLabel1
 			// 
@@ -135,23 +154,16 @@ namespace Serialcoder.MagicWords.Forms
 			this.uxAcceptButton.UseVisualStyleBackColor = true;
 			this.uxAcceptButton.Click += new System.EventHandler(this.uxAcceptButton_Click);
 			// 
-			// listMagicWords1
+			// uxImportLinkLabel
 			// 
-			this.listMagicWords1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.listMagicWords1.Location = new System.Drawing.Point(3, 3);
-			this.listMagicWords1.Name = "listMagicWords1";
-			this.listMagicWords1.Size = new System.Drawing.Size(504, 267);
-			this.listMagicWords1.TabIndex = 0;
-			// 
-			// helpViewer1
-			// 
-			this.helpViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
-			this.helpViewer1.Location = new System.Drawing.Point(6, 19);
-			this.helpViewer1.Name = "helpViewer1";
-			this.helpViewer1.Size = new System.Drawing.Size(498, 248);
-			this.helpViewer1.TabIndex = 1;
+			this.uxImportLinkLabel.AutoSize = true;
+			this.uxImportLinkLabel.Location = new System.Drawing.Point(12, 314);
+			this.uxImportLinkLabel.Name = "uxImportLinkLabel";
+			this.uxImportLinkLabel.Size = new System.Drawing.Size(78, 13);
+			this.uxImportLinkLabel.TabIndex = 3;
+			this.uxImportLinkLabel.TabStop = true;
+			this.uxImportLinkLabel.Text = "Import QRS file";
+			this.uxImportLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OnImportLinkLabelLinkClicked);
 			// 
 			// OptionsForm
 			// 
@@ -160,6 +172,7 @@ namespace Serialcoder.MagicWords.Forms
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.uxCancelButton;
 			this.ClientSize = new System.Drawing.Size(542, 352);
+			this.Controls.Add(this.uxImportLinkLabel);
 			this.Controls.Add(this.uxAcceptButton);
 			this.Controls.Add(this.uxCancelButton);
 			this.Controls.Add(this.tabControl1);
@@ -173,6 +186,7 @@ namespace Serialcoder.MagicWords.Forms
 			this.tabPage2.ResumeLayout(false);
 			this.tabPage2.PerformLayout();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -188,5 +202,6 @@ namespace Serialcoder.MagicWords.Forms
 		private System.Windows.Forms.PropertyGrid propertyGrid1;
 		private System.Windows.Forms.LinkLabel linkLabel1;
 		private Serialcoder.MagicWords.Controls.HelpViewer helpViewer1;
+		private System.Windows.Forms.LinkLabel uxImportLinkLabel;
 	}
 }

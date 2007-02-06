@@ -35,5 +35,7 @@ namespace Serialcoder.MagicWords.Forms
 			uxNotesTextBox.DataBindings.Add("Text", MagicWord, "Notes", false, DataSourceUpdateMode.OnPropertyChanged);
 		}
 
+		
+
 	}
 }

@@ -2,9 +2,11 @@ Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialcoder.MagicWords", "Serialcoder.MagicWords\Serialcoder.MagicWords.csproj", "{6F67CAF3-C557-4BEF-B233-FFB4E7C0C8BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialcoder.MagicWords.Interfaces", "Serialcoder.MagicWords.Interfaces\Serialcoder.MagicWords.Interfaces.csproj", "{1AEF87B4-B549-4408-BBF2-9BC76B9A5121}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialcoder.MagicWords.Framework", "Serialcoder.MagicWords.Framework\Serialcoder.MagicWords.Framework.csproj", "{1AEF87B4-B549-4408-BBF2-9BC76B9A5121}"
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MagicWordsSetup", "MagicWordsSetup\MagicWordsSetup.vdproj", "{015DF4CF-D5F7-4EED-89CA-8BDF9BEE7593}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialcoder.MagicWords.ScreenShotPlugin", "Serialcoder.MagicWords.ScreenShotPlugin\Serialcoder.MagicWords.ScreenShotPlugin.csproj", "{58E14687-40F2-43E2-93BB-B02A6BF90DCD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,6 +24,10 @@ Global
 		{1AEF87B4-B549-4408-BBF2-9BC76B9A5121}.Release|Any CPU.Build.0 = Release|Any CPU
 		{015DF4CF-D5F7-4EED-89CA-8BDF9BEE7593}.Debug|Any CPU.ActiveCfg = Debug
 		{015DF4CF-D5F7-4EED-89CA-8BDF9BEE7593}.Release|Any CPU.ActiveCfg = Release
+		{58E14687-40F2-43E2-93BB-B02A6BF90DCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58E14687-40F2-43E2-93BB-B02A6BF90DCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58E14687-40F2-43E2-93BB-B02A6BF90DCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58E14687-40F2-43E2-93BB-B02A6BF90DCD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

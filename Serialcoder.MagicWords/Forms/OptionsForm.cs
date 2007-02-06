@@ -38,5 +38,29 @@ namespace Serialcoder.MagicWords.Forms
 		{
 			System.Diagnostics.Process.Start("http://code.google.com/p/magicwords/");
 		}
+
+		private void OnImportLinkLabelLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			OpenFileDialog dialog = new OpenFileDialog();
+			dialog.Title = "Import a SlickRun qrs file...";
+			dialog.Filter = "SlickRun files (*.qrs)|*.qrs";
+			dialog.CheckFileExists = true;
+			dialog.CheckPathExists = true;
+			dialog.Multiselect = false;
+			
+			if (dialog.ShowDialog() == DialogResult.OK)
+			{
+				try
+				{
+					Context.Current.MagicWords.AddRange(SlickRunHelper.ImportFile(dialog.FileName));
+					MessageBox.Show(dialog.FileName + " imported successfully.");
+				}
+				catch (Exception exception)
+				{
+					MessageBox.Show("An error occured: " + exception.Message);
+				}
+				
+			}
+		}
 	}
 }
