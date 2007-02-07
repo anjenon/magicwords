@@ -194,7 +194,7 @@ namespace Serialcoder.MagicWords
 			string pluginPath = string.Empty;
 			
 			// we extract all the IAttributeDefinition implementations 
-			foreach (string filename in Directory.GetFiles(System.Windows.Forms.Application.StartupPath /* + "\\Plugins" */, "*.dll"))
+			foreach (string filename in Directory.GetFiles(System.Windows.Forms.Application.StartupPath + "\\Plugins" , "*.dll"))
 			{
 				System.Reflection.Assembly assembly = System.Reflection.Assembly.LoadFrom(filename);
 				foreach (Type type in assembly.GetTypes())
