@@ -116,7 +116,15 @@ namespace Serialcoder.MagicWords.Forms
 
 		private void OnHideToolStripMenuItemClick(object sender, EventArgs e)
 		{
-			this.HideForm();
+			if (this.Visible)
+			{
+				this.HideForm();
+			}
+			else
+			{
+				this.Show();
+			}
+			
 		}
 
 		private void OnSetupToolStripMenuItemClick(object sender, EventArgs e)
@@ -136,6 +144,10 @@ namespace Serialcoder.MagicWords.Forms
 
 		private void uxInputContextMenuStrip_Opening(object sender, CancelEventArgs e)
 		{
+			// update the show/hide input bar
+			uxHideToolStripMenuItem.Text = this.Visible ? "Hide command line" : "Show command line";
+			
+			// adding magicwords
 			uxMagicWordsToolStripMenuItem.DropDownItems.Clear();
 			Context.Current.MagicWords.Sort(delegate(Entities.MagicWord w1, Entities.MagicWord w2) { return w1.Alias.CompareTo(w2.Alias); });
 			foreach (Entities.MagicWord word in Context.Current.MagicWords)

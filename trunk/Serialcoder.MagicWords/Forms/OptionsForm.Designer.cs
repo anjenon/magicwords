@@ -33,6 +33,14 @@ namespace Serialcoder.MagicWords.Forms
 			this.listMagicWords1 = new Serialcoder.MagicWords.Controls.ListMagicWords();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
+			this.tabPage4 = new System.Windows.Forms.TabPage();
+			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.uxToolAliasColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.uxToolNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.uxToolDescriptionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.uxToolHotKeyColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.uxToolAuthorColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.uxToolVersionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.helpViewer1 = new Serialcoder.MagicWords.Controls.HelpViewer();
 			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -42,6 +50,8 @@ namespace Serialcoder.MagicWords.Forms
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.tabPage3.SuspendLayout();
+			this.tabPage4.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.tabPage2.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -52,6 +62,7 @@ namespace Serialcoder.MagicWords.Forms
 						| System.Windows.Forms.AnchorStyles.Right)));
 			this.tabControl1.Controls.Add(this.tabPage1);
 			this.tabControl1.Controls.Add(this.tabPage3);
+			this.tabControl1.Controls.Add(this.tabPage4);
 			this.tabControl1.Controls.Add(this.tabPage2);
 			this.tabControl1.Location = new System.Drawing.Point(12, 12);
 			this.tabControl1.Name = "tabControl1";
@@ -96,6 +107,71 @@ namespace Serialcoder.MagicWords.Forms
 			this.propertyGrid1.Name = "propertyGrid1";
 			this.propertyGrid1.Size = new System.Drawing.Size(504, 267);
 			this.propertyGrid1.TabIndex = 0;
+			// 
+			// tabPage4
+			// 
+			this.tabPage4.Controls.Add(this.dataGridView1);
+			this.tabPage4.Location = new System.Drawing.Point(4, 22);
+			this.tabPage4.Name = "tabPage4";
+			this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage4.Size = new System.Drawing.Size(510, 273);
+			this.tabPage4.TabIndex = 3;
+			this.tabPage4.Text = "Tools";
+			this.tabPage4.UseVisualStyleBackColor = true;
+			// 
+			// dataGridView1
+			// 
+			this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+						| System.Windows.Forms.AnchorStyles.Left)
+						| System.Windows.Forms.AnchorStyles.Right)));
+			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.uxToolAliasColumn,
+            this.uxToolNameColumn,
+            this.uxToolDescriptionColumn,
+            this.uxToolHotKeyColumn,
+            this.uxToolAuthorColumn,
+            this.uxToolVersionColumn});
+			this.dataGridView1.Location = new System.Drawing.Point(6, 6);
+			this.dataGridView1.Name = "dataGridView1";
+			this.dataGridView1.Size = new System.Drawing.Size(498, 261);
+			this.dataGridView1.TabIndex = 0;
+			// 
+			// uxToolAliasColumn
+			// 
+			this.uxToolAliasColumn.DataPropertyName = "Alias";
+			this.uxToolAliasColumn.HeaderText = "MagicWord";
+			this.uxToolAliasColumn.Name = "uxToolAliasColumn";
+			// 
+			// uxToolNameColumn
+			// 
+			this.uxToolNameColumn.DataPropertyName = "Name";
+			this.uxToolNameColumn.HeaderText = "Tool name";
+			this.uxToolNameColumn.Name = "uxToolNameColumn";
+			// 
+			// uxToolDescriptionColumn
+			// 
+			this.uxToolDescriptionColumn.DataPropertyName = "Description";
+			this.uxToolDescriptionColumn.HeaderText = "Description";
+			this.uxToolDescriptionColumn.Name = "uxToolDescriptionColumn";
+			// 
+			// uxToolHotKeyColumn
+			// 
+			this.uxToolHotKeyColumn.DataPropertyName = "HotKey";
+			this.uxToolHotKeyColumn.HeaderText = "HotKey";
+			this.uxToolHotKeyColumn.Name = "uxToolHotKeyColumn";
+			// 
+			// uxToolAuthorColumn
+			// 
+			this.uxToolAuthorColumn.DataPropertyName = "Author";
+			this.uxToolAuthorColumn.HeaderText = "Author";
+			this.uxToolAuthorColumn.Name = "uxToolAuthorColumn";
+			// 
+			// uxToolVersionColumn
+			// 
+			this.uxToolVersionColumn.DataPropertyName = "Version";
+			this.uxToolVersionColumn.HeaderText = "Version";
+			this.uxToolVersionColumn.Name = "uxToolVersionColumn";
 			// 
 			// tabPage2
 			// 
@@ -156,6 +232,7 @@ namespace Serialcoder.MagicWords.Forms
 			// 
 			// uxImportLinkLabel
 			// 
+			this.uxImportLinkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.uxImportLinkLabel.AutoSize = true;
 			this.uxImportLinkLabel.Location = new System.Drawing.Point(12, 314);
 			this.uxImportLinkLabel.Name = "uxImportLinkLabel";
@@ -179,10 +256,12 @@ namespace Serialcoder.MagicWords.Forms
 			this.MinimizeBox = false;
 			this.Name = "OptionsForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Options";
+			this.Text = "MagicWords settings";
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
 			this.tabPage3.ResumeLayout(false);
+			this.tabPage4.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.tabPage2.ResumeLayout(false);
 			this.tabPage2.PerformLayout();
 			this.ResumeLayout(false);
@@ -203,5 +282,13 @@ namespace Serialcoder.MagicWords.Forms
 		private System.Windows.Forms.LinkLabel linkLabel1;
 		private Serialcoder.MagicWords.Controls.HelpViewer helpViewer1;
 		private System.Windows.Forms.LinkLabel uxImportLinkLabel;
+		private System.Windows.Forms.TabPage tabPage4;
+		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn uxToolAliasColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn uxToolNameColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn uxToolDescriptionColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn uxToolHotKeyColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn uxToolAuthorColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn uxToolVersionColumn;
 	}
 }

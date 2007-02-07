@@ -8,9 +8,13 @@ using System.IO;
 
 namespace Serialcoder.MagicWords
 {
-	public class Context
+	public class Context : IDisposable
 	{
 		#region Properties
+
+		private string m_wordsPath = null;
+
+
 		private List<MagicWord> m_MagicWords;
 
 		public List<MagicWord> MagicWords
@@ -27,11 +31,20 @@ namespace Serialcoder.MagicWords
 			set { m_Tools = value; }
 		} 
 		#endregion
-
-		private string m_wordsPath = null;
-
+				
 		public Context()
 		{
+			#region Register app at windows startup
+			if (Properties.Settings.Default.RunAtWindowsStart)
+			{
+				Utilities.RunOnStart("MagicWords", System.Windows.Forms.Application.ExecutablePath);
+			}
+			else
+			{
+				Utilities.RemoveRunOnStart("MagicWords");
+			}
+			#endregion
+
 			m_wordsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + Environment.UserName +".magicwords";
 
 			m_MagicWords = new List<MagicWord>();
@@ -47,15 +60,11 @@ namespace Serialcoder.MagicWords
 
 			// TODO load plugins
 			m_Tools = new List<Serialcoder.MagicWords.Interfaces.ITool>();
-
-
-			//MagicWord word = new MagicWord();
-			//word.Alias = "ff";
-			//word.FileName = @"C:\Program Files\Mozilla Firefox\firefox.exe";
-
-			//m_MagicWords.Add(word.Alias, word);
+			LoadPlugins();
 		}
 
+		#region public methods
+		
 		public void GetDefaultMagicWordList()
 		{
 			m_MagicWords.Clear();
@@ -82,7 +91,134 @@ namespace Serialcoder.MagicWords
 			
 		}
 
-		public void AddGoogleMagicWords()
+		/// <summary>
+		/// Saves the magic words.
+		/// </summary>
+		public void SaveMagicWords()
+		{
+			XmlSerializer ser = new XmlSerializer(typeof(List<MagicWord>));
+			StreamWriter sw = new StreamWriter(m_wordsPath);
+			ser.Serialize(sw, m_MagicWords);
+			sw.Close();
+		}
+
+		/// <summary>
+		/// Gets the auto complete source.
+		/// </summary>
+		/// <value>The auto complete source.</value>
+		public string[] AutoCompleteSource
+		{
+			get
+			{
+				List<string> test = new List<string>();
+				test.Add("add");
+				test.Add("exit");
+				test.Add("help");
+				test.Add("setup");
+				
+				foreach (MagicWord word in m_MagicWords)
+				{
+					test.Add(word.Alias);
+				}
+
+				foreach (Interfaces.ITool tool in m_Tools)
+				{
+					test.Add(tool.Alias);
+				}
+
+				return test.ToArray();
+			}
+		}
+
+		public void Start(string alias)
+		{
+			switch (alias)
+			{
+				case "exit":
+					Exit();
+					return;
+
+				case "setup":
+					Setup();
+					return;
+
+				case "help":
+					Help();
+					return;
+
+				case "add":
+					ShowNewMagicWordForm();
+					return;
+				default:
+					break;
+			}
+
+			foreach (Interfaces.ITool tool in m_Tools)
+			{
+				if (tool.Alias.Equals(alias))
+				{
+					tool.Execute(null);
+					return;
+				}
+			}
+
+			foreach (MagicWord word in m_MagicWords)
+			{
+				if (word.Alias.Equals(alias))
+				{
+					Execute(word);
+					return;
+				}
+			}
+
+			//MagicWord word = m_MagicWords.Find(delegate(MagicWord w) { return w.Alias.Equals(alias); });
+			//if (word != null)
+			//{
+			//    Execute(word);
+			//}
+			//else
+			{
+				Execute(alias);
+			}
+		}
+
+		#endregion
+
+		#region Private methods
+		private System.ComponentModel.IContainer m_Components;		
+
+		private void LoadPlugins()
+		{
+			this.m_Components = new System.ComponentModel.Container();
+
+			string pluginPath = string.Empty;
+			
+			// we extract all the IAttributeDefinition implementations 
+			foreach (string filename in Directory.GetFiles(System.Windows.Forms.Application.StartupPath + "\\Plugins", "*.dll"))
+			{
+				System.Reflection.Assembly assembly = System.Reflection.Assembly.LoadFrom(filename);
+				foreach (Type type in assembly.GetTypes())
+				{
+					Type plugin = type.GetInterface("Serialcoder.MagicWords.Interfaces.ITool");
+					if (plugin != null)
+					{
+						Interfaces.ITool tool = (Interfaces.ITool)Activator.CreateInstance(type);
+						tool.Initialize();
+
+						Serialcoder.MagicWords.Components.SystemHotkey hotkey = new Serialcoder.MagicWords.Components.SystemHotkey(this.m_Components);
+						hotkey.Shortcut = tool.HotKey;
+						hotkey.Pressed += new EventHandler(delegate(object sender, EventArgs e)
+						{
+							tool.Execute(null);
+						});
+						m_Tools.Add(tool);
+					}
+				}
+			}
+			
+		}
+
+		private void AddGoogleMagicWords()
 		{
 			#region google words
 
@@ -140,9 +276,10 @@ namespace Serialcoder.MagicWords
 			photoWord.Arguments = "";
 			m_MagicWords.Add(photoWord);
 
-			#endregion 
+			#endregion
 		}
 
+		
 		/// <summary>
 		/// Loads the magic words.
 		/// </summary>
@@ -154,17 +291,10 @@ namespace Serialcoder.MagicWords
 			reader.Close();			
 		}
 
-		/// <summary>
-		/// Saves the magic words.
-		/// </summary>
-		public void SaveMagicWords()
-		{
-			XmlSerializer ser = new XmlSerializer(typeof(List<MagicWord>));
-			StreamWriter sw = new StreamWriter(m_wordsPath);
-			ser.Serialize(sw, m_MagicWords);
-			sw.Close();
-		}
+		
 
+		#endregion
+		
 		#region Singleton
 
 		private static volatile Context _singleton;
@@ -189,68 +319,8 @@ namespace Serialcoder.MagicWords
 			}
 		}
 		#endregion
-
-		/// <summary>
-		/// Gets the auto complete source.
-		/// </summary>
-		/// <value>The auto complete source.</value>
-		public string[] AutoCompleteSource
-		{
-			get
-			{
-				List<string> test = new List<string>();
-				test.Add("setup");
-				test.Add("exit");
-				test.Add("help");
-				test.Add("add");
-
-				foreach (MagicWord word in m_MagicWords)
-				{
-					test.Add(word.Alias);
-				}
-				return test.ToArray();
-			}			
-		}
-
-		public void Start(string alias)
-		{
-			switch (alias)
-			{
-				case "exit":
-					Exit();
-					return;
 				
-				case "setup":
-					Setup();
-					return;
-				
-				case "help":
-					Help();
-					return;
-				
-				case "add":
-					ShowNewMagicWordForm();
-					return;
-				default:
-					break;
-			}
-
-			MagicWord word = m_MagicWords.Find(delegate(MagicWord w) { return w.Alias.Equals(alias); });
-			if (word != null)
-			{
-				Execute(word);
-			}
-			else
-			{
-				Execute(alias);
-			}			
-		}
-
-		
-
-		
-
-		public string ParseInputText(string inputText, string notes)
+		private string ParseInputText(string inputText, string notes)
 		{
 			// TODO preprocess infos
 			if (inputText != null && (inputText.Contains("$W$") || inputText.Contains("$w$")))
@@ -271,7 +341,7 @@ namespace Serialcoder.MagicWords
 			return inputText;
 		}
 
-		public void Execute(MagicWord word)
+		private void Execute(MagicWord word)
 		{
 			string fileName = ParseInputText(word.FileName, word.Notes);
 			string arguments = ParseInputText(word.Arguments, word.Notes);
@@ -279,16 +349,18 @@ namespace Serialcoder.MagicWords
 			ProcessStartInfo info = new ProcessStartInfo(fileName, arguments);
 			info.WindowStyle = word.StartUpMode;
 			info.WorkingDirectory = word.WorkingDirectory;
-
-			Process.Start(info);
+			info.ErrorDialog = true;
+			
+			Process process = Process.Start(info);
 		}
 
-		public void Execute(string word)
+		private void Execute(string word)
 		{
 			try
 			{
 				ProcessStartInfo info = new ProcessStartInfo(word);
 				info.WindowStyle = ProcessWindowStyle.Normal;
+				info.UseShellExecute = true;
 				Process.Start(info);
 			}
 			catch (Exception)
@@ -298,7 +370,7 @@ namespace Serialcoder.MagicWords
 
 		}
 
-		#region Build in magic word launcher
+		#region BuildIn MagicWords launcher
 
 		public void Help()
 		{
@@ -357,5 +429,16 @@ namespace Serialcoder.MagicWords
 			}
 		}
 		
+		#region IDisposable Members
+
+		void IDisposable.Dispose()
+		{			
+			if (this.m_Components != null)
+			{
+				this.m_Components.Dispose();
+			}				
+		}
+
+		#endregion
 	}
 }

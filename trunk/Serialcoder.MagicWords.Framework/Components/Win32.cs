@@ -285,7 +285,10 @@ namespace Serialcoder.MagicWords.Components
 	public class NativeWIN32
 	{		
 		[DllImport("user32.dll")]
-		private static extern int GetForegroundWindow();
+		public static extern int GetForegroundWindow();
+
+		//[DllImport("user32.dll")]
+		//public static extern IntPtr GetForegroundWindow();
 
 		[DllImport("user32")]
 		private static extern UInt32 GetWindowThreadProcessId(Int32 hWnd, out Int32 lpdwProcessId);
@@ -295,6 +298,13 @@ namespace Serialcoder.MagicWords.Components
 			Int32 pid = 1;
 			GetWindowThreadProcessId(hwnd, out pid);
 			return pid;
+		}
+
+		public static Process GetFocusedProcess()
+		{
+			Int32 hwnd = 0;
+			hwnd = GetForegroundWindow();
+			return Process.GetProcessById(GetWindowProcessID(hwnd));
 		}
 
 		// http://forums.microsoft.com/MSDN/ShowPost.aspx?PostID=770697&SiteID=1

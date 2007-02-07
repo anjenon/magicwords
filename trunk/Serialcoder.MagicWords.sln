@@ -8,6 +8,10 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MagicWordsSetup", "MagicWor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialcoder.MagicWords.ScreenShotPlugin", "Serialcoder.MagicWords.ScreenShotPlugin\Serialcoder.MagicWords.ScreenShotPlugin.csproj", "{58E14687-40F2-43E2-93BB-B02A6BF90DCD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialcoder.MagicWords.ScratchPadPlugin", "Serialcoder.MagicWords.ScratchPadPlugin\Serialcoder.MagicWords.ScratchPadPlugin.csproj", "{14A071EC-3269-4E2B-9A1A-5EC9789CE924}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialcoder.MagicWords.TranslatorPlugin", "Serialcoder.MagicWords.TranslatorPlugin\Serialcoder.MagicWords.TranslatorPlugin.csproj", "{250E1A7A-8FC0-4178-A402-9D7D1743AC64}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +32,14 @@ Global
 		{58E14687-40F2-43E2-93BB-B02A6BF90DCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58E14687-40F2-43E2-93BB-B02A6BF90DCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58E14687-40F2-43E2-93BB-B02A6BF90DCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14A071EC-3269-4E2B-9A1A-5EC9789CE924}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14A071EC-3269-4E2B-9A1A-5EC9789CE924}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14A071EC-3269-4E2B-9A1A-5EC9789CE924}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14A071EC-3269-4E2B-9A1A-5EC9789CE924}.Release|Any CPU.Build.0 = Release|Any CPU
+		{250E1A7A-8FC0-4178-A402-9D7D1743AC64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{250E1A7A-8FC0-4178-A402-9D7D1743AC64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{250E1A7A-8FC0-4178-A402-9D7D1743AC64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{250E1A7A-8FC0-4178-A402-9D7D1743AC64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

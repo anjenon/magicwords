@@ -70,7 +70,7 @@ namespace Serialcoder.MagicWords.Forms
             this.toolStripSeparator1,
             this.uxExitToolStripMenuItem});
 			this.uxInputContextMenuStrip.Name = "contextMenuStrip1";
-			this.uxInputContextMenuStrip.Size = new System.Drawing.Size(175, 148);
+			this.uxInputContextMenuStrip.Size = new System.Drawing.Size(175, 170);
 			this.uxInputContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.uxInputContextMenuStrip_Opening);
 			// 
 			// uxMagicWordsToolStripMenuItem
