@@ -33,9 +33,18 @@ namespace Serialcoder.MagicWords
 
 			//m_MainForm = new LauncherForm();
 			//Console.WriteLine(Forms.LauncherForm.Current.Name);
+			Console.WriteLine("# MagicWords: " + Context.Current.MagicWords.Count);
 
 			m_NotifyIcon.ContextMenuStrip = Forms.LauncherForm.Current.ContextMenuStrip;
 		}
+
+		//public System.ComponentModel.IContainer Components
+		//{
+		//    get
+		//    {
+		//        this.components;
+		//    }
+		//}
 
 		/// <summary>
 		/// Create the NotifyIcon UI, the ContextMenu for the NotifyIcon and an Exit menu item. 
@@ -83,6 +92,11 @@ namespace Serialcoder.MagicWords
 				{
 					components.Dispose();
 				}
+
+				if (m_NotifyIcon != null)
+				{
+					m_NotifyIcon.Dispose();
+				}
 			}		
 		}
 
@@ -91,15 +105,15 @@ namespace Serialcoder.MagicWords
 			Context.Current.SaveMagicWords();
 		}		
 				
-		/// <summary>
-		/// When the exit menu item is clicked, make a call to terminate the ApplicationContext.
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void OnExitContextMenuItemClick(object sender, EventArgs e) 
-		{
-			ExitThread();
-		}
+		///// <summary>
+		///// When the exit menu item is clicked, make a call to terminate the ApplicationContext.
+		///// </summary>
+		///// <param name="sender"></param>
+		///// <param name="e"></param>
+		//private void OnExitContextMenuItemClick(object sender, EventArgs e) 
+		//{
+		//    ExitThread();
+		//}
 		
 		/// <summary>
 		/// When the notify icon is double clicked in the system tray, bring up a form with a calendar on it.
@@ -119,10 +133,10 @@ namespace Serialcoder.MagicWords
 		private void OnAddWordSystemHotkeyPressed(object sender, EventArgs e)
 		{
 			string appExePath = NativeWIN32.GetFocusesApp();
-			string appExeName = appExePath.Substring(appExePath.LastIndexOf(@"\") + 1);
+			string appExeName = System.IO.Path.GetFileNameWithoutExtension(appExePath);
 
 			Context.Current.AddActiveApplicationMagicWord(appExeName, appExePath);
-		}		
+		}
 
 		/// <summary>
 		/// This function will either create a new CalendarForm or activate the existing one, bringing the 

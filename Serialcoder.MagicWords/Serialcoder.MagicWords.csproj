@@ -187,7 +187,7 @@
     <Content Include="App.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Serialcoder.MagicWords.Interfaces\Serialcoder.MagicWords.Framework.csproj">
+    <ProjectReference Include="..\Serialcoder.MagicWords.Framework\Serialcoder.MagicWords.Framework.csproj">
       <Project>{1AEF87B4-B549-4408-BBF2-9BC76B9A5121}</Project>
       <Name>Serialcoder.MagicWords.Framework</Name>
     </ProjectReference>

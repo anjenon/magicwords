@@ -4,11 +4,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1AEF87B4-B549-4408-BBF2-9BC76B9A5121}</ProjectGuid>
+    <ProjectGuid>{14A071EC-3269-4E2B-9A1A-5EC9789CE924}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Serialcoder.MagicWords</RootNamespace>
-    <AssemblyName>MagicWords.Framework</AssemblyName>
+    <RootNamespace>Serialcoder.MagicWords.ScratchPadPlugin</RootNamespace>
+    <AssemblyName>Serialcoder.MagicWords.ScratchPadPlugin</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,22 +30,44 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\MagicWord.cs" />
-    <Compile Include="SlickRunHelper.cs" />
-    <Compile Include="Components\SystemHotkey.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Components\Win32.cs" />
-    <Compile Include="Interfaces\ITool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utilities.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ScratchPad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScratchPad.Designer.cs">
+      <DependentUpon>ScratchPad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScratchPadPlugin.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Entities\ClassDiagram.cd" />
+    <ProjectReference Include="..\Serialcoder.MagicWords.Framework\Serialcoder.MagicWords.Framework.csproj">
+      <Project>{1AEF87B4-B549-4408-BBF2-9BC76B9A5121}</Project>
+      <Name>Serialcoder.MagicWords.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ScratchPad.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ScratchPad.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

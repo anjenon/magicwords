@@ -19,8 +19,7 @@ namespace Serialcoder.MagicWords.Forms
 		{
 			base.OnLoad(e);
 
-			
-
+			dataGridView1.DataSource = Context.Current.Tools;
 			propertyGrid1.SelectedObject = Properties.Settings.Default;
 		}
 
