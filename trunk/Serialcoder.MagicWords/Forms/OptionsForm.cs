@@ -61,5 +61,28 @@ namespace Serialcoder.MagicWords.Forms
 				
 			}
 		}
+
+		private void OnExportLinkLabelLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			SaveFileDialog dialog = new SaveFileDialog();
+			dialog.Title = "Export library...";
+			dialog.Filter = "SlickRun files (*.qrs)|*.qrs";
+			//dialog.CheckFileExists = true;
+			//dialog.CheckPathExists = true;
+			dialog.AddExtension = true;
+
+			if (dialog.ShowDialog() == DialogResult.OK)
+			{
+				try
+				{
+					SlickRunHelper.ExportFile(Context.Current.MagicWords, dialog.FileName);
+					MessageBox.Show(dialog.FileName + " exported successfully.");
+				}
+				catch (Exception exception)
+				{
+					MessageBox.Show("An error occured: " + exception.Message);
+				}
+			}
+		}
 	}
 }

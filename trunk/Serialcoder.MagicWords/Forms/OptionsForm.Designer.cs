@@ -47,6 +47,7 @@ namespace Serialcoder.MagicWords.Forms
 			this.uxCancelButton = new System.Windows.Forms.Button();
 			this.uxAcceptButton = new System.Windows.Forms.Button();
 			this.uxImportLinkLabel = new System.Windows.Forms.LinkLabel();
+			this.uxExportLinkLabel = new System.Windows.Forms.LinkLabel();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.tabPage3.SuspendLayout();
@@ -242,6 +243,18 @@ namespace Serialcoder.MagicWords.Forms
 			this.uxImportLinkLabel.Text = "Import QRS file";
 			this.uxImportLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OnImportLinkLabelLinkClicked);
 			// 
+			// uxExportLinkLabel
+			// 
+			this.uxExportLinkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.uxExportLinkLabel.AutoSize = true;
+			this.uxExportLinkLabel.Location = new System.Drawing.Point(96, 314);
+			this.uxExportLinkLabel.Name = "uxExportLinkLabel";
+			this.uxExportLinkLabel.Size = new System.Drawing.Size(121, 13);
+			this.uxExportLinkLabel.TabIndex = 4;
+			this.uxExportLinkLabel.TabStop = true;
+			this.uxExportLinkLabel.Text = "Export library to QRS file";
+			this.uxExportLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OnExportLinkLabelLinkClicked);
+			// 
 			// OptionsForm
 			// 
 			this.AcceptButton = this.uxAcceptButton;
@@ -249,6 +262,7 @@ namespace Serialcoder.MagicWords.Forms
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.uxCancelButton;
 			this.ClientSize = new System.Drawing.Size(542, 352);
+			this.Controls.Add(this.uxExportLinkLabel);
 			this.Controls.Add(this.uxImportLinkLabel);
 			this.Controls.Add(this.uxAcceptButton);
 			this.Controls.Add(this.uxCancelButton);
@@ -290,5 +304,6 @@ namespace Serialcoder.MagicWords.Forms
 		private System.Windows.Forms.DataGridViewTextBoxColumn uxToolHotKeyColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn uxToolAuthorColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn uxToolVersionColumn;
+		private System.Windows.Forms.LinkLabel uxExportLinkLabel;
 	}
 }

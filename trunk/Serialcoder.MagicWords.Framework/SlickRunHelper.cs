@@ -70,8 +70,40 @@ namespace Serialcoder.MagicWords
 			return words;
 		}
 
-		public static void ImportFile(List<Entities.MagicWord> words, string path)
+		public static void ExportFile(List<Entities.MagicWord> words, string path)
 		{
+			StreamWriter writer = File.CreateText(path);
+
+			foreach (Entities.MagicWord word in words)
+			{
+				writer.WriteLine("[{0}]", word.Alias);
+				writer.WriteLine("Filename={0}", word.FileName);
+				writer.WriteLine("Path={0}", word.WorkingDirectory);
+				writer.WriteLine("Params={0}", word.Arguments);
+				writer.WriteLine("Notes={0}", word.Notes);
+				writer.WriteLine("GUID={1}{0}{2}", Guid.NewGuid(), "{", "}");
+				writer.WriteLine("StartMode={0}", GetSlickRunStartMode(word.StartUpMode));
+			}
+			writer.Close();
+		}
+
+		private static int GetSlickRunStartMode(System.Diagnostics.ProcessWindowStyle ws)
+		{
+			switch (ws)
+			{
+				case System.Diagnostics.ProcessWindowStyle.Maximized:
+					return 3;					
+
+				case System.Diagnostics.ProcessWindowStyle.Hidden:				
+				case System.Diagnostics.ProcessWindowStyle.Minimized:
+					return 7;
+					
+				case System.Diagnostics.ProcessWindowStyle.Normal:
+					return 5;
+					
+				default:
+					return 5;
+			}
 		}
 	}
 }
