@@ -140,8 +140,9 @@ namespace Serialcoder.MagicWords.Forms
 			this.uxStartupModeComboBox.FormattingEnabled = true;
 			this.uxStartupModeComboBox.Location = new System.Drawing.Point(123, 53);
 			this.uxStartupModeComboBox.Name = "uxStartupModeComboBox";
-			this.uxStartupModeComboBox.Size = new System.Drawing.Size(121, 21);
+			this.uxStartupModeComboBox.Size = new System.Drawing.Size(161, 21);
 			this.uxStartupModeComboBox.TabIndex = 2;
+			this.uxStartupModeComboBox.SelectedIndexChanged += new System.EventHandler(this.uxStartupModeComboBox_SelectedIndexChanged);
 			// 
 			// uxArgumentsTextBox
 			// 

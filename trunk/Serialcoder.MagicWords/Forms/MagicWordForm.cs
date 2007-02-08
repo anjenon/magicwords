@@ -33,6 +33,12 @@ namespace Serialcoder.MagicWords.Forms
 			uxFilenameTextBox.DataBindings.Add("Text", MagicWord, "FileName", false, DataSourceUpdateMode.OnPropertyChanged);
 			uxArgumentsTextBox.DataBindings.Add("Text", MagicWord, "Arguments", false, DataSourceUpdateMode.OnPropertyChanged);
 			uxNotesTextBox.DataBindings.Add("Text", MagicWord, "Notes", false, DataSourceUpdateMode.OnPropertyChanged);
+			uxStartupPathTextBox.DataBindings.Add("Text", MagicWord, "WorkingDirectory", false, DataSourceUpdateMode.OnPropertyChanged);
+		}
+
+		private void uxStartupModeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			MagicWord.StartUpMode = (System.Diagnostics.ProcessWindowStyle)uxStartupModeComboBox.SelectedValue;
 		}
 
 		

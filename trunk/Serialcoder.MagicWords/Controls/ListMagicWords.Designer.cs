@@ -35,6 +35,7 @@ namespace Serialcoder.MagicWords.Controls
 			this.uxAliasColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.uxFilenameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.uxArgumentsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.uxStartupPathColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.uxModesColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
 			this.uxNotesColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.uxDataGridView)).BeginInit();
@@ -51,6 +52,7 @@ namespace Serialcoder.MagicWords.Controls
             this.uxAliasColumn,
             this.uxFilenameColumn,
             this.uxArgumentsColumn,
+            this.uxStartupPathColumn,
             this.uxModesColumn,
             this.uxNotesColumn});
 			this.uxDataGridView.DataSource = this.bindingSource1;
@@ -96,6 +98,12 @@ namespace Serialcoder.MagicWords.Controls
 			this.uxArgumentsColumn.Name = "uxArgumentsColumn";
 			this.uxArgumentsColumn.Width = 90;
 			// 
+			// uxStartupPathColumn
+			// 
+			this.uxStartupPathColumn.DataPropertyName = "WorkingDirectory";
+			this.uxStartupPathColumn.HeaderText = "Startup path";
+			this.uxStartupPathColumn.Name = "uxStartupPathColumn";
+			// 
 			// uxModesColumn
 			// 
 			this.uxModesColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -135,6 +143,7 @@ namespace Serialcoder.MagicWords.Controls
 		private System.Windows.Forms.DataGridViewTextBoxColumn uxAliasColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn uxFilenameColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn uxArgumentsColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn uxStartupPathColumn;
 		private System.Windows.Forms.DataGridViewComboBoxColumn uxModesColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn uxNotesColumn;
 	}
