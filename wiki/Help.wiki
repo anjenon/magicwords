@@ -14,7 +14,7 @@ MagicWords command line textbox is hidden by default, so when the program start 
 The input box use build in autocompletion feature, so your MagicWord will probably be completed after typing 2 or 3 caracters.
 
 
-=How to open the new MagicWord dialog=
+==How to open the new MagicWord dialog==
 
 You can add a new magic word, the following ways:
 
@@ -22,14 +22,25 @@ You can add a new magic word, the following ways:
   * Right click the tray icon, and click on the "Setup.." item. An editable MagicWords data grid view is displayed, there you can view your Magic Words library, edit, insert or delete MagicWords.
   * Finally you can add the current focused application by pressing the CTRL-F11 hotkey combinaison. The new MagicWord form will be displayed, filled with current focused application data.
 
-=MagicWord data=
-  * Filename =
-  * Arguments =
-  * Startup path = 
-  * Startup mode =
-  * Notes: 
+==MagicWord data==
+  * Alias = the 'magicword' that will lauchn the file
+  * Filename =  the file to open
+  * Arguments = arguments that will be passed to the file
+  * Startup path = the working directory
+  * Startup mode = indicates the the window style (normal, maximized, minimized, etc)
+  * Notes: some comment. will also be display on the argument input form
 
-=BuildIn MagicWords=
+==Variables==
+Variables can be used in either the 'filename' or the 'arguments' data of a MagicWord, it used to create dynamic magicword.
+
+Available variables are:
+  * $w$: a simple word replacement, a form is opened to allow user to type the input. 
+  * $W$: urlencoded version of $w$
+
+Usage samples:
+  * Google map: http://www.google.com/maps?f=q&hl=fr&q=$W$&ie=UTF8&z=16&s&om=1&iwloc=addr
+
+==BuildIn MagicWords==
   * setup : open the option form
   * hide : hide the input form in the tray
   * exit : terminate the application
