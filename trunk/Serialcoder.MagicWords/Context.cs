@@ -361,9 +361,10 @@ namespace Serialcoder.MagicWords
 			{
 				// user cancel the argument form
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
 				System.Media.SystemSounds.Exclamation.Play();
+				//System.Windows.Forms.MessageBox.Show(ex.Message);
 			}
 			
 		}
@@ -375,11 +376,12 @@ namespace Serialcoder.MagicWords
 				ProcessStartInfo info = new ProcessStartInfo(word);
 				info.WindowStyle = ProcessWindowStyle.Normal;
 				info.UseShellExecute = true;
-				Process.Start(info);
+				Process p = Process.Start(info);
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
-				System.Media.SystemSounds.Exclamation.Play();	
+				System.Media.SystemSounds.Exclamation.Play();
+				System.Windows.Forms.MessageBox.Show(ex.Message);
 			}
 
 		}
