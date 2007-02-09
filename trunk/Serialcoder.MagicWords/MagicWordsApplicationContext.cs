@@ -145,13 +145,15 @@ namespace Serialcoder.MagicWords
 		private void ShowForm() 
 		{			
 			if (!Forms.LauncherForm.Current.Visible)			
-			{
-				Forms.LauncherForm.Current.Show();
+			{				
+				Forms.LauncherForm.Current.Show();				
 			}
-
-			Forms.LauncherForm.Current.Select();
-			Forms.LauncherForm.Current.Activate();
-			Forms.LauncherForm.Current.Focus();
+			else
+			{
+				Forms.LauncherForm.Current.Select();
+				Forms.LauncherForm.Current.Activate();
+				Forms.LauncherForm.Current.Focus();
+			}			
 		}
 
 		/// <summary>

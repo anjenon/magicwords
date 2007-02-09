@@ -59,6 +59,9 @@ namespace Serialcoder.MagicWords.Forms
 			base.OnShown(e);
 
 			UpdateAutoCompletion();
+
+			Select();
+			Activate();
 		}
 
 		public void UpdateAutoCompletion()

@@ -21,7 +21,12 @@ namespace Serialcoder.MagicWords.Controls
 			base.OnLoad(e);
 
 			uxModesColumn.DataSource = Enum.GetValues(typeof (System.Diagnostics.ProcessWindowStyle));
-			bindingSource1.DataSource = Context.Current.MagicWords;
+
+			if (DesignMode == false)
+			{
+				bindingSource1.DataSource = Context.Current.MagicWords;
+			}
+			
 		}
 
 		private void OnDataGridViewCellParsing(object sender, DataGridViewCellParsingEventArgs e)

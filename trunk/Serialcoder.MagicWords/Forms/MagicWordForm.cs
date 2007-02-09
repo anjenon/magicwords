@@ -41,5 +41,28 @@ namespace Serialcoder.MagicWords.Forms
 			MagicWord.StartUpMode = (System.Diagnostics.ProcessWindowStyle)uxStartupModeComboBox.SelectedValue;
 		}
 
+		private void OnFilenameTextBoxDoubleClick(object sender, EventArgs e)
+		{
+			OpenFileDialog dialog = new OpenFileDialog();
+			dialog.Title = "Select a file...";
+			dialog.Filter = "All files (*.*)|*.*|Executables (*.exe)|*.exe";
+			if (dialog.ShowDialog() == DialogResult.OK)
+			{
+				uxFilenameTextBox.Text = dialog.FileName;
+			}
+		}
+
+		private void OnStartupPathTextBoxDoubleClick(object sender, EventArgs e)
+		{
+			FolderBrowserDialog dialog = new FolderBrowserDialog();
+			dialog.Description = "Select the working directory...";
+			dialog.ShowNewFolderButton = true;
+			
+			if (dialog.ShowDialog() == DialogResult.OK)
+			{
+				uxStartupPathTextBox.Text = dialog.SelectedPath;
+			}
+		}
+
 	}
 }

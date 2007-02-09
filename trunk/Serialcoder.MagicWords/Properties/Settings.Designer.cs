@@ -126,5 +126,14 @@ namespace Serialcoder.MagicWords.Properties {
                 this["ArgumentHistory"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://code.google.com/p/magicwords")]
+        public string HomepageUrl {
+            get {
+                return ((string)(this["HomepageUrl"]));
+            }
+        }
     }
 }

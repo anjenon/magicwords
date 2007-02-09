@@ -283,7 +283,10 @@ namespace Serialcoder.MagicWords.Components
 	}
 
 	public class NativeWIN32
-	{		
+	{
+		[DllImport("user32.dll", CharSet = CharSet.Auto)]
+		public static extern int SendMessage(IntPtr hWnd, int wMsg, IntPtr wParam, IntPtr lParam);
+	
 		[DllImport("user32.dll")]
 		public static extern int GetForegroundWindow();
 

@@ -37,6 +37,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\MagicWord.cs" />
+    <Compile Include="Interfaces\IParameter.cs" />
     <Compile Include="SlickRunHelper.cs" />
     <Compile Include="Components\SystemHotkey.cs">
       <SubType>Component</SubType>
