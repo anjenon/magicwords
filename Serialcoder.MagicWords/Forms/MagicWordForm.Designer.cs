@@ -43,6 +43,7 @@ namespace Serialcoder.MagicWords.Forms
 			this.label1 = new System.Windows.Forms.Label();
 			this.uxAcceptButton = new System.Windows.Forms.Button();
 			this.uxCancelButton = new System.Windows.Forms.Button();
+			this.label7 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -100,7 +101,7 @@ namespace Serialcoder.MagicWords.Forms
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(114, 23);
 			this.label4.TabIndex = 8;
-			this.label4.Text = "Startup path :";
+			this.label4.Text = "Startup path (*):";
 			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// label3
@@ -118,7 +119,7 @@ namespace Serialcoder.MagicWords.Forms
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(114, 23);
 			this.label2.TabIndex = 7;
-			this.label2.Text = "Filename or url :";
+			this.label2.Text = "Filename or url (*):";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// uxAliasTextBox
@@ -134,6 +135,7 @@ namespace Serialcoder.MagicWords.Forms
 			this.uxFilenameTextBox.Name = "uxFilenameTextBox";
 			this.uxFilenameTextBox.Size = new System.Drawing.Size(342, 20);
 			this.uxFilenameTextBox.TabIndex = 1;
+			this.uxFilenameTextBox.DoubleClick += new System.EventHandler(this.OnFilenameTextBoxDoubleClick);
 			// 
 			// uxStartupModeComboBox
 			// 
@@ -165,6 +167,7 @@ namespace Serialcoder.MagicWords.Forms
 			this.uxStartupPathTextBox.Name = "uxStartupPathTextBox";
 			this.uxStartupPathTextBox.Size = new System.Drawing.Size(342, 20);
 			this.uxStartupPathTextBox.TabIndex = 3;
+			this.uxStartupPathTextBox.DoubleClick += new System.EventHandler(this.OnStartupPathTextBoxDoubleClick);
 			// 
 			// label1
 			// 
@@ -197,6 +200,15 @@ namespace Serialcoder.MagicWords.Forms
 			this.uxCancelButton.Text = "&Cancel";
 			this.uxCancelButton.UseVisualStyleBackColor = true;
 			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Location = new System.Drawing.Point(12, 197);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(255, 13);
+			this.label7.TabIndex = 5;
+			this.label7.Text = "(*) Double click on textboxes to open the file selector";
+			// 
 			// MagicWordForm
 			// 
 			this.AcceptButton = this.uxAcceptButton;
@@ -205,6 +217,7 @@ namespace Serialcoder.MagicWords.Forms
 			this.CancelButton = this.uxCancelButton;
 			this.ClientSize = new System.Drawing.Size(493, 234);
 			this.ControlBox = false;
+			this.Controls.Add(this.label7);
 			this.Controls.Add(this.uxAcceptButton);
 			this.Controls.Add(this.uxCancelButton);
 			this.Controls.Add(this.tableLayoutPanel1);
@@ -235,5 +248,6 @@ namespace Serialcoder.MagicWords.Forms
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button uxAcceptButton;
 		private System.Windows.Forms.Button uxCancelButton;
+		private System.Windows.Forms.Label label7;
 	}
 }

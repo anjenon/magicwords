@@ -5,16 +5,21 @@ using System.Diagnostics;
 using Serialcoder.MagicWords.Entities;
 using System.Xml.Serialization;
 using System.IO;
+using System.Windows.Forms;
+using System.Reflection;
 
 namespace Serialcoder.MagicWords
 {
-	public class Context : IDisposable
+	/// <summary>
+	/// The global Context of the application.
+	/// Holds user data and main business logic
+	/// </summary>
+	public class Context
 	{
 		#region Properties
 
-		private string m_wordsPath = null;
-
-
+		private string m_UserLibraryFileName = null;
+		
 		private List<MagicWord> m_MagicWords;
 
 		public List<MagicWord> MagicWords
@@ -29,77 +34,14 @@ namespace Serialcoder.MagicWords
 		{
 			get { return m_Tools; }
 			set { m_Tools = value; }
-		} 
-		#endregion
-				
-		public Context()
-		{
-			#region Register app at windows startup
-			if (Properties.Settings.Default.RunAtWindowsStart)
-			{
-				Utilities.RunOnStart("MagicWords", System.Windows.Forms.Application.ExecutablePath);
-			}
-			else
-			{
-				Utilities.RemoveRunOnStart("MagicWords");
-			}
-			#endregion
-
-			m_wordsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + Environment.UserName +".magicwords";
-
-			m_MagicWords = new List<MagicWord>();
-
-			if (File.Exists(m_wordsPath))
-			{
-				LoadMagicWords();
-			}
-			else
-			{
-				GetDefaultMagicWordList();
-			}
-
-			// TODO load plugins
-			m_Tools = new List<Serialcoder.MagicWords.Interfaces.ITool>();
-			LoadPlugins();
 		}
 
-		#region public methods
-		
-		public void GetDefaultMagicWordList()
+		private List<Interfaces.IParameter> m_Parameters;
+
+		public List<Interfaces.IParameter> Parameters
 		{
-			m_MagicWords.Clear();
-
-			if (File.Exists(@"C:\Program Files\Mozilla Firefox\firefox.exe"))
-			{
-				MagicWord word = new MagicWord();
-				word.Alias = "firefox";
-				word.FileName = @"C:\Program Files\Mozilla Firefox\firefox.exe";
-				m_MagicWords.Add(word);
-			}			
-
-			MagicWord word1 = new MagicWord();
-			word1.Alias = "paint";
-			word1.FileName = @"pbrush.exe";
-			m_MagicWords.Add(word1);
-
-			MagicWord word2 = new MagicWord();
-			word2.Alias = "torrentspy";
-			word2.FileName = @"http://www.torrentspy.com/search?query=$W$&submit.x=0&submit.y=0";
-			word2.Arguments = "";
-			m_MagicWords.Add(word2);
-
-			
-		}
-
-		/// <summary>
-		/// Saves the magic words.
-		/// </summary>
-		public void SaveMagicWords()
-		{
-			XmlSerializer ser = new XmlSerializer(typeof(List<MagicWord>));
-			StreamWriter sw = new StreamWriter(m_wordsPath);
-			ser.Serialize(sw, m_MagicWords);
-			sw.Close();
+			get { return m_Parameters; }
+			set { m_Parameters = value; }
 		}
 
 		/// <summary>
@@ -115,7 +57,8 @@ namespace Serialcoder.MagicWords
 				test.Add("exit");
 				test.Add("help");
 				test.Add("setup");
-				
+				test.Add("hide");
+
 				foreach (MagicWord word in m_MagicWords)
 				{
 					test.Add(word.Alias);
@@ -129,6 +72,53 @@ namespace Serialcoder.MagicWords
 				return test.ToArray();
 			}
 		}
+		#endregion
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Context"/> class.
+		/// </summary>
+		public Context()
+		{
+			#region Register app at windows startup
+			if (Properties.Settings.Default.RunAtWindowsStart)
+			{
+				Utilities.RunOnStart("MagicWords", System.Windows.Forms.Application.ExecutablePath);
+			}
+			else
+			{
+				Utilities.RemoveRunOnStart("MagicWords");
+			}
+			#endregion
+
+			m_UserLibraryFileName = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + Environment.UserName +".magicwords";
+
+			m_MagicWords = new List<MagicWord>();
+
+			if (File.Exists(m_UserLibraryFileName))
+			{
+				LoadMagicWords();
+			}
+			else
+			{
+				GetDefaultMagicWordList();
+			}
+						
+			LoadToolPlugins();
+			LoadParameterPlugins();
+		}
+		
+		#region public methods
+				
+		/// <summary>
+		/// Saves the magic words.
+		/// </summary>
+		public void SaveMagicWords()
+		{
+			XmlSerializer ser = new XmlSerializer(typeof(List<MagicWord>));
+			StreamWriter sw = new StreamWriter(m_UserLibraryFileName);
+			ser.Serialize(sw, m_MagicWords);
+			sw.Close();
+		}		
 
 		public void Start(string alias)
 		{
@@ -136,6 +126,10 @@ namespace Serialcoder.MagicWords
 			{
 				case "exit":
 					Exit();
+					return;
+
+				case "hide":
+					HideLauncherForm();
 					return;
 
 				case "setup":
@@ -171,51 +165,122 @@ namespace Serialcoder.MagicWords
 				}
 			}
 
-			//MagicWord word = m_MagicWords.Find(delegate(MagicWord w) { return w.Alias.Equals(alias); });
-			//if (word != null)
-			//{
-			//    Execute(word);
-			//}
-			//else
-			{
-				Execute(alias);
-			}
-		}
+			Execute(alias);
+		}		
+
+		public void AddActiveApplicationMagicWord(string appExeName, string appExePath)
+		{
+			MagicWord word = new MagicWord();
+			word.Alias = appExeName;
+			word.FileName = appExePath;
+
+			ShowMagicWordForm(word);
+		}		
 
 		#endregion
 
 		#region Private methods
 		private System.ComponentModel.IContainer m_Components;		
 
-		private void LoadPlugins()
+		private void LoadToolPlugins()
 		{
+			m_Tools = new List<Serialcoder.MagicWords.Interfaces.ITool>();
+			
 			this.m_Components = new System.ComponentModel.Container();
 
-			string pluginPath = string.Empty;
-			
-			// we extract all the IAttributeDefinition implementations 
-			foreach (string filename in Directory.GetFiles(System.Windows.Forms.Application.StartupPath /*+ "\\Plugins"*/ , "*.dll"))
-			{
-				System.Reflection.Assembly assembly = System.Reflection.Assembly.LoadFrom(filename);
-				foreach (Type type in assembly.GetTypes())
-				{
-					Type plugin = type.GetInterface("Serialcoder.MagicWords.Interfaces.ITool");
-					if (plugin != null)
-					{
-						Interfaces.ITool tool = (Interfaces.ITool)Activator.CreateInstance(type);
-						tool.Initialize();
+#if Release
+			string pluginPath = System.Windows.Forms.Application.StartupPath + "\\Plugins";
+#else
+			string pluginPath = System.Windows.Forms.Application.StartupPath;
+#endif
 
-						Serialcoder.MagicWords.Components.SystemHotkey hotkey = new Serialcoder.MagicWords.Components.SystemHotkey(this.m_Components);
-						hotkey.Shortcut = tool.HotKey;
-						hotkey.Pressed += new EventHandler(delegate(object sender, EventArgs e)
-						{
-							tool.Execute(null);
-						});
-						m_Tools.Add(tool);
-					}
-				}
+			AddToolPlugin(Assembly.GetExecutingAssembly());
+
+			// We extract all the ITool implementations 
+			foreach (string filename in Directory.GetFiles(pluginPath , "*.dll"))
+			{
+				Assembly assembly = Assembly.LoadFrom(filename);
+				AddToolPlugin(assembly);
 			}
 			
+		}
+
+		private void AddToolPlugin(Assembly assembly)
+		{
+			foreach (Type type in assembly.GetTypes())
+			{
+				Type plugin = type.GetInterface("Serialcoder.MagicWords.Interfaces.ITool");
+				if (plugin != null)
+				{
+					Interfaces.ITool tool = (Interfaces.ITool)Activator.CreateInstance(type);
+					tool.Initialize();
+
+					Serialcoder.MagicWords.Components.SystemHotkey hotkey = new Serialcoder.MagicWords.Components.SystemHotkey(this.m_Components);
+					hotkey.Shortcut = tool.HotKey;
+					hotkey.Pressed += new EventHandler(delegate(object sender, EventArgs e)
+					{
+						tool.Execute(null);
+					});
+					m_Tools.Add(tool);
+				}
+			}
+		}
+
+		private void LoadParameterPlugins()
+		{
+			m_Parameters = new List<Serialcoder.MagicWords.Interfaces.IParameter>();
+						
+#if Release
+			string pluginPath = System.Windows.Forms.Application.StartupPath + "\\Plugins";
+#else
+			string pluginPath = System.Windows.Forms.Application.StartupPath;
+#endif
+
+			// Load build in IParameter
+			AddParameterPlugin(Assembly.GetExecutingAssembly());
+
+			// add Iparameter stored in external plugins
+			foreach (string filename in Directory.GetFiles(pluginPath, "*.dll"))
+			{
+				AddParameterPlugin(Assembly.LoadFrom(filename));
+			}
+		}
+
+		private void AddParameterPlugin(Assembly assembly)
+		{
+			foreach (Type type in assembly.GetTypes())
+			{					
+				Type plugin = type.GetInterface("Serialcoder.MagicWords.Interfaces.IParameter");
+				if (plugin != null)
+				{
+					Interfaces.IParameter parameter = (Interfaces.IParameter)Activator.CreateInstance(type);
+					m_Parameters.Add(parameter);
+				}
+			}
+		}
+
+		private void GetDefaultMagicWordList()
+		{
+			m_MagicWords.Clear();
+
+			if (File.Exists(@"C:\Program Files\Mozilla Firefox\firefox.exe"))
+			{
+				MagicWord word = new MagicWord();
+				word.Alias = "firefox";
+				word.FileName = @"C:\Program Files\Mozilla Firefox\firefox.exe";
+				m_MagicWords.Add(word);
+			}
+
+			MagicWord word1 = new MagicWord();
+			word1.Alias = "paint";
+			word1.FileName = @"pbrush.exe";
+			m_MagicWords.Add(word1);
+
+			MagicWord word2 = new MagicWord();
+			word2.Alias = "torrentspy";
+			word2.FileName = @"http://www.torrentspy.com/search?query=$W$&submit.x=0&submit.y=0";
+			word2.Arguments = "";
+			m_MagicWords.Add(word2);
 		}
 
 		private void AddGoogleMagicWords()
@@ -278,58 +343,28 @@ namespace Serialcoder.MagicWords
 
 			#endregion
 		}
-
-		
+				
 		/// <summary>
 		/// Loads the magic words.
 		/// </summary>
 		private void LoadMagicWords()
 		{
 			XmlSerializer serializer = new XmlSerializer(typeof(List<MagicWord>));
-			StreamReader reader = File.OpenText(m_wordsPath);
+			StreamReader reader = File.OpenText(m_UserLibraryFileName);
 			m_MagicWords = (List<MagicWord>)serializer.Deserialize(reader);
 			reader.Close();			
 		}
 
-		
-
-		#endregion
-		
-		#region Singleton
-
-		private static volatile Context _singleton;
-		private static object syncRoot = new Object();
-
-		public static Context Current
-		{
-			get
-			{
-				if (_singleton == null)
-				{
-					lock (syncRoot)
-					{
-						if (_singleton == null)
-						{
-							_singleton = new Context();
-						}
-					}
-				}
-
-				return _singleton;
-			}
-		}
-		#endregion
-				
 		private string ParseInputText(string inputText, string notes)
 		{
-			if (inputText != null && (inputText.Contains("$W$") || inputText.Contains("$w$")))
+			if (inputText != null && (inputText.Contains("$W$") || inputText.Contains("$I$")))
 			{
 				Forms.DynamicInput form = new Serialcoder.MagicWords.Forms.DynamicInput();
 				form.Title = notes;
 				switch (form.ShowDialog())
 				{
 					case System.Windows.Forms.DialogResult.OK:
-						return inputText.Replace("$W$", form.EncodedInput).Replace("$w$", form.Input);
+						return inputText.Replace("$W$", form.EncodedInput).Replace("$I$", form.Input);
 					
 					case System.Windows.Forms.DialogResult.Cancel:
 						throw new ApplicationException("User cancel");
@@ -340,33 +375,66 @@ namespace Serialcoder.MagicWords
 				}
 			}
 
+			if (inputText != null && inputText.Contains("$C$"))
+			{
+				return inputText.Replace("$I$", Clipboard.GetText());
+			}
+
 			return inputText;
 		}
 
+		
 		private void Execute(MagicWord word)
-		{
+		{			
+			string fileName = word.FileName;
+			string arguments = word.Arguments;
+			
+			foreach (Interfaces.IParameter parameter in m_Parameters)
+			{
+				try
+				{
+					fileName = ApplyParameterPlugin(word.Notes, fileName, parameter);
+					arguments = ApplyParameterPlugin(word.Notes, arguments, parameter);					
+				}
+				catch (ApplicationException)
+				{
+					return;
+				}				
+			}
+
 			try
 			{
-				string fileName = ParseInputText(word.FileName, word.Notes);
-				string arguments = ParseInputText(word.Arguments, word.Notes);
-
 				ProcessStartInfo info = new ProcessStartInfo(fileName, arguments);
 				info.WindowStyle = word.StartUpMode;
 				info.WorkingDirectory = word.WorkingDirectory;
 				info.ErrorDialog = true;
 
 				Process process = Process.Start(info);
-			}
-			catch (ApplicationException)
-			{
-				// user cancel the argument form
-			}
+			}			
 			catch (Exception ex)
 			{
 				System.Media.SystemSounds.Exclamation.Play();
 				//System.Windows.Forms.MessageBox.Show(ex.Message);
 			}
 			
+		}
+
+		private string ApplyParameterPlugin(string wordNotes, string input, Interfaces.IParameter parameter)
+		{
+			while (string.IsNullOrEmpty(input) == false && input.Contains(parameter.Variable))
+			{
+				string parameterValue = string.Empty;
+
+				if (parameter.GetValue(wordNotes, out parameterValue) == true)
+				{
+					input = input.Replace(parameter.Variable, parameterValue);
+				}
+				else
+				{
+					throw new ApplicationException();
+				}
+			}
+			return input;
 		}
 
 		private void Execute(string word)
@@ -386,11 +454,27 @@ namespace Serialcoder.MagicWords
 
 		}
 
+		private void ShowMagicWordForm(MagicWord word)
+		{
+			Forms.MagicWordForm form = new Serialcoder.MagicWords.Forms.MagicWordForm();
+			form.MagicWord = word;
+
+			if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK && m_MagicWords.Contains(word) == false)
+			{
+				m_MagicWords.Add(word);
+			}
+		}
+
+		#endregion
+		
 		#region BuildIn MagicWords launcher
 
+		/// <summary>
+		/// Open the online help. "help" magicword handler
+		/// </summary>
 		public void Help()
 		{
-			Process.Start("http://code.google.com/p/magicwords");
+			Process.Start(Properties.Settings.Default.HelpUrl);
 		}
 
 		public void Setup()
@@ -418,43 +502,42 @@ namespace Serialcoder.MagicWords
 			System.Windows.Forms.Application.Exit();
 		}
 
-		#endregion
-
-		public void AddActiveApplicationMagicWord(string appExeName, string appExePath)
-		{			
-			MagicWord word = new MagicWord();
-			word.Alias = appExeName;
-			word.FileName = appExePath;
-
-			ShowMagicWordForm(word);
+		public void HideLauncherForm()
+		{
+			Forms.LauncherForm.Current.Hide();
 		}
 
 		public void ShowNewMagicWordForm()
 		{
-			ShowMagicWordForm(new MagicWord());			
-		}
-
-		private void ShowMagicWordForm(MagicWord word)
-		{
-			Forms.MagicWordForm form = new Serialcoder.MagicWords.Forms.MagicWordForm();
-			form.MagicWord = word;
-
-			if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK && m_MagicWords.Contains(word) == false)
-			{
-				m_MagicWords.Add(word);
-			}
-		}
-		
-		#region IDisposable Members
-
-		void IDisposable.Dispose()
-		{			
-			if (this.m_Components != null)
-			{
-				this.m_Components.Dispose();
-			}				
+			ShowMagicWordForm(new MagicWord());
 		}
 
 		#endregion
+						
+		#region Singleton
+
+		private static volatile Context _singleton;
+		private static object syncRoot = new Object();
+
+		public static Context Current
+		{
+			get
+			{
+				if (_singleton == null)
+				{
+					lock (syncRoot)
+					{
+						if (_singleton == null)
+						{
+							_singleton = new Context();
+						}
+					}
+				}
+
+				return _singleton;
+			}
+		}
+		#endregion
+		
 	}
 }

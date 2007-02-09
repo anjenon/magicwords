@@ -29,5 +29,8 @@
     <Setting Name="ArgumentHistory" Type="System.Collections.Specialized.StringCollection" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="HomepageUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://code.google.com/p/magicwords</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

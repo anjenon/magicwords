@@ -19,8 +19,10 @@ namespace Serialcoder.MagicWords.Forms
 		{
 			base.OnLoad(e);
 
-			dataGridView1.DataSource = Context.Current.Tools;
-			propertyGrid1.SelectedObject = Properties.Settings.Default;
+			uxToolDataGridView.DataSource = Context.Current.Tools;
+			uxParametersDataGridView.DataSource = Context.Current.Parameters;
+
+			uxUserSettingsPropertyGrid.SelectedObject = Properties.Settings.Default;
 		}
 
 		private void uxCancelButton_Click(object sender, EventArgs e)

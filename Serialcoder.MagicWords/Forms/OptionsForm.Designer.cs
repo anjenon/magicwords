@@ -32,9 +32,9 @@ namespace Serialcoder.MagicWords.Forms
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.listMagicWords1 = new Serialcoder.MagicWords.Controls.ListMagicWords();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
-			this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
+			this.uxUserSettingsPropertyGrid = new System.Windows.Forms.PropertyGrid();
 			this.tabPage4 = new System.Windows.Forms.TabPage();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.uxToolDataGridView = new System.Windows.Forms.DataGridView();
 			this.uxToolAliasColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.uxToolNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.uxToolDescriptionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,12 +48,16 @@ namespace Serialcoder.MagicWords.Forms
 			this.uxAcceptButton = new System.Windows.Forms.Button();
 			this.uxImportLinkLabel = new System.Windows.Forms.LinkLabel();
 			this.uxExportLinkLabel = new System.Windows.Forms.LinkLabel();
+			this.tabPage5 = new System.Windows.Forms.TabPage();
+			this.uxParametersDataGridView = new System.Windows.Forms.DataGridView();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.tabPage3.SuspendLayout();
 			this.tabPage4.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.uxToolDataGridView)).BeginInit();
 			this.tabPage2.SuspendLayout();
+			this.tabPage5.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.uxParametersDataGridView)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tabControl1
@@ -65,6 +69,7 @@ namespace Serialcoder.MagicWords.Forms
 			this.tabControl1.Controls.Add(this.tabPage3);
 			this.tabControl1.Controls.Add(this.tabPage4);
 			this.tabControl1.Controls.Add(this.tabPage2);
+			this.tabControl1.Controls.Add(this.tabPage5);
 			this.tabControl1.Location = new System.Drawing.Point(12, 12);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
@@ -92,7 +97,7 @@ namespace Serialcoder.MagicWords.Forms
 			// 
 			// tabPage3
 			// 
-			this.tabPage3.Controls.Add(this.propertyGrid1);
+			this.tabPage3.Controls.Add(this.uxUserSettingsPropertyGrid);
 			this.tabPage3.Location = new System.Drawing.Point(4, 22);
 			this.tabPage3.Name = "tabPage3";
 			this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -101,17 +106,17 @@ namespace Serialcoder.MagicWords.Forms
 			this.tabPage3.Text = "Options";
 			this.tabPage3.UseVisualStyleBackColor = true;
 			// 
-			// propertyGrid1
+			// uxUserSettingsPropertyGrid
 			// 
-			this.propertyGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.propertyGrid1.Location = new System.Drawing.Point(3, 3);
-			this.propertyGrid1.Name = "propertyGrid1";
-			this.propertyGrid1.Size = new System.Drawing.Size(504, 267);
-			this.propertyGrid1.TabIndex = 0;
+			this.uxUserSettingsPropertyGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.uxUserSettingsPropertyGrid.Location = new System.Drawing.Point(3, 3);
+			this.uxUserSettingsPropertyGrid.Name = "uxUserSettingsPropertyGrid";
+			this.uxUserSettingsPropertyGrid.Size = new System.Drawing.Size(504, 267);
+			this.uxUserSettingsPropertyGrid.TabIndex = 0;
 			// 
 			// tabPage4
 			// 
-			this.tabPage4.Controls.Add(this.dataGridView1);
+			this.tabPage4.Controls.Add(this.uxToolDataGridView);
 			this.tabPage4.Location = new System.Drawing.Point(4, 22);
 			this.tabPage4.Name = "tabPage4";
 			this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -120,23 +125,23 @@ namespace Serialcoder.MagicWords.Forms
 			this.tabPage4.Text = "Tools";
 			this.tabPage4.UseVisualStyleBackColor = true;
 			// 
-			// dataGridView1
+			// uxToolDataGridView
 			// 
-			this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+			this.uxToolDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
 						| System.Windows.Forms.AnchorStyles.Left)
 						| System.Windows.Forms.AnchorStyles.Right)));
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+			this.uxToolDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.uxToolDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.uxToolAliasColumn,
             this.uxToolNameColumn,
             this.uxToolDescriptionColumn,
             this.uxToolHotKeyColumn,
             this.uxToolAuthorColumn,
             this.uxToolVersionColumn});
-			this.dataGridView1.Location = new System.Drawing.Point(6, 6);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(498, 261);
-			this.dataGridView1.TabIndex = 0;
+			this.uxToolDataGridView.Location = new System.Drawing.Point(6, 6);
+			this.uxToolDataGridView.Name = "uxToolDataGridView";
+			this.uxToolDataGridView.Size = new System.Drawing.Size(498, 261);
+			this.uxToolDataGridView.TabIndex = 0;
 			// 
 			// uxToolAliasColumn
 			// 
@@ -255,6 +260,24 @@ namespace Serialcoder.MagicWords.Forms
 			this.uxExportLinkLabel.Text = "Export library to QRS file";
 			this.uxExportLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OnExportLinkLabelLinkClicked);
 			// 
+			// tabPage5
+			// 
+			this.tabPage5.Controls.Add(this.uxParametersDataGridView);
+			this.tabPage5.Location = new System.Drawing.Point(4, 22);
+			this.tabPage5.Name = "tabPage5";
+			this.tabPage5.Size = new System.Drawing.Size(510, 273);
+			this.tabPage5.TabIndex = 4;
+			this.tabPage5.Text = "Parameter plugins";
+			this.tabPage5.UseVisualStyleBackColor = true;
+			// 
+			// uxParametersDataGridView
+			// 
+			this.uxParametersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.uxParametersDataGridView.Location = new System.Drawing.Point(3, 3);
+			this.uxParametersDataGridView.Name = "uxParametersDataGridView";
+			this.uxParametersDataGridView.Size = new System.Drawing.Size(504, 267);
+			this.uxParametersDataGridView.TabIndex = 0;
+			// 
 			// OptionsForm
 			// 
 			this.AcceptButton = this.uxAcceptButton;
@@ -275,9 +298,11 @@ namespace Serialcoder.MagicWords.Forms
 			this.tabPage1.ResumeLayout(false);
 			this.tabPage3.ResumeLayout(false);
 			this.tabPage4.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.uxToolDataGridView)).EndInit();
 			this.tabPage2.ResumeLayout(false);
 			this.tabPage2.PerformLayout();
+			this.tabPage5.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.uxParametersDataGridView)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -292,12 +317,12 @@ namespace Serialcoder.MagicWords.Forms
 		private System.Windows.Forms.Button uxAcceptButton;
 		private Serialcoder.MagicWords.Controls.ListMagicWords listMagicWords1;
 		private System.Windows.Forms.TabPage tabPage3;
-		private System.Windows.Forms.PropertyGrid propertyGrid1;
+		private System.Windows.Forms.PropertyGrid uxUserSettingsPropertyGrid;
 		private System.Windows.Forms.LinkLabel linkLabel1;
 		private Serialcoder.MagicWords.Controls.HelpViewer helpViewer1;
 		private System.Windows.Forms.LinkLabel uxImportLinkLabel;
 		private System.Windows.Forms.TabPage tabPage4;
-		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.DataGridView uxToolDataGridView;
 		private System.Windows.Forms.DataGridViewTextBoxColumn uxToolAliasColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn uxToolNameColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn uxToolDescriptionColumn;
@@ -305,5 +330,7 @@ namespace Serialcoder.MagicWords.Forms
 		private System.Windows.Forms.DataGridViewTextBoxColumn uxToolAuthorColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn uxToolVersionColumn;
 		private System.Windows.Forms.LinkLabel uxExportLinkLabel;
+		private System.Windows.Forms.TabPage tabPage5;
+		private System.Windows.Forms.DataGridView uxParametersDataGridView;
 	}
 }
