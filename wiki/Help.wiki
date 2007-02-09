@@ -14,7 +14,7 @@ MagicWords command line textbox is hidden by default, so when the program start 
 The input box use build in autocompletion feature, so your MagicWord will probably be completed after typing 2 or 3 caracters.
 
 
-== How to add MagicWords ==
+=How to open the new MagicWord dialog=
 
 You can add a new magic word, the following ways:
 
@@ -22,7 +22,14 @@ You can add a new magic word, the following ways:
   * Right click the tray icon, and click on the "Setup.." item. An editable MagicWords data grid view is displayed, there you can view your Magic Words library, edit, insert or delete MagicWords.
   * Finally you can add the current focused application by pressing the CTRL-F11 hotkey combinaison. The new MagicWord form will be displayed, filled with current focused application data.
 
-== BuildIn MagicWords ==
+=MagicWord data=
+  * Filename =
+  * Arguments =
+  * Startup path = 
+  * Startup mode =
+  * Notes: 
+
+=BuildIn MagicWords=
   * setup : open the option form
   * hide : hide the input form in the tray
   * exit : terminate the application
