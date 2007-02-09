@@ -41,7 +41,5 @@ namespace Serialcoder.MagicWords.Forms
 			MagicWord.StartUpMode = (System.Diagnostics.ProcessWindowStyle)uxStartupModeComboBox.SelectedValue;
 		}
 
-		
-
 	}
 }

@@ -28,20 +28,11 @@ namespace Serialcoder.MagicWords.Forms
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.uxNotesLabel = new System.Windows.Forms.Label();
-			this.button1 = new System.Windows.Forms.Button();
+			this.uxAcceptButton = new System.Windows.Forms.Button();
+			this.uxCancelButton = new System.Windows.Forms.Button();
+			this.uxArgumentComboBox = new System.Windows.Forms.ComboBox();
 			this.SuspendLayout();
-			// 
-			// comboBox1
-			// 
-			this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.AllSystemSources;
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(12, 29);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(247, 21);
-			this.comboBox1.TabIndex = 0;
 			// 
 			// uxNotesLabel
 			// 
@@ -49,29 +40,50 @@ namespace Serialcoder.MagicWords.Forms
 			this.uxNotesLabel.Location = new System.Drawing.Point(12, 9);
 			this.uxNotesLabel.Name = "uxNotesLabel";
 			this.uxNotesLabel.Size = new System.Drawing.Size(35, 13);
-			this.uxNotesLabel.TabIndex = 1;
+			this.uxNotesLabel.TabIndex = 3;
 			this.uxNotesLabel.Text = "label1";
 			// 
-			// button1
+			// uxAcceptButton
 			// 
-			this.button1.Location = new System.Drawing.Point(265, 27);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(32, 23);
-			this.button1.TabIndex = 2;
-			this.button1.Text = "&OK";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
+			this.uxAcceptButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+			this.uxAcceptButton.Location = new System.Drawing.Point(265, 27);
+			this.uxAcceptButton.Name = "uxAcceptButton";
+			this.uxAcceptButton.Size = new System.Drawing.Size(32, 23);
+			this.uxAcceptButton.TabIndex = 1;
+			this.uxAcceptButton.Text = "&OK";
+			this.uxAcceptButton.UseVisualStyleBackColor = true;
+			// 
+			// uxCancelButton
+			// 
+			this.uxCancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+			this.uxCancelButton.Location = new System.Drawing.Point(303, 27);
+			this.uxCancelButton.Name = "uxCancelButton";
+			this.uxCancelButton.Size = new System.Drawing.Size(75, 23);
+			this.uxCancelButton.TabIndex = 2;
+			this.uxCancelButton.Text = "&Cancel";
+			this.uxCancelButton.UseVisualStyleBackColor = true;
+			// 
+			// uxArgumentComboBox
+			// 
+			this.uxArgumentComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+			this.uxArgumentComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+			this.uxArgumentComboBox.Location = new System.Drawing.Point(12, 29);
+			this.uxArgumentComboBox.Name = "uxArgumentComboBox";
+			this.uxArgumentComboBox.Size = new System.Drawing.Size(247, 21);
+			this.uxArgumentComboBox.TabIndex = 4;
 			// 
 			// DynamicInput
 			// 
-			this.AcceptButton = this.button1;
+			this.AcceptButton = this.uxAcceptButton;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(308, 62);
+			this.CancelButton = this.uxCancelButton;
+			this.ClientSize = new System.Drawing.Size(391, 62);
 			this.ControlBox = false;
-			this.Controls.Add(this.button1);
+			this.Controls.Add(this.uxArgumentComboBox);
+			this.Controls.Add(this.uxCancelButton);
+			this.Controls.Add(this.uxAcceptButton);
 			this.Controls.Add(this.uxNotesLabel);
-			this.Controls.Add(this.comboBox1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
@@ -85,8 +97,9 @@ namespace Serialcoder.MagicWords.Forms
 
 		#endregion
 
-		private System.Windows.Forms.ComboBox comboBox1;
 		private System.Windows.Forms.Label uxNotesLabel;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button uxAcceptButton;
+		private System.Windows.Forms.Button uxCancelButton;
+		private System.Windows.Forms.ComboBox uxArgumentComboBox;
 	}
 }

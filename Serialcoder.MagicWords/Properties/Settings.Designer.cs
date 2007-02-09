@@ -74,8 +74,7 @@ namespace Serialcoder.MagicWords.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("CtrlF12")]
-		[System.ComponentModel.Editor(@"System.Windows.Forms.Design.ShortcutKeysEditor, System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))]
-		public global::System.Windows.Forms.Shortcut TypeWordHotKey {
+        public global::System.Windows.Forms.Shortcut TypeWordHotKey {
             get {
                 return ((global::System.Windows.Forms.Shortcut)(this["TypeWordHotKey"]));
             }
@@ -87,9 +86,7 @@ namespace Serialcoder.MagicWords.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("CtrlF11")]
-		[System.ComponentModel.Editor(@"System.Windows.Forms.Design.ShortcutKeysEditor, System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))]
-		public global::System.Windows.Forms.Shortcut AddWordHotKey
-		{
+        public global::System.Windows.Forms.Shortcut AddWordHotKey {
             get {
                 return ((global::System.Windows.Forms.Shortcut)(this["AddWordHotKey"]));
             }
@@ -116,6 +113,17 @@ namespace Serialcoder.MagicWords.Properties {
             }
             set {
                 this["RunAtWindowsStart"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection ArgumentHistory {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["ArgumentHistory"]));
+            }
+            set {
+                this["ArgumentHistory"] = value;
             }
         }
     }
