@@ -26,7 +26,7 @@ You can add a new magic word, the following ways:
   * Alias = the 'magicword' that will lauchn the file
   * Filename =  the file to open
   * Arguments = arguments that will be passed to the file
-  * Startup path = the working directory
+  * Startup path = the working directory (very optional)
   * Startup mode = indicates the the window style (normal, maximized, minimized, etc)
   * Notes: some comment. will also be display on the argument input form
 
@@ -34,8 +34,9 @@ You can add a new magic word, the following ways:
 Variables can be used in either the 'filename' or the 'arguments' data of a MagicWord, it used to create dynamic magicword.
 
 Available variables are:
-  * $w$: a simple word replacement, a form is opened to allow user to type the input. 
+  * $I$: a simple word replacement, a form is opened to allow user to type the input. 
   * $W$: urlencoded version of $w$
+  * $C$: clipboard data
 
 Usage samples:
   * Google map: http://www.google.com/maps?f=q&hl=fr&q=$W$&ie=UTF8&z=16&s&om=1&iwloc=addr
