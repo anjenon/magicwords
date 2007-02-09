@@ -94,7 +94,7 @@ namespace Serialcoder.MagicWords.Entities
 		}
 		#endregion
 
-		#region Public string StartUpPath
+		#region Public string WorkingDirectory
 
 		[System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
 		private string m_WorkingDirectory;
