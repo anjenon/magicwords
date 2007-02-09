@@ -322,7 +322,6 @@ namespace Serialcoder.MagicWords
 				
 		private string ParseInputText(string inputText, string notes)
 		{
-			// TODO preprocess infos
 			if (inputText != null && (inputText.Contains("$W$") || inputText.Contains("$w$")))
 			{
 				Forms.DynamicInput form = new Serialcoder.MagicWords.Forms.DynamicInput();
@@ -331,6 +330,9 @@ namespace Serialcoder.MagicWords
 				{
 					case System.Windows.Forms.DialogResult.OK:
 						return inputText.Replace("$W$", form.EncodedInput).Replace("$w$", form.Input);
+					
+					case System.Windows.Forms.DialogResult.Cancel:
+						throw new ApplicationException("User cancel");
 						break;
 					
 					default:
@@ -343,15 +345,27 @@ namespace Serialcoder.MagicWords
 
 		private void Execute(MagicWord word)
 		{
-			string fileName = ParseInputText(word.FileName, word.Notes);
-			string arguments = ParseInputText(word.Arguments, word.Notes);
+			try
+			{
+				string fileName = ParseInputText(word.FileName, word.Notes);
+				string arguments = ParseInputText(word.Arguments, word.Notes);
 
-			ProcessStartInfo info = new ProcessStartInfo(fileName, arguments);
-			info.WindowStyle = word.StartUpMode;
-			info.WorkingDirectory = word.WorkingDirectory;
-			info.ErrorDialog = true;
+				ProcessStartInfo info = new ProcessStartInfo(fileName, arguments);
+				info.WindowStyle = word.StartUpMode;
+				info.WorkingDirectory = word.WorkingDirectory;
+				info.ErrorDialog = true;
+
+				Process process = Process.Start(info);
+			}
+			catch (ApplicationException)
+			{
+				// user cancel the argument form
+			}
+			catch (Exception)
+			{
+				System.Media.SystemSounds.Exclamation.Play();
+			}
 			
-			Process process = Process.Start(info);
 		}
 
 		private void Execute(string word)

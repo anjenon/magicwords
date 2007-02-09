@@ -15,11 +15,26 @@ namespace Serialcoder.MagicWords.Forms
 			InitializeComponent();
 		}
 
+		protected override void OnLoad(EventArgs e)
+		{
+			base.OnLoad(e);
+
+			if (Properties.Settings.Default.ArgumentHistory == null)
+			{
+				Properties.Settings.Default.ArgumentHistory = new System.Collections.Specialized.StringCollection();
+			}
+			uxArgumentComboBox.DataSource = Properties.Settings.Default.ArgumentHistory;
+
+			uxArgumentComboBox.Focus();
+			uxArgumentComboBox.Select();
+			uxArgumentComboBox.Focus();
+		}
+
 		public string Input
 		{
 			get
 			{
-				return comboBox1.Text;
+				return uxArgumentComboBox.Text;
 			}
 		}
 
@@ -27,13 +42,8 @@ namespace Serialcoder.MagicWords.Forms
 		{
 			get
 			{
-				return System.Web.HttpUtility.UrlEncode(comboBox1.Text);
+				return System.Web.HttpUtility.UrlEncode(uxArgumentComboBox.Text);
 			}
-		}
-
-		private void button1_Click(object sender, EventArgs e)
-		{
-			DialogResult = DialogResult.OK;
 		}
 
 		public string Title
@@ -42,6 +52,27 @@ namespace Serialcoder.MagicWords.Forms
 			{
 				uxNotesLabel.Text = value;
 			}
+		}
+		protected override void OnFormClosing(FormClosingEventArgs e)
+		{
+			base.OnFormClosing(e);
+
+			if (Properties.Settings.Default.ArgumentHistory == null)
+			{
+				Properties.Settings.Default.ArgumentHistory = new System.Collections.Specialized.StringCollection();
+			}
+
+			if (DialogResult == DialogResult.OK && string.IsNullOrEmpty(uxArgumentComboBox.Text) == false && Properties.Settings.Default.ArgumentHistory.Contains(uxArgumentComboBox.Text) == false)
+			{
+				Properties.Settings.Default.ArgumentHistory.Add(uxArgumentComboBox.Text);
+			}
+		}
+
+		protected override void OnShown(EventArgs e)
+		{
+			base.OnShown(e);
+						
+			
 		}
 	}
 }
