@@ -1,5 +1,5 @@
+#summary This is the MagicWords quick start and help page.
 #labels Phase-Support
-This is the MagicWords help page.
 
 == Introduction ==
 Here are the basic quick start information for MagicWords, it will tell you how to type existing MagicWord and how to add some new ones.
