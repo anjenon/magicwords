@@ -35,8 +35,11 @@ Variables can be used in either the 'filename' or the 'arguments' data of a Magi
 
 Available variables are:
   * $I$: a simple word replacement, a form is opened to allow user to type the input. 
-  * $W$: urlencoded version of $w$
+  * $W$: urlencoded version of $I$
   * $C$: clipboard data
+  * $FILE$: replaced by a filename, a Open file dialog is poped up.
+
+Variables can be add via the MagicWords extensibility framework, more on the [ExtensibilityPage].
 
 Usage samples:
   * Google map: http://www.google.com/maps?f=q&hl=fr&q=$W$&ie=UTF8&z=16&s&om=1&iwloc=addr
