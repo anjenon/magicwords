@@ -4,17 +4,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialcoder.MagicWords", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialcoder.MagicWords.Framework", "Serialcoder.MagicWords.Framework\Serialcoder.MagicWords.Framework.csproj", "{1AEF87B4-B549-4408-BBF2-9BC76B9A5121}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MagicWordsSetup", "MagicWordsSetup\MagicWordsSetup.vdproj", "{015DF4CF-D5F7-4EED-89CA-8BDF9BEE7593}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialcoder.MagicWords.ScreenShotPlugin", "Serialcoder.MagicWords.ScreenShotPlugin\Serialcoder.MagicWords.ScreenShotPlugin.csproj", "{58E14687-40F2-43E2-93BB-B02A6BF90DCD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialcoder.MagicWords.ScratchPadPlugin", "Serialcoder.MagicWords.ScratchPadPlugin\Serialcoder.MagicWords.ScratchPadPlugin.csproj", "{14A071EC-3269-4E2B-9A1A-5EC9789CE924}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialcoder.MagicWords.TranslatorPlugin", "Serialcoder.MagicWords.TranslatorPlugin\Serialcoder.MagicWords.TranslatorPlugin.csproj", "{250E1A7A-8FC0-4178-A402-9D7D1743AC64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialcoder.MagicWords.DownloaderPlugin", "Serialcoder.MagicWords.DownloaderPlugin\Serialcoder.MagicWords.DownloaderPlugin.csproj", "{A7D24CC3-3925-42ED-B2ED-A92DCFB1B03A}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{DE70B1FA-500C-4B6E-9BEC-83DD1DD289B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialcoder.MagicWords.AlarmPlugin", "Serialcoder.MagicWords.AlarmPlugin\Serialcoder.MagicWords.AlarmPlugin.csproj", "{E919E91D-3AD8-4EB6-9FAA-CE13C3279EDD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,8 +28,6 @@ Global
 		{1AEF87B4-B549-4408-BBF2-9BC76B9A5121}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AEF87B4-B549-4408-BBF2-9BC76B9A5121}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AEF87B4-B549-4408-BBF2-9BC76B9A5121}.Release|Any CPU.Build.0 = Release|Any CPU
-		{015DF4CF-D5F7-4EED-89CA-8BDF9BEE7593}.Debug|Any CPU.ActiveCfg = Debug
-		{015DF4CF-D5F7-4EED-89CA-8BDF9BEE7593}.Release|Any CPU.ActiveCfg = Release
 		{58E14687-40F2-43E2-93BB-B02A6BF90DCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{58E14687-40F2-43E2-93BB-B02A6BF90DCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58E14687-40F2-43E2-93BB-B02A6BF90DCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -44,18 +40,18 @@ Global
 		{250E1A7A-8FC0-4178-A402-9D7D1743AC64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{250E1A7A-8FC0-4178-A402-9D7D1743AC64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{250E1A7A-8FC0-4178-A402-9D7D1743AC64}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A7D24CC3-3925-42ED-B2ED-A92DCFB1B03A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A7D24CC3-3925-42ED-B2ED-A92DCFB1B03A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A7D24CC3-3925-42ED-B2ED-A92DCFB1B03A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A7D24CC3-3925-42ED-B2ED-A92DCFB1B03A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E919E91D-3AD8-4EB6-9FAA-CE13C3279EDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E919E91D-3AD8-4EB6-9FAA-CE13C3279EDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E919E91D-3AD8-4EB6-9FAA-CE13C3279EDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E919E91D-3AD8-4EB6-9FAA-CE13C3279EDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{A7D24CC3-3925-42ED-B2ED-A92DCFB1B03A} = {DE70B1FA-500C-4B6E-9BEC-83DD1DD289B5}
 		{14A071EC-3269-4E2B-9A1A-5EC9789CE924} = {DE70B1FA-500C-4B6E-9BEC-83DD1DD289B5}
-		{58E14687-40F2-43E2-93BB-B02A6BF90DCD} = {DE70B1FA-500C-4B6E-9BEC-83DD1DD289B5}
 		{250E1A7A-8FC0-4178-A402-9D7D1743AC64} = {DE70B1FA-500C-4B6E-9BEC-83DD1DD289B5}
+		{58E14687-40F2-43E2-93BB-B02A6BF90DCD} = {DE70B1FA-500C-4B6E-9BEC-83DD1DD289B5}
+		{E919E91D-3AD8-4EB6-9FAA-CE13C3279EDD} = {DE70B1FA-500C-4B6E-9BEC-83DD1DD289B5}
 	EndGlobalSection
 EndGlobal

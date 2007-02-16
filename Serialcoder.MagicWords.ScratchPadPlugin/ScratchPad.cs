@@ -24,22 +24,26 @@ namespace Serialcoder.MagicWords.ScratchPadPlugin
 			//{
 			//    richTextBox1.LoadFile(m_file, RichTextBoxStreamType.PlainText);
 			//}
-
-			richTextBox1.Text = Properties.Settings.Default.ScratchPadText;
+			richTextBox1.DataBindings.Add("Text", Properties.Settings.Default, "ScratchPadText", false, DataSourceUpdateMode.OnPropertyChanged);
+			//richTextBox1.Text = Properties.Settings.Default.ScratchPadText;
 		}
 
 		void ScratchPad_FormClosing(object sender, FormClosingEventArgs e)
 		{
+			Properties.Settings.Default.Save();
+
 			if (e.CloseReason == CloseReason.UserClosing)
 			{
 				e.Cancel = true;
 				this.Hide();
-			}
-			else
-			{
-				Properties.Settings.Default.Save();
-				//richTextBox1.SaveFile(m_file, RichTextBoxStreamType.PlainText);
-			}
+			}			
+		}
+
+		protected override void OnShown(EventArgs e)
+		{
+			base.OnShown(e);
+			Select();
+			Activate();
 		}
 
 		#region Singleton

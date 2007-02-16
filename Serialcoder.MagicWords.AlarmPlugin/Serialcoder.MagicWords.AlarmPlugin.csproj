@@ -4,11 +4,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1AEF87B4-B549-4408-BBF2-9BC76B9A5121}</ProjectGuid>
+    <ProjectGuid>{E919E91D-3AD8-4EB6-9FAA-CE13C3279EDD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Serialcoder.MagicWords</RootNamespace>
-    <AssemblyName>MagicWords.Framework</AssemblyName>
+    <RootNamespace>Serialcoder.MagicWords.AlarmPlugin</RootNamespace>
+    <AssemblyName>Serialcoder.MagicWords.AlarmPlugin</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,22 +30,45 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\MagicWord.cs" />
-    <Compile Include="Interfaces\IParameter.cs" />
-    <Compile Include="SlickRunHelper.cs" />
-    <Compile Include="Components\SystemHotkey.cs">
-      <SubType>Component</SubType>
+    <Compile Include="AlarmForm.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Components\Win32.cs" />
-    <Compile Include="Interfaces\ITool.cs" />
+    <Compile Include="AlarmForm.Designer.cs">
+      <DependentUpon>AlarmForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AlarmPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utilities.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Serialcoder.MagicWords.Framework\Serialcoder.MagicWords.Framework.csproj">
+      <Project>{1AEF87B4-B549-4408-BBF2-9BC76B9A5121}</Project>
+      <Name>Serialcoder.MagicWords.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AlarmForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AlarmForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="alarm.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

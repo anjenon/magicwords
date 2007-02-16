@@ -1,30 +1,28 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Windows.Forms;
 using System.ComponentModel;
 
-namespace Serialcoder.MagicWords.ScratchPadPlugin
+namespace Serialcoder.MagicWords.AlarmPlugin
 {
-	public class ScratchPadPlugin : Interfaces.ITool
+	public class AlarmPlugin : Interfaces.ITool
 	{
-		public ScratchPadPlugin()
+		public AlarmPlugin()
 		{
-			m_Alias = "scratchpad";
-			m_HotKey = Shortcut.ShiftF2;
-			//ScratchPad.Current.Size = new System.Drawing.Size(200, 200);
+			m_Alias = "alarm";
+			m_Hotkey = System.Windows.Forms.Shortcut.ShiftF4;
 		}
 
 		#region ITool Members
 
 		string Serialcoder.MagicWords.Interfaces.ITool.Name
 		{
-			get { return "ScratPad plugin"; }
+			get { return "Alarm plugin"; }
 		}
 
 		string Serialcoder.MagicWords.Interfaces.ITool.Description
 		{
-			get { return "The ScratchPad is a simple text editor to collect and keep text."; }
+			get { return "This plugin allow you to be alerted on a particular time."; }
 		}
 
 		string Serialcoder.MagicWords.Interfaces.ITool.Author
@@ -39,36 +37,29 @@ namespace Serialcoder.MagicWords.ScratchPadPlugin
 
 		void Serialcoder.MagicWords.Interfaces.ITool.Initialize()
 		{
-			// todo restore settings
+			Console.WriteLine(AlarmForm.Current.Name);
+			//throw new Exception("The method or operation is not implemented.");
 		}
 
 		void Serialcoder.MagicWords.Interfaces.ITool.Execute(string[] args)
 		{
-			
-			ScratchPad.Current.Show();
-			ScratchPad.Current.Left = Screen.PrimaryScreen.WorkingArea.Width - ScratchPad.Current.Width;
-			ScratchPad.Current.Top = Screen.PrimaryScreen.WorkingArea.Height - ScratchPad.Current.Height;
-
-			ScratchPad.Current.Select();
-			ScratchPad.Current.Focus();
+			AlarmForm.Current.Show();
 		}
-		
-		private Shortcut m_HotKey;
-		private string m_Alias;
-
 
 		[Editor(@"System.Windows.Forms.Design.ShortcutKeysEditor, System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))]
 		System.Windows.Forms.Shortcut Serialcoder.MagicWords.Interfaces.ITool.HotKey
 		{
 			get
 			{
-				return m_HotKey;
+				return m_Hotkey;
 			}
 			set
 			{
-				m_HotKey = value;
+				m_Hotkey = value;
 			}
 		}
+		private string m_Alias;
+		private System.Windows.Forms.Shortcut m_Hotkey;
 
 		string Serialcoder.MagicWords.Interfaces.ITool.Alias
 		{
