@@ -76,6 +76,8 @@ namespace Serialcoder.MagicWords.Components
 			if (((int)key & (int)Keys.Alt)==(int)Keys.Alt) {mod+=(int)Modifiers.MOD_ALT;k2=Keys.Alt;}
 			if (((int)key & (int)Keys.Shift)==(int)Keys.Shift) {mod+=(int)Modifiers.MOD_SHIFT;k2=Keys.Shift;}
 			if (((int)key & (int)Keys.Control)==(int)Keys.Control) {mod+=(int)Modifiers.MOD_CONTROL;k2=Keys.Control;}
+			if (((int)key & (int)Keys.LWin) == (int)Keys.Control) { mod += (int)Modifiers.MOD_WIN; k2 = Keys.LWin; }
+			if (((int)key & (int)Keys.RWin) == (int)Keys.Control) { mod += (int)Modifiers.MOD_WIN; k2 = Keys.RWin; }
 			
 			System.Diagnostics.Debug.Write(mod.ToString()+" ");
 			System.Diagnostics.Debug.WriteLine((((int)key)-((int)k2)).ToString());

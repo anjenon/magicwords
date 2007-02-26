@@ -38,6 +38,9 @@
   <ItemGroup>
     <Compile Include="Entities\MagicWord.cs" />
     <Compile Include="Interfaces\IParameter.cs" />
+    <Compile Include="RichTextBoxExtended.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="SlickRunHelper.cs" />
     <Compile Include="Components\SystemHotkey.cs">
       <SubType>Component</SubType>
@@ -46,6 +49,69 @@
     <Compile Include="Interfaces\ITool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\bold.gif" />
+    <Content Include="images\center.gif" />
+    <Content Include="images\Colors.gif" />
+    <Content Include="images\colors2.gif" />
+    <Content Include="images\copy.gif" />
+    <Content Include="images\cut.gif" />
+    <Content Include="images\font.gif" />
+    <Content Include="images\fontSize.gif" />
+    <Content Include="images\Image.gif" />
+    <Content Include="images\italic.gif" />
+    <Content Include="images\left.gif" />
+    <Content Include="images\open.gif" />
+    <Content Include="images\paste.gif" />
+    <Content Include="images\print.gif" />
+    <Content Include="images\Redo.gif" />
+    <Content Include="images\RichTextBoxExtended.bmp" />
+    <Content Include="images\RichTextBoxExtended.ico" />
+    <Content Include="images\right.gif" />
+    <Content Include="images\save.gif" />
+    <Content Include="images\stamp.gif" />
+    <Content Include="images\stamp2.gif" />
+    <Content Include="images\strikeout.gif" />
+    <Content Include="images\underline.gif" />
+    <Content Include="images\Undo.gif" />
+    <Content Include="RichTextBoxExtended.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\psd\bold.psd" />
+    <None Include="images\psd\Button2.psd" />
+    <None Include="images\psd\Button2SMALL.psd" />
+    <None Include="images\psd\center.psd" />
+    <None Include="images\psd\colors2.psd" />
+    <None Include="images\psd\copy.psd" />
+    <None Include="images\psd\cut.psd" />
+    <None Include="images\psd\font.psd" />
+    <None Include="images\psd\fontSize.psd" />
+    <None Include="images\psd\icon.psd" />
+    <None Include="images\psd\Image.psd" />
+    <None Include="images\psd\italic.psd" />
+    <None Include="images\psd\left.psd" />
+    <None Include="images\psd\open.psd" />
+    <None Include="images\psd\paste.psd" />
+    <None Include="images\psd\print.psd" />
+    <None Include="images\psd\pspbrwse.jbf" />
+    <None Include="images\psd\Redo.psd" />
+    <None Include="images\psd\right.psd" />
+    <None Include="images\psd\save.psd" />
+    <None Include="images\psd\stamp.psd" />
+    <None Include="images\psd\stamp2.psd" />
+    <None Include="images\psd\strikeout.psd" />
+    <None Include="images\psd\underline.psd" />
+    <None Include="images\psd\Undo.psd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RichTextBoxExtended.resx">
+      <DependentUpon>RichTextBoxExtended.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
