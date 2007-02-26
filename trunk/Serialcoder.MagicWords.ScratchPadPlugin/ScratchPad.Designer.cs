@@ -28,37 +28,82 @@ namespace Serialcoder.MagicWords.ScratchPadPlugin
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+			this.components = new System.ComponentModel.Container();
+			this.richTextBoxExtended1 = new RichTextBoxExtended.RichTextBoxExtended();
 			this.SuspendLayout();
 			// 
-			// richTextBox1
+			// richTextBoxExtended1
 			// 
-			this.richTextBox1.AcceptsTab = true;
-			this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-			this.richTextBox1.Name = "richTextBox1";
-			this.richTextBox1.ShowSelectionMargin = true;
-			this.richTextBox1.Size = new System.Drawing.Size(380, 302);
-			this.richTextBox1.TabIndex = 0;
-			this.richTextBox1.Text = "";
+			this.richTextBoxExtended1.AcceptsTab = false;
+			this.richTextBoxExtended1.AutoWordSelection = true;
+			this.richTextBoxExtended1.DetectURLs = true;
+			this.richTextBoxExtended1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.richTextBoxExtended1.Location = new System.Drawing.Point(0, 0);
+			this.richTextBoxExtended1.Name = "richTextBoxExtended1";
+			this.richTextBoxExtended1.ReadOnly = false;
+			// 
+			// 
+			// 
+			this.richTextBoxExtended1.RichTextBox.AutoWordSelection = true;
+			this.richTextBoxExtended1.RichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.richTextBoxExtended1.RichTextBox.Location = new System.Drawing.Point(0, 26);
+			this.richTextBoxExtended1.RichTextBox.Name = "rtb1";
+			this.richTextBoxExtended1.RichTextBox.Size = new System.Drawing.Size(520, 293);
+			this.richTextBoxExtended1.RichTextBox.TabIndex = 1;
+			this.richTextBoxExtended1.ShowBold = true;
+			this.richTextBoxExtended1.ShowCenterJustify = true;
+			this.richTextBoxExtended1.ShowColors = true;
+			this.richTextBoxExtended1.ShowCopy = true;
+			this.richTextBoxExtended1.ShowCut = true;
+			this.richTextBoxExtended1.ShowFont = true;
+			this.richTextBoxExtended1.ShowFontSize = true;
+			this.richTextBoxExtended1.ShowItalic = true;
+			this.richTextBoxExtended1.ShowLeftJustify = true;
+			this.richTextBoxExtended1.ShowOpen = true;
+			this.richTextBoxExtended1.ShowPaste = true;
+			this.richTextBoxExtended1.ShowRedo = true;
+			this.richTextBoxExtended1.ShowRightJustify = true;
+			this.richTextBoxExtended1.ShowSave = true;
+			this.richTextBoxExtended1.ShowStamp = true;
+			this.richTextBoxExtended1.ShowStrikeout = true;
+			this.richTextBoxExtended1.ShowToolBarText = false;
+			this.richTextBoxExtended1.ShowUnderline = true;
+			this.richTextBoxExtended1.ShowUndo = true;
+			this.richTextBoxExtended1.Size = new System.Drawing.Size(520, 319);
+			this.richTextBoxExtended1.StampAction = RichTextBoxExtended.StampActions.EditedBy;
+			this.richTextBoxExtended1.StampColor = System.Drawing.Color.Blue;
+			this.richTextBoxExtended1.TabIndex = 1;
+			// 
+			// 
+			// 
+			this.richTextBoxExtended1.Toolbar.Appearance = System.Windows.Forms.ToolBarAppearance.Flat;
+			this.richTextBoxExtended1.Toolbar.ButtonSize = new System.Drawing.Size(16, 16);
+			this.richTextBoxExtended1.Toolbar.Divider = false;
+			this.richTextBoxExtended1.Toolbar.DropDownArrows = true;
+			this.richTextBoxExtended1.Toolbar.Location = new System.Drawing.Point(0, 0);
+			this.richTextBoxExtended1.Toolbar.Name = "tb1";
+			this.richTextBoxExtended1.Toolbar.ShowToolTips = true;
+			this.richTextBoxExtended1.Toolbar.Size = new System.Drawing.Size(520, 26);
+			this.richTextBoxExtended1.Toolbar.TabIndex = 0;
 			// 
 			// ScratchPad
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(380, 302);
-			this.Controls.Add(this.richTextBox1);
+			this.ClientSize = new System.Drawing.Size(520, 319);
+			this.Controls.Add(this.richTextBoxExtended1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
 			this.MinimizeBox = false;
 			this.Name = "ScratchPad";
 			this.Text = "ScratchPad";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ScratchPad_FormClosing);
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
 
-		private System.Windows.Forms.RichTextBox richTextBox1;
+		private RichTextBoxExtended.RichTextBoxExtended richTextBoxExtended1;
+
 	}
 }

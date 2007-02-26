@@ -12,24 +12,17 @@ namespace Serialcoder.MagicWords.ScratchPadPlugin
 	{
 		//private string m_file;
 
-		public ScratchPad()
+		private ScratchPad()
 		{
 			InitializeComponent();
 
 			this.Size = new Size(300, Screen.PrimaryScreen.WorkingArea.Height);
-			this.FormClosing += new FormClosingEventHandler(ScratchPad_FormClosing);
-
-			//m_file = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\MagicWordsScratchPad.txt";
-			//if (System.IO.File.Exists(m_file))
-			//{
-			//    richTextBox1.LoadFile(m_file, RichTextBoxStreamType.PlainText);
-			//}
-			richTextBox1.DataBindings.Add("Text", Properties.Settings.Default, "ScratchPadText", false, DataSourceUpdateMode.OnPropertyChanged);
-			//richTextBox1.Text = Properties.Settings.Default.ScratchPadText;
+			richTextBoxExtended1.RichTextBox.Text = Properties.Settings.Default.ScratchPadText;
 		}
 
 		void ScratchPad_FormClosing(object sender, FormClosingEventArgs e)
 		{
+			Properties.Settings.Default.ScratchPadText = richTextBoxExtended1.RichTextBox.Text;
 			Properties.Settings.Default.Save();
 
 			if (e.CloseReason == CloseReason.UserClosing)

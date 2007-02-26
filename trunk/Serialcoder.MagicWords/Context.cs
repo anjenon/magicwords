@@ -188,10 +188,10 @@ namespace Serialcoder.MagicWords
 			
 			this.m_Components = new System.ComponentModel.Container();
 
-#if Release
-			string pluginPath = System.Windows.Forms.Application.StartupPath + "\\Plugins";
+#if DEBUG
+			string pluginPath = System.Windows.Forms.Application.StartupPath;			
 #else
-			string pluginPath = System.Windows.Forms.Application.StartupPath;
+			string pluginPath = System.Windows.Forms.Application.StartupPath + "\\Plugins";
 #endif
 
 			AddToolPlugin(Assembly.GetExecutingAssembly());
@@ -230,10 +230,10 @@ namespace Serialcoder.MagicWords
 		{
 			m_Parameters = new List<Serialcoder.MagicWords.Interfaces.IParameter>();
 						
-#if Release
-			string pluginPath = System.Windows.Forms.Application.StartupPath + "\\Plugins";
+#if DEBUG
+			string pluginPath = System.Windows.Forms.Application.StartupPath;			
 #else
-			string pluginPath = System.Windows.Forms.Application.StartupPath;
+			string pluginPath = System.Windows.Forms.Application.StartupPath + "\\Plugins";
 #endif
 
 			// Load build in IParameter
