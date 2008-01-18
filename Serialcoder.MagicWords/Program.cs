@@ -16,10 +16,5 @@ namespace Serialcoder.MagicWords
 			MagicWordsApplicationContext applicationContext = new MagicWordsApplicationContext();
 			Application.Run(applicationContext);
 		}
-
-		
-		
-
-
 	}
 }

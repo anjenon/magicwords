@@ -31,7 +31,7 @@ namespace Serialcoder.MagicWords.TranslatorPlugin
 
 		string Serialcoder.MagicWords.Interfaces.ITool.Version
 		{
-			get { return "1.0"; }
+			get { return "1.1"; }
 		}
 
 		void Serialcoder.MagicWords.Interfaces.ITool.Initialize()
