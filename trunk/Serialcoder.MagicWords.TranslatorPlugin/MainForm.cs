@@ -60,7 +60,8 @@ namespace Serialcoder.MagicWords.TranslatorPlugin
 
 			string google = readHtmlPage("http://translate.google.com/translate_t", "text=" + input.Split('$')[1] + "&langpair=" + input.Split('$')[0] + "&ie=UTF8&oe=UTF8");
 
-			string regex = "<div id=result_box dir=ltr>([^/<]*)</div>";
+			//string regex = "<div id=result_box dir=ltr>([^/<]*)</div>";
+			string regex = "<div id=result_box dir=\"ltr\">([^/<]*)</div>";
 			System.Text.RegularExpressions.RegexOptions options = ((System.Text.RegularExpressions.RegexOptions.Singleline | System.Text.RegularExpressions.RegexOptions.Multiline) | System.Text.RegularExpressions.RegexOptions.IgnoreCase);
 			System.Text.RegularExpressions.Regex reg = new System.Text.RegularExpressions.Regex(regex, options);
 
