@@ -25,12 +25,22 @@ namespace Serialcoder.MagicWords.TranslatorPlugin
 		{
 			base.OnLoad(e);
 
+			textBox1.Focus();
 			
 			this.uxLpComboBox.ValueMember = "Code";
 			this.uxLpComboBox.DisplayMember = "Caption";
 			this.uxLpComboBox.DataSource = LanguagePair.GoogleLanguagePairs;
 
 			this.uxLpComboBox.DataBindings.Add("SelectedValue", Properties.Settings.Default, "SelectedLanguage", true, DataSourceUpdateMode.OnPropertyChanged);
+
+			textBox1.Focus();
+
+			string cbText = Clipboard.GetText();
+			if (!string.IsNullOrEmpty(cbText))
+			{
+				textBox1.Text = cbText;
+			}
+
 		}
 
 		protected override void OnFormClosing(FormClosingEventArgs e)

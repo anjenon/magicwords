@@ -35,16 +35,19 @@ namespace Serialcoder.MagicWords.Forms
 			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.uxAliasTextBox = new System.Windows.Forms.TextBox();
-			this.uxFilenameTextBox = new System.Windows.Forms.TextBox();
 			this.uxStartupModeComboBox = new System.Windows.Forms.ComboBox();
 			this.uxArgumentsTextBox = new System.Windows.Forms.TextBox();
 			this.uxNotesTextBox = new System.Windows.Forms.TextBox();
 			this.uxStartupPathTextBox = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.uxBrowseButton = new System.Windows.Forms.Button();
+			this.uxFilenameTextBox = new System.Windows.Forms.TextBox();
 			this.uxAcceptButton = new System.Windows.Forms.Button();
 			this.uxCancelButton = new System.Windows.Forms.Button();
 			this.label7 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel1.SuspendLayout();
+			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -59,12 +62,12 @@ namespace Serialcoder.MagicWords.Forms
 			this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
 			this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
 			this.tableLayoutPanel1.Controls.Add(this.uxAliasTextBox, 1, 0);
-			this.tableLayoutPanel1.Controls.Add(this.uxFilenameTextBox, 1, 1);
 			this.tableLayoutPanel1.Controls.Add(this.uxStartupModeComboBox, 1, 2);
 			this.tableLayoutPanel1.Controls.Add(this.uxArgumentsTextBox, 1, 4);
 			this.tableLayoutPanel1.Controls.Add(this.uxNotesTextBox, 1, 5);
 			this.tableLayoutPanel1.Controls.Add(this.uxStartupPathTextBox, 1, 3);
 			this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+			this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 1);
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.RowCount = 6;
@@ -129,14 +132,6 @@ namespace Serialcoder.MagicWords.Forms
 			this.uxAliasTextBox.Size = new System.Drawing.Size(342, 20);
 			this.uxAliasTextBox.TabIndex = 0;
 			// 
-			// uxFilenameTextBox
-			// 
-			this.uxFilenameTextBox.Location = new System.Drawing.Point(123, 28);
-			this.uxFilenameTextBox.Name = "uxFilenameTextBox";
-			this.uxFilenameTextBox.Size = new System.Drawing.Size(342, 20);
-			this.uxFilenameTextBox.TabIndex = 1;
-			this.uxFilenameTextBox.DoubleClick += new System.EventHandler(this.OnFilenameTextBoxDoubleClick);
-			// 
 			// uxStartupModeComboBox
 			// 
 			this.uxStartupModeComboBox.FormattingEnabled = true;
@@ -151,7 +146,7 @@ namespace Serialcoder.MagicWords.Forms
 			this.uxArgumentsTextBox.Location = new System.Drawing.Point(123, 103);
 			this.uxArgumentsTextBox.Name = "uxArgumentsTextBox";
 			this.uxArgumentsTextBox.Size = new System.Drawing.Size(342, 20);
-			this.uxArgumentsTextBox.TabIndex = 5;
+			this.uxArgumentsTextBox.TabIndex = 4;
 			// 
 			// uxNotesTextBox
 			// 
@@ -159,7 +154,7 @@ namespace Serialcoder.MagicWords.Forms
 			this.uxNotesTextBox.Multiline = true;
 			this.uxNotesTextBox.Name = "uxNotesTextBox";
 			this.uxNotesTextBox.Size = new System.Drawing.Size(342, 51);
-			this.uxNotesTextBox.TabIndex = 4;
+			this.uxNotesTextBox.TabIndex = 5;
 			// 
 			// uxStartupPathTextBox
 			// 
@@ -178,6 +173,37 @@ namespace Serialcoder.MagicWords.Forms
 			this.label1.Text = "Magic word :";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
+			// panel1
+			// 
+			this.panel1.Controls.Add(this.uxBrowseButton);
+			this.panel1.Controls.Add(this.uxFilenameTextBox);
+			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel1.Location = new System.Drawing.Point(120, 25);
+			this.panel1.Margin = new System.Windows.Forms.Padding(0);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(348, 25);
+			this.panel1.TabIndex = 1;
+			// 
+			// uxBrowseButton
+			// 
+			this.uxBrowseButton.Location = new System.Drawing.Point(320, 3);
+			this.uxBrowseButton.Name = "uxBrowseButton";
+			this.uxBrowseButton.Size = new System.Drawing.Size(25, 19);
+			this.uxBrowseButton.TabIndex = 0;
+			this.uxBrowseButton.Text = "...";
+			this.uxBrowseButton.UseVisualStyleBackColor = true;
+			this.uxBrowseButton.Click += new System.EventHandler(this.OnFilenameTextBoxDoubleClick);
+			// 
+			// uxFilenameTextBox
+			// 
+			this.uxFilenameTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+			this.uxFilenameTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.AllSystemSources;
+			this.uxFilenameTextBox.Location = new System.Drawing.Point(3, 3);
+			this.uxFilenameTextBox.Name = "uxFilenameTextBox";
+			this.uxFilenameTextBox.Size = new System.Drawing.Size(311, 20);
+			this.uxFilenameTextBox.TabIndex = 1;
+			this.uxFilenameTextBox.DoubleClick += new System.EventHandler(this.OnFilenameTextBoxDoubleClick);
+			// 
 			// uxAcceptButton
 			// 
 			this.uxAcceptButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -185,7 +211,7 @@ namespace Serialcoder.MagicWords.Forms
 			this.uxAcceptButton.Location = new System.Drawing.Point(324, 199);
 			this.uxAcceptButton.Name = "uxAcceptButton";
 			this.uxAcceptButton.Size = new System.Drawing.Size(75, 23);
-			this.uxAcceptButton.TabIndex = 4;
+			this.uxAcceptButton.TabIndex = 0;
 			this.uxAcceptButton.Text = "&OK";
 			this.uxAcceptButton.UseVisualStyleBackColor = true;
 			// 
@@ -196,7 +222,7 @@ namespace Serialcoder.MagicWords.Forms
 			this.uxCancelButton.Location = new System.Drawing.Point(405, 200);
 			this.uxCancelButton.Name = "uxCancelButton";
 			this.uxCancelButton.Size = new System.Drawing.Size(75, 23);
-			this.uxCancelButton.TabIndex = 3;
+			this.uxCancelButton.TabIndex = 1;
 			this.uxCancelButton.Text = "&Cancel";
 			this.uxCancelButton.UseVisualStyleBackColor = true;
 			// 
@@ -206,7 +232,7 @@ namespace Serialcoder.MagicWords.Forms
 			this.label7.Location = new System.Drawing.Point(12, 197);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(255, 13);
-			this.label7.TabIndex = 5;
+			this.label7.TabIndex = 2;
 			this.label7.Text = "(*) Double click on textboxes to open the file selector";
 			// 
 			// MagicWordForm
@@ -226,6 +252,8 @@ namespace Serialcoder.MagicWords.Forms
 			this.Text = "MagicWord editor";
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.tableLayoutPanel1.PerformLayout();
+			this.panel1.ResumeLayout(false);
+			this.panel1.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -249,5 +277,7 @@ namespace Serialcoder.MagicWords.Forms
 		private System.Windows.Forms.Button uxAcceptButton;
 		private System.Windows.Forms.Button uxCancelButton;
 		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Button uxBrowseButton;
 	}
 }

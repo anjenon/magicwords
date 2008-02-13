@@ -277,8 +277,8 @@ namespace Serialcoder.MagicWords
 			m_MagicWords.Add(word1);
 
 			MagicWord word2 = new MagicWord();
-			word2.Alias = "torrentspy";
-			word2.FileName = @"http://www.torrentspy.com/search?query=$W$&submit.x=0&submit.y=0";
+			word2.Alias = "btjunkie";
+			word2.FileName = @"http://btjunkie.org/search?q=$W$";
 			word2.Arguments = "";
 			m_MagicWords.Add(word2);
 		}
@@ -461,7 +461,14 @@ namespace Serialcoder.MagicWords
 
 			if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK && m_MagicWords.Contains(word) == false)
 			{
-				m_MagicWords.Add(word);
+				if (m_MagicWords.Contains(word) == false)
+				{
+					m_MagicWords.Add(word);
+					Forms.LauncherForm.Current.UpdateAutoCompletion();
+				}
+
+				Context.Current.SaveMagicWords();
+				Properties.Settings.Default.Save();
 			}
 		}
 

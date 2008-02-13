@@ -34,6 +34,8 @@ namespace Serialcoder.MagicWords.Forms
 			uxArgumentsTextBox.DataBindings.Add("Text", MagicWord, "Arguments", false, DataSourceUpdateMode.OnPropertyChanged);
 			uxNotesTextBox.DataBindings.Add("Text", MagicWord, "Notes", false, DataSourceUpdateMode.OnPropertyChanged);
 			uxStartupPathTextBox.DataBindings.Add("Text", MagicWord, "WorkingDirectory", false, DataSourceUpdateMode.OnPropertyChanged);
+
+			uxAliasTextBox.Focus();
 		}
 
 		private void uxStartupModeComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -49,6 +51,11 @@ namespace Serialcoder.MagicWords.Forms
 			if (dialog.ShowDialog() == DialogResult.OK)
 			{
 				uxFilenameTextBox.Text = dialog.FileName;
+
+				//if (string.IsNullOrEmpty( uxStartupPathTextBox.Text) && System.IO.File.Exists(dialog.FileName))
+				//{
+				//    uxStartupPathTextBox.Text = System.IO.Path.GetDirectoryName(uxStartupPathTextBox.Text);
+				//}
 			}
 		}
 

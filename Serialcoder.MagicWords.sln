@@ -14,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{DE70
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialcoder.MagicWords.AlarmPlugin", "Serialcoder.MagicWords.AlarmPlugin\Serialcoder.MagicWords.AlarmPlugin.csproj", "{E919E91D-3AD8-4EB6-9FAA-CE13C3279EDD}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MagicWordSetup", "MagicWordSetup\MagicWordSetup.vdproj", "{E4559E34-B5DE-4997-873D-A798AF391A02}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MagicWordsSetup", "MagicWordsSetup\MagicWordsSetup.vdproj", "{E4559E34-B5DE-4997-873D-A798AF391A02}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
