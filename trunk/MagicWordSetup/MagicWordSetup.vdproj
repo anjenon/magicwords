@@ -76,6 +76,12 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_4C8E169B2D4F4E70B46AEDB2855C2F12"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_1C385E54FEF2404BA0ADDF43F308D3BC"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -103,12 +109,6 @@
         "OwnerKey" = "8:_39F106AABFDC2928B614610D5EA45403"
         "MsmSig" = "8:_UNDEFINED"
         }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_4C8E169B2D4F4E70B46AEDB2855C2F12"
-        "MsmSig" = "8:_UNDEFINED"
-        }
     }
     "Configurations"
     {
@@ -127,6 +127,17 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                }
+            }
         }
         "Release"
         {
@@ -143,6 +154,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Net.Framework.2.0"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 2.0"
+                    "ProductCode" = "8:Microsoft.Net.Framework.2.0"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -176,7 +203,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Serialcoder.MagicWords.TranslatorPlugin, Version=1.0.2743.15395, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Serialcoder.MagicWords.TranslatorPlugin, Version=1.0.2965.16506, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_1C385E54FEF2404BA0ADDF43F308D3BC"
@@ -188,7 +215,7 @@
             "SourcePath" = "8:Serialcoder.MagicWords.TranslatorPlugin.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_C3762D69C6674629B57FC3D9C119B8D0"
+            "Folder" = "8:_A5874F6BD7F7462698DFBE64E0385E47"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -238,7 +265,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Serialcoder.MagicWords.ScreenShotPlugin, Version=1.0.2743.15395, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Serialcoder.MagicWords.ScreenShotPlugin, Version=1.0.2965.16506, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_4AEA7BCA66D8789F54EE5200CC721CED"
@@ -250,7 +277,7 @@
             "SourcePath" = "8:Serialcoder.MagicWords.ScreenShotPlugin.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_C3762D69C6674629B57FC3D9C119B8D0"
+            "Folder" = "8:_A5874F6BD7F7462698DFBE64E0385E47"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -269,7 +296,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Serialcoder.MagicWords.ScratchPadPlugin, Version=1.0.2743.15395, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Serialcoder.MagicWords.ScratchPadPlugin, Version=1.0.2965.16506, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_8BE9BE4F162408216DCDF75476857604"
@@ -281,7 +308,7 @@
             "SourcePath" = "8:Serialcoder.MagicWords.ScratchPadPlugin.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_C3762D69C6674629B57FC3D9C119B8D0"
+            "Folder" = "8:_A5874F6BD7F7462698DFBE64E0385E47"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -300,7 +327,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Serialcoder.MagicWords.AlarmPlugin, Version=1.0.2743.15395, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Serialcoder.MagicWords.AlarmPlugin, Version=1.0.2965.16506, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_A68FE669FDA880428EF3CC5B3EFF5308"
@@ -312,7 +339,7 @@
             "SourcePath" = "8:Serialcoder.MagicWords.AlarmPlugin.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_C3762D69C6674629B57FC3D9C119B8D0"
+            "Folder" = "8:_A5874F6BD7F7462698DFBE64E0385E47"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -354,6 +381,17 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_A5874F6BD7F7462698DFBE64E0385E47"
+                    {
+                    "Name" = "8:Plugins"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_181FA30DBBB54B0E968A68CC49CA3BF4"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_D4D47E1EDF684BBEA9A8BD9FFEF4349B"
@@ -383,7 +421,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:MagicWord"
         "ProductCode" = "8:{2688DBE7-35AC-4CD6-88C1-6D21738C773D}"
-        "PackageCode" = "8:{5527B58A-1D16-4B9F-A14B-18DCBEB39C5E}"
+        "PackageCode" = "8:{82E5F825-D900-4B8C-A42B-818FCCFC0084}"
         "UpgradeCode" = "8:{35AFF303-ABDD-4344-8390-8A1A32352F8B}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
