@@ -51,6 +51,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_3F9942FC284F4B8C9EEA9993C32C937A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_4AEA7BCA66D8789F54EE5200CC721CED"
         "OwnerKey" = "8:_4C8E169B2D4F4E70B46AEDB2855C2F12"
         "MsmSig" = "8:_UNDEFINED"
@@ -203,7 +209,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Serialcoder.MagicWords.TranslatorPlugin, Version=1.0.2965.16506, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Serialcoder.MagicWords.TranslatorPlugin, Version=1.0.2965.17045, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_1C385E54FEF2404BA0ADDF43F308D3BC"
@@ -261,11 +267,31 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3F9942FC284F4B8C9EEA9993C32C937A"
+            {
+            "SourcePath" = "8:..\\Serialcoder.MagicWords\\App.ico"
+            "TargetName" = "8:App.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_C3762D69C6674629B57FC3D9C119B8D0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4AEA7BCA66D8789F54EE5200CC721CED"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Serialcoder.MagicWords.ScreenShotPlugin, Version=1.0.2965.16506, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Serialcoder.MagicWords.ScreenShotPlugin, Version=1.0.2965.17045, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_4AEA7BCA66D8789F54EE5200CC721CED"
@@ -296,7 +322,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Serialcoder.MagicWords.ScratchPadPlugin, Version=1.0.2965.16506, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Serialcoder.MagicWords.ScratchPadPlugin, Version=1.0.2965.17045, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_8BE9BE4F162408216DCDF75476857604"
@@ -327,7 +353,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Serialcoder.MagicWords.AlarmPlugin, Version=1.0.2965.16506, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Serialcoder.MagicWords.AlarmPlugin, Version=1.0.2965.17045, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_A68FE669FDA880428EF3CC5B3EFF5308"
@@ -420,14 +446,14 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:MagicWord"
-        "ProductCode" = "8:{2688DBE7-35AC-4CD6-88C1-6D21738C773D}"
-        "PackageCode" = "8:{82E5F825-D900-4B8C-A42B-818FCCFC0084}"
+        "ProductCode" = "8:{362C2031-92BE-4211-A39C-AA6935C375D4}"
+        "PackageCode" = "8:{354E192A-156B-4921-B798-995A39CA1BD3}"
         "UpgradeCode" = "8:{35AFF303-ABDD-4344-8390-8A1A32352F8B}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.3.0"
+        "ProductVersion" = "8:1.4.0"
         "Manufacturer" = "8:Serialcoder"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://code.google.com/p/magicwords/"
@@ -437,7 +463,7 @@
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:Command line utility"
         "ARPURLINFOABOUT" = "8:http://www.serialcoder.net"
-        "ARPPRODUCTICON" = "8:"
+        "ARPPRODUCTICON" = "8:_3F9942FC284F4B8C9EEA9993C32C937A"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -551,7 +577,7 @@
             "Target" = "8:_4C8E169B2D4F4E70B46AEDB2855C2F12"
             "Folder" = "8:_00694D1BD96E496FB1B59AEF527265C6"
             "WorkingFolder" = "8:_C3762D69C6674629B57FC3D9C119B8D0"
-            "Icon" = "8:"
+            "Icon" = "8:_3F9942FC284F4B8C9EEA9993C32C937A"
             "Feature" = "8:"
             }
         }
