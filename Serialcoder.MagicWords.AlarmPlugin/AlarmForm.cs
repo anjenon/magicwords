@@ -69,5 +69,10 @@ namespace Serialcoder.MagicWords.AlarmPlugin
 		}
 		#endregion
 
+		private void uxHideButton_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+		}
+
 	}
 }

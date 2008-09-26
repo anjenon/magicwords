@@ -1,5 +1,7 @@
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{DE70B1FA-500C-4B6E-9BEC-83DD1DD289B5}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialcoder.MagicWords", "Serialcoder.MagicWords\Serialcoder.MagicWords.csproj", "{6F67CAF3-C557-4BEF-B233-FFB4E7C0C8BA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialcoder.MagicWords.Framework", "Serialcoder.MagicWords.Framework\Serialcoder.MagicWords.Framework.csproj", "{1AEF87B4-B549-4408-BBF2-9BC76B9A5121}"
@@ -10,11 +12,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialcoder.MagicWords.Scra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialcoder.MagicWords.TranslatorPlugin", "Serialcoder.MagicWords.TranslatorPlugin\Serialcoder.MagicWords.TranslatorPlugin.csproj", "{250E1A7A-8FC0-4178-A402-9D7D1743AC64}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{DE70B1FA-500C-4B6E-9BEC-83DD1DD289B5}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialcoder.MagicWords.AlarmPlugin", "Serialcoder.MagicWords.AlarmPlugin\Serialcoder.MagicWords.AlarmPlugin.csproj", "{E919E91D-3AD8-4EB6-9FAA-CE13C3279EDD}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MagicWordsSetup", "MagicWordsSetup\MagicWordsSetup.vdproj", "{E4559E34-B5DE-4997-873D-A798AF391A02}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MagicWordSetup", "MagicWordsSetup\MagicWordsSetup.vdproj", "{E4559E34-B5DE-4997-873D-A798AF391A02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialcoder.MagicWords.GuidPlugin", "Serialcoder.MagicWords.GuidPlugin\Serialcoder.MagicWords.GuidPlugin.csproj", "{B3DD740C-3345-4779-826B-5371FEE32B02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialcoder.MagicWords.MultiScreenPlugin", "Serialcoder.MagicWords.MultiScreenPlugin\Serialcoder.MagicWords.MultiScreenPlugin.csproj", "{BABF9348-20D4-46B5-A58A-E982DD3A08CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,14 +52,24 @@ Global
 		{E919E91D-3AD8-4EB6-9FAA-CE13C3279EDD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E4559E34-B5DE-4997-873D-A798AF391A02}.Debug|Any CPU.ActiveCfg = Debug
 		{E4559E34-B5DE-4997-873D-A798AF391A02}.Release|Any CPU.ActiveCfg = Release
+		{B3DD740C-3345-4779-826B-5371FEE32B02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3DD740C-3345-4779-826B-5371FEE32B02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3DD740C-3345-4779-826B-5371FEE32B02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3DD740C-3345-4779-826B-5371FEE32B02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BABF9348-20D4-46B5-A58A-E982DD3A08CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BABF9348-20D4-46B5-A58A-E982DD3A08CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BABF9348-20D4-46B5-A58A-E982DD3A08CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BABF9348-20D4-46B5-A58A-E982DD3A08CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{58E14687-40F2-43E2-93BB-B02A6BF90DCD} = {DE70B1FA-500C-4B6E-9BEC-83DD1DD289B5}
 		{14A071EC-3269-4E2B-9A1A-5EC9789CE924} = {DE70B1FA-500C-4B6E-9BEC-83DD1DD289B5}
 		{250E1A7A-8FC0-4178-A402-9D7D1743AC64} = {DE70B1FA-500C-4B6E-9BEC-83DD1DD289B5}
-		{58E14687-40F2-43E2-93BB-B02A6BF90DCD} = {DE70B1FA-500C-4B6E-9BEC-83DD1DD289B5}
 		{E919E91D-3AD8-4EB6-9FAA-CE13C3279EDD} = {DE70B1FA-500C-4B6E-9BEC-83DD1DD289B5}
+		{B3DD740C-3345-4779-826B-5371FEE32B02} = {DE70B1FA-500C-4B6E-9BEC-83DD1DD289B5}
+		{BABF9348-20D4-46B5-A58A-E982DD3A08CE} = {DE70B1FA-500C-4B6E-9BEC-83DD1DD289B5}
 	EndGlobalSection
 EndGlobal

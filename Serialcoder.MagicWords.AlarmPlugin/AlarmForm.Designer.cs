@@ -32,6 +32,8 @@ namespace Serialcoder.MagicWords.AlarmPlugin
 			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
 			this.button1 = new System.Windows.Forms.Button();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
+			this.uxCancelButton = new System.Windows.Forms.Button();
+			this.uxHideButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// dateTimePicker1
@@ -57,11 +59,33 @@ namespace Serialcoder.MagicWords.AlarmPlugin
 			this.timer1.Interval = 1000;
 			this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
 			// 
+			// uxCancelButton
+			// 
+			this.uxCancelButton.Location = new System.Drawing.Point(190, 12);
+			this.uxCancelButton.Name = "uxCancelButton";
+			this.uxCancelButton.Size = new System.Drawing.Size(75, 23);
+			this.uxCancelButton.TabIndex = 2;
+			this.uxCancelButton.Text = "&Cancel";
+			this.uxCancelButton.UseVisualStyleBackColor = true;
+			// 
+			// uxHideButton
+			// 
+			this.uxHideButton.Location = new System.Drawing.Point(12, 119);
+			this.uxHideButton.Name = "uxHideButton";
+			this.uxHideButton.Size = new System.Drawing.Size(75, 23);
+			this.uxHideButton.TabIndex = 2;
+			this.uxHideButton.Text = "&Hide";
+			this.uxHideButton.UseVisualStyleBackColor = true;
+			this.uxHideButton.Click += new System.EventHandler(this.uxHideButton_Click);
+			// 
 			// AlarmForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(208, 65);
+			this.ClientSize = new System.Drawing.Size(272, 154);
+			this.ControlBox = false;
+			this.Controls.Add(this.uxHideButton);
+			this.Controls.Add(this.uxCancelButton);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.dateTimePicker1);
 			this.Name = "AlarmForm";
@@ -75,5 +99,7 @@ namespace Serialcoder.MagicWords.AlarmPlugin
 		private System.Windows.Forms.DateTimePicker dateTimePicker1;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Timer timer1;
+		private System.Windows.Forms.Button uxCancelButton;
+		private System.Windows.Forms.Button uxHideButton;
 	}
 }

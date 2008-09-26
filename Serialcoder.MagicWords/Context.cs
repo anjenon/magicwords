@@ -122,7 +122,7 @@ namespace Serialcoder.MagicWords
 
 		public void Start(string alias)
 		{
-			switch (alias)
+			switch (alias.ToLower())
 			{
 				case "exit":
 					Exit();
@@ -149,7 +149,7 @@ namespace Serialcoder.MagicWords
 
 			foreach (Interfaces.ITool tool in m_Tools)
 			{
-				if (tool.Alias.Equals(alias))
+				if (tool.Alias.Equals(alias, StringComparison.InvariantCultureIgnoreCase))
 				{
 					tool.Execute(null);
 					return;
@@ -158,7 +158,7 @@ namespace Serialcoder.MagicWords
 
 			foreach (MagicWord word in m_MagicWords)
 			{
-				if (word.Alias.Equals(alias))
+				if (word.Alias.Equals(alias, StringComparison.InvariantCultureIgnoreCase))
 				{
 					Execute(word);
 					return;
