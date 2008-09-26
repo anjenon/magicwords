@@ -330,5 +330,17 @@ namespace Serialcoder.MagicWords.Components
 		//[DllImport("user32.dll", CharSet = CharSet.Auto)]
 		//public static extern int SendMessage(IntPtr hWnd,
 		//    int msg, int wParam, int lParam);
+
+		[DllImport("user32.dll")]
+		public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
+
+		public const UInt32 SWP_SHOWWINDOW = 0x0040;
+		public static readonly IntPtr HWND_TOP = new IntPtr(0);
+
+		[DllImport("user32.dll")]
+		public static extern bool MoveWindow(IntPtr hWnd, int X, int Y, int nWidth, int nHeight, bool bRepaint);
+
+		[DllImport("user32.dll")]
+		public static extern bool UpdateWindow(IntPtr hWnd);
 	}
 }
