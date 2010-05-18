@@ -4,7 +4,7 @@ using System.Collections;
 using System.Diagnostics;
 using System.Windows.Forms;
 
-namespace Serialcoder.MagicWords.Components
+namespace JRoland.MagicWords.Components
 {
 	/// <summary>
 	/// Handles a System Hotkey

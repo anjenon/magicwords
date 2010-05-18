@@ -1,4 +1,4 @@
-namespace Serialcoder.MagicWords.ScratchPadPlugin
+namespace JRoland.MagicWords.ScratchPadPlugin
 {
 	partial class ScratchPad
 	{

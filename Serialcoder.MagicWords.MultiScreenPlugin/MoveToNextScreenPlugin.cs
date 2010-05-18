@@ -6,9 +6,9 @@ using System.Windows.Forms;
 using System.ComponentModel;
 using System.Diagnostics;
 
-namespace Serialcoder.MagicWords.MultiScreenPlugin
+namespace JRoland.MagicWords.MultiScreenPlugin
 {
-	class MoveToNextScreenPlugin : Serialcoder.MagicWords.Interfaces.ITool
+	class MoveToNextScreenPlugin : JRoland.MagicWords.Interfaces.ITool
 	{
 		private string m_Alias;
 		private Shortcut m_HotKey;
@@ -21,32 +21,32 @@ namespace Serialcoder.MagicWords.MultiScreenPlugin
 
 		#region ITool Members
 
-		string Serialcoder.MagicWords.Interfaces.ITool.Name
+		string JRoland.MagicWords.Interfaces.ITool.Name
 		{
 			get { return "Move current application to next screen"; }
 		}
 
-		string Serialcoder.MagicWords.Interfaces.ITool.Description
+		string JRoland.MagicWords.Interfaces.ITool.Description
 		{
 			get { return "Move the current application to the next screen"; }
 		}
 
-		string Serialcoder.MagicWords.Interfaces.ITool.Author
+		string JRoland.MagicWords.Interfaces.ITool.Author
 		{
 			get { return "John Roland"; }
 		}
 
-		string Serialcoder.MagicWords.Interfaces.ITool.Version
+		string JRoland.MagicWords.Interfaces.ITool.Version
 		{
 			get { return "1.0"; }
 		}
 
-		void Serialcoder.MagicWords.Interfaces.ITool.Initialize()
+		void JRoland.MagicWords.Interfaces.ITool.Initialize()
 		{
 			
 		}
 
-		void Serialcoder.MagicWords.Interfaces.ITool.Execute(string[] args)
+		void JRoland.MagicWords.Interfaces.ITool.Execute(string[] args)
 		{
 			ToggleScreen();
 		}
@@ -55,9 +55,9 @@ namespace Serialcoder.MagicWords.MultiScreenPlugin
 		{
 			if (Screen.AllScreens.Length > 1)
 			{
-				//IntPtr hwnd = (IntPtr)Serialcoder.MagicWords.Components.NativeWIN32.GetForegroundWindow();
+				//IntPtr hwnd = (IntPtr)JRoland.MagicWords.Components.NativeWIN32.GetForegroundWindow();
 
-				Process process = Serialcoder.MagicWords.Components.NativeWIN32.GetFocusedProcess();
+				Process process = JRoland.MagicWords.Components.NativeWIN32.GetFocusedProcess();
 				IntPtr hwnd = process.MainWindowHandle;
 
 
@@ -75,15 +75,15 @@ namespace Serialcoder.MagicWords.MultiScreenPlugin
 				int newScreenIndex = (currentScreenIndex + 1) % Screen.AllScreens.Length;
 				Screen screen = Screen.AllScreens[newScreenIndex];
 				
-				//Serialcoder.MagicWords.Components.NativeWIN32.SetWindowPos(hwnd, Serialcoder.MagicWords.Components.NativeWIN32.HWND_TOP, screen.WorkingArea.X, screen.WorkingArea.Y, screen.WorkingArea.Width, screen.WorkingArea.Height, Serialcoder.MagicWords.Components.NativeWIN32.SWP_SHOWWINDOW);
+				//JRoland.MagicWords.Components.NativeWIN32.SetWindowPos(hwnd, JRoland.MagicWords.Components.NativeWIN32.HWND_TOP, screen.WorkingArea.X, screen.WorkingArea.Y, screen.WorkingArea.Width, screen.WorkingArea.Height, JRoland.MagicWords.Components.NativeWIN32.SWP_SHOWWINDOW);
 
-				Serialcoder.MagicWords.Components.NativeWIN32.MoveWindow(hwnd, screen.WorkingArea.X, screen.WorkingArea.Y, screen.WorkingArea.Width, screen.WorkingArea.Height, true);
-				Serialcoder.MagicWords.Components.NativeWIN32.UpdateWindow(hwnd);
+				JRoland.MagicWords.Components.NativeWIN32.MoveWindow(hwnd, screen.WorkingArea.X, screen.WorkingArea.Y, screen.WorkingArea.Width, screen.WorkingArea.Height, true);
+				JRoland.MagicWords.Components.NativeWIN32.UpdateWindow(hwnd);
 			}
 		}
 
 		[Editor(@"System.Windows.Forms.Design.ShortcutKeysEditor, System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))]
-		Shortcut Serialcoder.MagicWords.Interfaces.ITool.HotKey
+		Shortcut JRoland.MagicWords.Interfaces.ITool.HotKey
 		{
 			get
 			{
@@ -95,7 +95,7 @@ namespace Serialcoder.MagicWords.MultiScreenPlugin
 			}
 		}
 
-		string Serialcoder.MagicWords.Interfaces.ITool.Alias
+		string JRoland.MagicWords.Interfaces.ITool.Alias
 		{
 			get
 			{

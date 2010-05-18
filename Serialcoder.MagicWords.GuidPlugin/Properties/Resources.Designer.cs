@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Serialcoder.MagicWords.GuidPlugin.Properties
+namespace JRoland.MagicWords.GuidPlugin.Properties
 {
 
 
@@ -44,7 +44,7 @@ namespace Serialcoder.MagicWords.GuidPlugin.Properties
 			{
 				if ((resourceMan == null))
 				{
-					global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Serialcoder.MagicWords.GuidPlugin.Properties.Resources", typeof(Resources).Assembly);
+					global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("JRoland.MagicWords.GuidPlugin.Properties.Resources", typeof(Resources).Assembly);
 					resourceMan = temp;
 				}
 				return resourceMan;

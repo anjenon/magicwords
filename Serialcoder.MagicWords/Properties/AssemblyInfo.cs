@@ -9,9 +9,9 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyTitle("MagicWords")]
 [assembly: AssemblyDescription("Improved floating command line utility for Windows")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Serialcoder")]
+[assembly: AssemblyCompany("JRoland")]
 [assembly: AssemblyProduct("MagicWords")]
-[assembly: AssemblyCopyright("Serialcoder 2007")]
+[assembly: AssemblyCopyright("JRoland 2007")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]		
 

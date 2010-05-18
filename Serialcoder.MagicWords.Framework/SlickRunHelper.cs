@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 
-namespace Serialcoder.MagicWords
+namespace JRoland.MagicWords
 {
 	/// <summary>
 	/// This class offers helper methods to interact with SlickRun files
@@ -18,13 +18,13 @@ namespace Serialcoder.MagicWords
 		public static List<Entities.MagicWord> ImportFile(string path)
 		{
 			// TODO validate that it is a qrs file
-			List<Entities.MagicWord> words = new List<Serialcoder.MagicWords.Entities.MagicWord>();
+			List<Entities.MagicWord> words = new List<JRoland.MagicWords.Entities.MagicWord>();
 
 			StreamReader reader = File.OpenText(path);
 
 			while (!reader.EndOfStream)
 			{
-				Entities.MagicWord word = new Serialcoder.MagicWords.Entities.MagicWord();
+				Entities.MagicWord word = new JRoland.MagicWords.Entities.MagicWord();
 
 				string aliasLine = reader.ReadLine();
 				word.Alias = aliasLine.Substring(1, aliasLine.Length - 2);

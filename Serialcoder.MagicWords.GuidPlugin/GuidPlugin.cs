@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Serialcoder.MagicWords.GuidPlugin
+namespace JRoland.MagicWords.GuidPlugin
 {
-	public class GuidPlugin : Serialcoder.MagicWords.Interfaces.ITool
+	public class GuidPlugin : JRoland.MagicWords.Interfaces.ITool
 	{
 		private string m_Alias;
 		private Shortcut m_HotKey;
@@ -19,37 +19,37 @@ namespace Serialcoder.MagicWords.GuidPlugin
 
 		#region ITool Members
 
-		string Serialcoder.MagicWords.Interfaces.ITool.Name
+		string JRoland.MagicWords.Interfaces.ITool.Name
 		{
 			get { return "Générateur Guid"; }
 		}
 
-		string Serialcoder.MagicWords.Interfaces.ITool.Description
+		string JRoland.MagicWords.Interfaces.ITool.Description
 		{
 			get { return "Génère un identifiant unique Guid"; }
 		}
 
-		string Serialcoder.MagicWords.Interfaces.ITool.Author
+		string JRoland.MagicWords.Interfaces.ITool.Author
 		{
 			get { return "John Roland"; }
 		}
 
-		string Serialcoder.MagicWords.Interfaces.ITool.Version
+		string JRoland.MagicWords.Interfaces.ITool.Version
 		{
 			get { return "1.0"; }
 		}
 
-		void Serialcoder.MagicWords.Interfaces.ITool.Initialize()
+		void JRoland.MagicWords.Interfaces.ITool.Initialize()
 		{
 			
 		}
 
-		void Serialcoder.MagicWords.Interfaces.ITool.Execute(string[] args)
+		void JRoland.MagicWords.Interfaces.ITool.Execute(string[] args)
 		{
 			Clipboard.SetText(Guid.NewGuid().ToString());
 		}
 
-		System.Windows.Forms.Shortcut Serialcoder.MagicWords.Interfaces.ITool.HotKey
+		System.Windows.Forms.Shortcut JRoland.MagicWords.Interfaces.ITool.HotKey
 		{
 			get
 			{
@@ -61,7 +61,7 @@ namespace Serialcoder.MagicWords.GuidPlugin
 			}
 		}
 
-		string Serialcoder.MagicWords.Interfaces.ITool.Alias
+		string JRoland.MagicWords.Interfaces.ITool.Alias
 		{
 			get
 			{

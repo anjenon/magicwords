@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 using System.Drawing;
 #endregion
 
-namespace Serialcoder.MagicWords.ScreenShotPlugin
+namespace JRoland.MagicWords.ScreenShotPlugin
 {
 	/// <summary>
 	/// Helper class to do a screenshot of a specified window handle

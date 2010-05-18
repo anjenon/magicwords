@@ -6,7 +6,7 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Serialcoder.MagicWords.Controls
+namespace JRoland.MagicWords.Controls
 {
 	public partial class ListMagicWords : UserControl
 	{

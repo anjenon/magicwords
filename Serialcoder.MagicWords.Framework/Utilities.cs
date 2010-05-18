@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Serialcoder.MagicWords
+namespace JRoland.MagicWords
 {
 	/// <summary>
 	/// Exposes some usefull helpers. need to be sorted out.

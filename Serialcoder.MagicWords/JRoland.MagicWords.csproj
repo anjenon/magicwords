@@ -1,7 +1,7 @@
 ﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <ProjectType>Local</ProjectType>
-    <ProductVersion>8.0.50727</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{6F67CAF3-C557-4BEF-B233-FFB4E7C0C8BA}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -17,7 +17,7 @@
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
     <DelaySign>false</DelaySign>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Serialcoder.MagicWords</RootNamespace>
+    <RootNamespace>JRoland.MagicWords</RootNamespace>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <StartupObject>
     </StartupObject>
@@ -81,6 +81,7 @@
     <Reference Include="System.Data">
       <Name>System.Data</Name>
     </Reference>
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing">
       <Name>System.Drawing</Name>
     </Reference>
@@ -114,7 +115,7 @@
     <Compile Include="Parameters\ClipboardParameter.cs" />
     <Compile Include="Parameters\FilePathParameter.cs" />
     <Compile Include="Parameters\NonEncodedWordParameter.cs" />
-    <Compile Include="Parameters\SelectedTextParmater.cs" />
+    <Compile Include="Parameters\SelectedTextParameter.cs" />
     <Compile Include="Parameters\WordParameter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -197,9 +198,9 @@
       <Project>{E919E91D-3AD8-4EB6-9FAA-CE13C3279EDD}</Project>
       <Name>Serialcoder.MagicWords.AlarmPlugin</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Serialcoder.MagicWords.Framework\Serialcoder.MagicWords.Framework.csproj">
+    <ProjectReference Include="..\Serialcoder.MagicWords.Framework\JRoland.MagicWords.Framework.csproj">
       <Project>{1AEF87B4-B549-4408-BBF2-9BC76B9A5121}</Project>
-      <Name>Serialcoder.MagicWords.Framework</Name>
+      <Name>JRoland.MagicWords.Framework</Name>
     </ProjectReference>
     <ProjectReference Include="..\Serialcoder.MagicWords.ScratchPadPlugin\Serialcoder.MagicWords.ScratchPadPlugin.csproj">
       <Project>{14A071EC-3269-4E2B-9A1A-5EC9789CE924}</Project>
@@ -209,9 +210,9 @@
       <Project>{58E14687-40F2-43E2-93BB-B02A6BF90DCD}</Project>
       <Name>Serialcoder.MagicWords.ScreenShotPlugin</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Serialcoder.MagicWords.TranslatorPlugin\Serialcoder.MagicWords.TranslatorPlugin.csproj">
+    <ProjectReference Include="..\Serialcoder.MagicWords.TranslatorPlugin\JRoland.MagicWords.TranslatorPlugin.csproj">
       <Project>{250E1A7A-8FC0-4178-A402-9D7D1743AC64}</Project>
-      <Name>Serialcoder.MagicWords.TranslatorPlugin</Name>
+      <Name>JRoland.MagicWords.TranslatorPlugin</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

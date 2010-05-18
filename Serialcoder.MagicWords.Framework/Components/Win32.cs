@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Diagnostics;
 
-namespace Serialcoder.MagicWords.Components
+namespace JRoland.MagicWords.Components
 {
 	/// <summary>
 	/// Summary description for Win32.

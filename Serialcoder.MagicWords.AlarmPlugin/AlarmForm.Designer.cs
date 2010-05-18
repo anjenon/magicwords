@@ -1,4 +1,4 @@
-namespace Serialcoder.MagicWords.AlarmPlugin
+namespace JRoland.MagicWords.AlarmPlugin
 {
 	partial class AlarmForm
 	{

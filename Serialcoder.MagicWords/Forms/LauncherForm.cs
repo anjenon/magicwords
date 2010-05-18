@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Serialcoder.MagicWords.Forms
+namespace JRoland.MagicWords.Forms
 {
 	public partial class LauncherForm : Form
 	{
@@ -70,7 +70,7 @@ namespace Serialcoder.MagicWords.Forms
 			uxInputText.AutoCompleteSource = AutoCompleteSource.CustomSource;
 			AutoCompleteStringCollection sr = new AutoCompleteStringCollection();
 			sr.AddRange(Context.Current.AutoCompleteSource);
-
+            uxInputText.AutoCompleteCustomSource = null;
 			uxInputText.AutoCompleteCustomSource = sr;
 		}
 		
@@ -155,6 +155,11 @@ namespace Serialcoder.MagicWords.Forms
 			Context.Current.MagicWords.Sort(delegate(Entities.MagicWord w1, Entities.MagicWord w2) { return w1.Alias.CompareTo(w2.Alias); });
 			foreach (Entities.MagicWord word in Context.Current.MagicWords)
 			{
+                if (word.Kind!= JRoland.MagicWords.Entities.Kind.User)
+                {
+                    continue;
+                }
+
 				ToolStripMenuItem item = new ToolStripMenuItem(word.Alias);
 				item.Click += new EventHandler(delegate(object source, EventArgs args)
 				{

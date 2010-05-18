@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Serialcoder.MagicWords.MultiScreenPlugin")]
+[assembly: AssemblyTitle("JRoland.MagicWords.MultiScreenPlugin")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Serialcoder.MagicWords.MultiScreenPlugin")]
+[assembly: AssemblyProduct("JRoland.MagicWords.MultiScreenPlugin")]
 [assembly: AssemblyCopyright("Copyright ©  2008")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Serialcoder.MagicWords.ScreenShotPlugin")]
+[assembly: AssemblyTitle("JRoland.MagicWords.ScreenShotPlugin")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("XPSP2")]
-[assembly: AssemblyProduct("Serialcoder.MagicWords.ScreenShotPlugin")]
+[assembly: AssemblyProduct("JRoland.MagicWords.ScreenShotPlugin")]
 [assembly: AssemblyCopyright("Copyright © XPSP2 2007")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

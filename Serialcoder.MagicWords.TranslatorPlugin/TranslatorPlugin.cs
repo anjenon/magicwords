@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Serialcoder.MagicWords.TranslatorPlugin
+namespace JRoland.MagicWords.TranslatorPlugin
 {
 	public class TranslatorPlugin : Interfaces.ITool
 	{
@@ -14,32 +14,32 @@ namespace Serialcoder.MagicWords.TranslatorPlugin
 
 		#region ITool Members
 
-		string Serialcoder.MagicWords.Interfaces.ITool.Name
+		string JRoland.MagicWords.Interfaces.ITool.Name
 		{
 			get { return "Translator plugin"; }
 		}
 
-		string Serialcoder.MagicWords.Interfaces.ITool.Description
+		string JRoland.MagicWords.Interfaces.ITool.Description
 		{
 			get { return "This is a Google Translator wrapper"; }
 		}
 
-		string Serialcoder.MagicWords.Interfaces.ITool.Author
+		string JRoland.MagicWords.Interfaces.ITool.Author
 		{
 			get { return "John Roland"; }
 		}
 
-		string Serialcoder.MagicWords.Interfaces.ITool.Version
+		string JRoland.MagicWords.Interfaces.ITool.Version
 		{
 			get { return "1.1"; }
 		}
 
-		void Serialcoder.MagicWords.Interfaces.ITool.Initialize()
+		void JRoland.MagicWords.Interfaces.ITool.Initialize()
 		{
 			//
 		}
 
-		void Serialcoder.MagicWords.Interfaces.ITool.Execute(string[] args)
+		void JRoland.MagicWords.Interfaces.ITool.Execute(string[] args)
 		{
 			MainForm form = new MainForm();
 			form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -48,7 +48,7 @@ namespace Serialcoder.MagicWords.TranslatorPlugin
 			form.ShowDialog();
 		}
 
-		System.Windows.Forms.Shortcut Serialcoder.MagicWords.Interfaces.ITool.HotKey
+		System.Windows.Forms.Shortcut JRoland.MagicWords.Interfaces.ITool.HotKey
 		{
 			get
 			{
@@ -63,7 +63,7 @@ namespace Serialcoder.MagicWords.TranslatorPlugin
 		private string m_Alias;
 		private System.Windows.Forms.Shortcut m_Hotkey;
 
-		string Serialcoder.MagicWords.Interfaces.ITool.Alias
+		string JRoland.MagicWords.Interfaces.ITool.Alias
 		{
 			get
 			{

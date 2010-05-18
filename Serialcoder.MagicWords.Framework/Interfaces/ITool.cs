@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
 
-namespace Serialcoder.MagicWords.Interfaces
+namespace JRoland.MagicWords.Interfaces
 {
 	public interface ITool
 	{

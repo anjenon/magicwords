@@ -1,4 +1,4 @@
-namespace Serialcoder.MagicWords.Forms
+namespace JRoland.MagicWords.Forms
 {
 	partial class DynamicInput
 	{
