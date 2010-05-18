@@ -1,4 +1,4 @@
-namespace Serialcoder.MagicWords.Forms
+namespace JRoland.MagicWords.Forms
 {
 	partial class LauncherForm
 	{
@@ -44,13 +44,13 @@ namespace Serialcoder.MagicWords.Forms
 			// 
 			// uxInputText
 			// 
-			this.uxInputText.BackColor = global::Serialcoder.MagicWords.Properties.Settings.Default.Backcolor;
+			this.uxInputText.BackColor = global::JRoland.MagicWords.Properties.Settings.Default.Backcolor;
 			this.uxInputText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.uxInputText.ContextMenuStrip = this.uxInputContextMenuStrip;
-			this.uxInputText.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::Serialcoder.MagicWords.Properties.Settings.Default, "ForeColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.uxInputText.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::Serialcoder.MagicWords.Properties.Settings.Default, "Backcolor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.uxInputText.DataBindings.Add(new System.Windows.Forms.Binding("ForeColor", global::JRoland.MagicWords.Properties.Settings.Default, "ForeColor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.uxInputText.DataBindings.Add(new System.Windows.Forms.Binding("BackColor", global::JRoland.MagicWords.Properties.Settings.Default, "Backcolor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.uxInputText.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.uxInputText.ForeColor = global::Serialcoder.MagicWords.Properties.Settings.Default.ForeColor;
+			this.uxInputText.ForeColor = global::JRoland.MagicWords.Properties.Settings.Default.ForeColor;
 			this.uxInputText.Location = new System.Drawing.Point(0, 0);
 			this.uxInputText.Margin = new System.Windows.Forms.Padding(0);
 			this.uxInputText.Name = "uxInputText";
@@ -132,11 +132,11 @@ namespace Serialcoder.MagicWords.Forms
 			this.ContextMenuStrip = this.uxInputContextMenuStrip;
 			this.ControlBox = false;
 			this.Controls.Add(this.uxInputText);
-			this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Serialcoder.MagicWords.Properties.Settings.Default, "Position", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::JRoland.MagicWords.Properties.Settings.Default, "Position", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.ForeColor = System.Drawing.Color.White;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-			this.Location = global::Serialcoder.MagicWords.Properties.Settings.Default.Position;
+			this.Location = global::JRoland.MagicWords.Properties.Settings.Default.Position;
 			this.Name = "LauncherForm";
 			this.ShowIcon = false;
 			this.ShowInTaskbar = false;

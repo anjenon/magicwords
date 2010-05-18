@@ -3,10 +3,10 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Diagnostics;
 
-using Serialcoder.MagicWords.Forms;
-using Serialcoder.MagicWords.Components;
+using JRoland.MagicWords.Forms;
+using JRoland.MagicWords.Components;
 
-namespace Serialcoder.MagicWords
+namespace JRoland.MagicWords
 {
 	/// <summary>
 	/// CalendarApplicationContext.

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Serialcoder.MagicWords.Interfaces
+namespace JRoland.MagicWords.Interfaces
 {
 	public interface IParameter
 	{

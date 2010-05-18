@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Serialcoder.MagicWords.ScratchPadPlugin
+namespace JRoland.MagicWords.ScratchPadPlugin
 {
 	public partial class ScratchPad : Form
 	{

@@ -4,7 +4,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.ComponentModel;
 
-namespace Serialcoder.MagicWords.ScratchPadPlugin
+namespace JRoland.MagicWords.ScratchPadPlugin
 {
 	public class ScratchPadPlugin : Interfaces.ITool
 	{
@@ -17,32 +17,32 @@ namespace Serialcoder.MagicWords.ScratchPadPlugin
 
 		#region ITool Members
 
-		string Serialcoder.MagicWords.Interfaces.ITool.Name
+		string JRoland.MagicWords.Interfaces.ITool.Name
 		{
 			get { return "ScratPad plugin"; }
 		}
 
-		string Serialcoder.MagicWords.Interfaces.ITool.Description
+		string JRoland.MagicWords.Interfaces.ITool.Description
 		{
 			get { return "The ScratchPad is a simple text editor to collect and keep text."; }
 		}
 
-		string Serialcoder.MagicWords.Interfaces.ITool.Author
+		string JRoland.MagicWords.Interfaces.ITool.Author
 		{
 			get { return "John Roland"; }
 		}
 
-		string Serialcoder.MagicWords.Interfaces.ITool.Version
+		string JRoland.MagicWords.Interfaces.ITool.Version
 		{
 			get { return "1.0"; }
 		}
 
-		void Serialcoder.MagicWords.Interfaces.ITool.Initialize()
+		void JRoland.MagicWords.Interfaces.ITool.Initialize()
 		{
 			// todo restore settings
 		}
 
-		void Serialcoder.MagicWords.Interfaces.ITool.Execute(string[] args)
+		void JRoland.MagicWords.Interfaces.ITool.Execute(string[] args)
 		{
 			
 			ScratchPad.Current.Show();
@@ -58,7 +58,7 @@ namespace Serialcoder.MagicWords.ScratchPadPlugin
 
 
 		[Editor(@"System.Windows.Forms.Design.ShortcutKeysEditor, System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))]
-		System.Windows.Forms.Shortcut Serialcoder.MagicWords.Interfaces.ITool.HotKey
+		System.Windows.Forms.Shortcut JRoland.MagicWords.Interfaces.ITool.HotKey
 		{
 			get
 			{
@@ -70,7 +70,7 @@ namespace Serialcoder.MagicWords.ScratchPadPlugin
 			}
 		}
 
-		string Serialcoder.MagicWords.Interfaces.ITool.Alias
+		string JRoland.MagicWords.Interfaces.ITool.Alias
 		{
 			get
 			{

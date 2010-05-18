@@ -1,4 +1,4 @@
-namespace Serialcoder.MagicWords.TranslatorPlugin
+namespace JRoland.MagicWords.TranslatorPlugin
 {
 	/// <summary>
 	/// Summary description for Form1.
@@ -204,7 +204,7 @@ namespace Serialcoder.MagicWords.TranslatorPlugin
 			// uxFrenchToEnglishToolStripButton
 			// 
 			this.uxFrenchToEnglishToolStripButton.AutoToolTip = false;
-			this.uxFrenchToEnglishToolStripButton.Image = global::Serialcoder.MagicWords.TranslatorPlugin.Properties.Resources.fren;
+			this.uxFrenchToEnglishToolStripButton.Image = global::JRoland.MagicWords.TranslatorPlugin.Properties.Resources.fren;
 			this.uxFrenchToEnglishToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.uxFrenchToEnglishToolStripButton.Name = "uxFrenchToEnglishToolStripButton";
 			this.uxFrenchToEnglishToolStripButton.Size = new System.Drawing.Size(49, 33);
@@ -216,7 +216,7 @@ namespace Serialcoder.MagicWords.TranslatorPlugin
 			// uxEnglishToFrenchToolStripButton
 			// 
 			this.uxEnglishToFrenchToolStripButton.AutoToolTip = false;
-			this.uxEnglishToFrenchToolStripButton.Image = global::Serialcoder.MagicWords.TranslatorPlugin.Properties.Resources.enfr;
+			this.uxEnglishToFrenchToolStripButton.Image = global::JRoland.MagicWords.TranslatorPlugin.Properties.Resources.enfr;
 			this.uxEnglishToFrenchToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.uxEnglishToFrenchToolStripButton.Name = "uxEnglishToFrenchToolStripButton";
 			this.uxEnglishToFrenchToolStripButton.Size = new System.Drawing.Size(49, 33);

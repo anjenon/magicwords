@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Serialcoder.MagicWords.GuidPlugin.Properties
+namespace JRoland.MagicWords.GuidPlugin.Properties
 {
 
 

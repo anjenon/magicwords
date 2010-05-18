@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Serialcoder.MagicWords.AlarmPlugin
+namespace JRoland.MagicWords.AlarmPlugin
 {
 	public partial class AlarmForm : Form
 	{

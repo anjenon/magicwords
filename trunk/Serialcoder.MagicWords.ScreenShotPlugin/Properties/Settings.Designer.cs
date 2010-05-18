@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Serialcoder.MagicWords.ScreenShotPlugin.Properties {
+namespace JRoland.MagicWords.ScreenShotPlugin.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

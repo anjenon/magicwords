@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Diagnostics;
 
-namespace Serialcoder.MagicWords.Entities
+namespace JRoland.MagicWords.Entities
 {
 	/// <summary>
 	/// A magic word is an alias, a keyword, to launch one or more program, url, or files.
@@ -14,6 +14,7 @@ namespace Serialcoder.MagicWords.Entities
 		public MagicWord()
 		{
 			m_StartUpMode = ProcessWindowStyle.Normal;
+            this.Kind = Kind.User;
 		}
 
 		#region Public string Alias
@@ -145,6 +146,9 @@ namespace Serialcoder.MagicWords.Entities
 			}
 		}
 		#endregion
+
+        [System.ComponentModel.Bindable(true)]
+        public Kind Kind { get; set; }
 
 		#region Public string Notes
 

@@ -2,23 +2,23 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Serialcoder.MagicWords.Parameters
+namespace JRoland.MagicWords.Parameters
 {
 	public class NonEncodedWordParameter : Interfaces.IParameter
 	{
 		#region IParameter Members
 
-		string Serialcoder.MagicWords.Interfaces.IParameter.Variable
+		string JRoland.MagicWords.Interfaces.IParameter.Variable
 		{
 			get { return "$I$"; }
 		}
 
-		string Serialcoder.MagicWords.Interfaces.IParameter.Description
+		string JRoland.MagicWords.Interfaces.IParameter.Description
 		{
 			get { return "Replace the $I$ placeholder by a user input."; }
 		}
 
-		bool Serialcoder.MagicWords.Interfaces.IParameter.GetValue(string magicWordNotes, out string output)
+		bool JRoland.MagicWords.Interfaces.IParameter.GetValue(string magicWordNotes, out string output)
 		{
 			// the value that will replace the $param$
 			output = string.Empty;
@@ -33,7 +33,6 @@ namespace Serialcoder.MagicWords.Parameters
 				
 				case System.Windows.Forms.DialogResult.Cancel:
 					return false;
-					break;
 
 				default:
 					break;

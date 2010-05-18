@@ -1,4 +1,4 @@
-namespace Serialcoder.MagicWords.Controls
+namespace JRoland.MagicWords.Controls
 {
 	partial class HelpViewer
 	{

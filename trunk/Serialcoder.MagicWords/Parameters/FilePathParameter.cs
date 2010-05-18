@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Serialcoder.MagicWords.Parameters
+namespace JRoland.MagicWords.Parameters
 {
 	public class FilePathParameter : Interfaces.IParameter
 	{
 		#region IParameter Members
 
-		string Serialcoder.MagicWords.Interfaces.IParameter.Variable
+		string JRoland.MagicWords.Interfaces.IParameter.Variable
 		{
 			get { return "$FILE$"; }
 		}
 
-		string Serialcoder.MagicWords.Interfaces.IParameter.Description
+		string JRoland.MagicWords.Interfaces.IParameter.Description
 		{
 			get { return "Open a file selector"; }
 		}
 
-		bool Serialcoder.MagicWords.Interfaces.IParameter.GetValue(string magicWordNotes, out string variableValue)
+		bool JRoland.MagicWords.Interfaces.IParameter.GetValue(string magicWordNotes, out string variableValue)
 		{
 			OpenFileDialog dialog = new OpenFileDialog();
 			dialog.Title = "Select a file please";

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Serialcoder.MagicWords.ScratchPadPlugin.Properties {
+namespace JRoland.MagicWords.ScratchPadPlugin.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

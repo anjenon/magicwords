@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Serialcoder.Launcher.Interfaces")]
+[assembly: AssemblyTitle("JRoland.Launcher.Interfaces")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("XPSP2")]
-[assembly: AssemblyProduct("Serialcoder.Launcher.Interfaces")]
+[assembly: AssemblyProduct("JRoland.Launcher.Interfaces")]
 [assembly: AssemblyCopyright("Copyright © XPSP2 2007")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

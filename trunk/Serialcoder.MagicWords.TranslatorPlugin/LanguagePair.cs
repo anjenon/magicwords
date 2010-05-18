@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Serialcoder.MagicWords.TranslatorPlugin
+namespace JRoland.MagicWords.TranslatorPlugin
 {
 	public class LanguagePair
 	{

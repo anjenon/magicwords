@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
 
-namespace Serialcoder.MagicWords.AlarmPlugin
+namespace JRoland.MagicWords.AlarmPlugin
 {
 	public class AlarmPlugin : Interfaces.ITool
 	{
@@ -15,39 +15,39 @@ namespace Serialcoder.MagicWords.AlarmPlugin
 
 		#region ITool Members
 
-		string Serialcoder.MagicWords.Interfaces.ITool.Name
+		string JRoland.MagicWords.Interfaces.ITool.Name
 		{
 			get { return "Alarm plugin"; }
 		}
 
-		string Serialcoder.MagicWords.Interfaces.ITool.Description
+		string JRoland.MagicWords.Interfaces.ITool.Description
 		{
 			get { return "This plugin allow you to be alerted on a particular time."; }
 		}
 
-		string Serialcoder.MagicWords.Interfaces.ITool.Author
+		string JRoland.MagicWords.Interfaces.ITool.Author
 		{
 			get { return "John Roland"; }
 		}
 
-		string Serialcoder.MagicWords.Interfaces.ITool.Version
+		string JRoland.MagicWords.Interfaces.ITool.Version
 		{
 			get { return "1.0"; }
 		}
 
-		void Serialcoder.MagicWords.Interfaces.ITool.Initialize()
+		void JRoland.MagicWords.Interfaces.ITool.Initialize()
 		{
 			Console.WriteLine(AlarmForm.Current.Name);
 			//throw new Exception("The method or operation is not implemented.");
 		}
 
-		void Serialcoder.MagicWords.Interfaces.ITool.Execute(string[] args)
+		void JRoland.MagicWords.Interfaces.ITool.Execute(string[] args)
 		{
 			AlarmForm.Current.Show();
 		}
 
 		[Editor(@"System.Windows.Forms.Design.ShortcutKeysEditor, System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))]
-		System.Windows.Forms.Shortcut Serialcoder.MagicWords.Interfaces.ITool.HotKey
+		System.Windows.Forms.Shortcut JRoland.MagicWords.Interfaces.ITool.HotKey
 		{
 			get
 			{
@@ -61,7 +61,7 @@ namespace Serialcoder.MagicWords.AlarmPlugin
 		private string m_Alias;
 		private System.Windows.Forms.Shortcut m_Hotkey;
 
-		string Serialcoder.MagicWords.Interfaces.ITool.Alias
+		string JRoland.MagicWords.Interfaces.ITool.Alias
 		{
 			get
 			{

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Serialcoder.MagicWords.AlarmPlugin.Properties {
+namespace JRoland.MagicWords.AlarmPlugin.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Serialcoder.MagicWords.AlarmPlugin.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Serialcoder.MagicWords.AlarmPlugin.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("JRoland.MagicWords.AlarmPlugin.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

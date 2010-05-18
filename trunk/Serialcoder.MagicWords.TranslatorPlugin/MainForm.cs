@@ -8,7 +8,7 @@ using System.Net;
 using System.IO;
 using System.Collections.Generic;
 
-namespace Serialcoder.MagicWords.TranslatorPlugin
+namespace JRoland.MagicWords.TranslatorPlugin
 {
 	/// <summary>
 	/// Summary description for Form1.

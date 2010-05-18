@@ -27,7 +27,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>bin\Release\Plugins\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -72,9 +72,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Serialcoder.MagicWords.Framework\Serialcoder.MagicWords.Framework.csproj">
+    <ProjectReference Include="..\Serialcoder.MagicWords.Framework\JRoland.MagicWords.Framework.csproj">
       <Project>{1AEF87B4-B549-4408-BBF2-9BC76B9A5121}</Project>
-      <Name>Serialcoder.MagicWords.Framework</Name>
+      <Name>JRoland.MagicWords.Framework</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
